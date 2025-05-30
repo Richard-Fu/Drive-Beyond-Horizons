@@ -1,6 +1,6 @@
-# 🚀 Wacky Flip Game - Deployment Guide
+# 🚀 Drive Beyond Horizons - Deployment Guide
 
-This guide will help you deploy the **Wacky Flip Game** website with full analytics integration.
+This guide will help you deploy the **Drive Beyond Horizons** website with full analytics integration.
 
 ## 📋 Prerequisites
 
@@ -15,8 +15,8 @@ This guide will help you deploy the **Wacky Flip Game** website with full analyt
 
 ```bash
 # Clone the repository
-git clone https://github.com/Richard-Fu/wackyflipgame.git
-cd wackyflipgame
+git clone https://github.com/Richard-Fu/drivebeyondhorizons.git
+cd drivebeyondhorizons
 
 # Install dependencies
 npm install
@@ -40,7 +40,7 @@ The game will be available at `http://localhost:3000` or similar port shown in t
    - Copy your Measurement ID (format: G-XXXXXXXXX)
 
 2. **Update Configuration**:
-   - Replace `G-GGT9J10SJH` in `index.html` with your Measurement ID
+   - Replace `G-GGT9J10SJH` in `public/index.html` with your Measurement ID
    - Located in the `<head>` section
 
 ```html
@@ -67,7 +67,7 @@ The game will be available at `http://localhost:3000` or similar port shown in t
 # Install Vercel CLI
 npm i -g vercel
 
-# Deploy
+# Deploy (ensure you are in the project root, not /public)
 vercel --prod
 ```
 
@@ -79,7 +79,7 @@ vercel --prod
    - Enable Analytics for your project
 
 3. **Verify Integration**:
-   - The `@vercel/analytics` package is already configured
+   - The Vercel Analytics script is already configured in `public/index.html`
    - Analytics will automatically start tracking after deployment
 
 ## 🌐 Domain Configuration
@@ -89,12 +89,12 @@ vercel --prod
 1. **Add Domain in Vercel**:
 
    - Go to Project Settings → Domains
-   - Add your custom domain (e.g., `wackyflipgame.me`)
+   - Add your custom domain (e.g., `drivebeyondhorizon.com`)
 
 2. **Update URLs**:
-   - Update `sitemap.xml` with your domain
-   - Update canonical URLs in `index.html`
-   - Update any hardcoded domain references
+   - Update `public/sitemap.xml` with your domain
+   - Update canonical URLs in `public/index.html`
+   - Update any hardcoded domain references (e.g., in this README)
 
 ### SSL Certificate
 
@@ -111,6 +111,7 @@ The following events are automatically tracked:
 - `game_rated` - User submits a rating
 - `comment_posted` - User submits a comment
 - `faq_interaction` - User opens/closes FAQ items
+- `theater_mode_toggled` - User toggles theater mode
 
 ### Event Data Structure
 
@@ -118,11 +119,11 @@ The following events are automatically tracked:
 // Example event tracking
 trackEvent("game_rated", {
   rating: 5,
-  game: "wacky_flip",
+  game: "drive_beyond_horizons",
 });
 
 trackEvent("comment_posted", {
-  game: "wacky_flip",
+  game: "drive_beyond_horizons",
   comment_length: 150,
 });
 ```
@@ -137,12 +138,12 @@ trackEvent("comment_posted", {
    - Add your domain as a property
 
 2. **Submit Sitemap**:
-   - Upload `sitemap.xml` to Search Console
-   - URL: `https://yourdomain.com/sitemap.xml`
+   - Upload `public/sitemap.xml` to Search Console
+   - URL: `https://drivebeyondhorizon.com/sitemap.xml`
 
 ### robots.txt
 
-The `robots.txt` file is already configured to:
+The `public/robots.txt` file is already configured to:
 
 - Allow all search engines
 - Point to your sitemap
@@ -168,11 +169,11 @@ The site is optimized for:
 
 - [ ] Clone repository
 - [ ] Install dependencies (`npm install`)
-- [ ] Update Google Analytics ID
+- [ ] Update Google Analytics ID in `public/index.html`
 - [ ] Test locally (`npm run dev`)
-- [ ] Deploy to Vercel (`vercel --prod`)
+- [ ] Deploy to Vercel (`vercel --prod` from project root)
 - [ ] Enable Vercel Analytics
-- [ ] Configure custom domain
+- [ ] Configure custom domain (`drivebeyondhorizon.com`)
 - [ ] Submit sitemap to Search Console
 - [ ] Verify analytics tracking
 
@@ -182,7 +183,7 @@ The site is optimized for:
 
 - User ratings and comments stored locally (localStorage)
 - No sensitive data transmitted
-- XSS protection implemented
+- XSS protection implemented (HTML escaping)
 - Input validation for user content
 
 ### Rate Limiting
@@ -196,26 +197,26 @@ The site is optimized for:
 ### Common Issues
 
 **Q: Analytics not working?**
-A: Check your GA Measurement ID and ensure Vercel Analytics is enabled
+A: Check your GA Measurement ID and ensure Vercel Analytics is enabled for your project on Vercel.
 
 **Q: Game not loading?**
-A: Verify iframe src URL and check browser console for errors
+A: Verify iframe src URL and check browser console for errors.
 
 **Q: Mobile display issues?**
-A: Clear browser cache and ensure responsive meta tag is present
+A: Clear browser cache and ensure responsive meta tag is present.
 
 ### Getting Help
 
-- **Issues**: [GitHub Issues](https://github.com/Richard-Fu/wackyflipgame/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/Richard-Fu/wackyflipgame/discussions)
+- **Issues**: [GitHub Issues](https://github.com/Richard-Fu/drivebeyondhorizons/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Richard-Fu/drivebeyondhorizons/discussions)
 - **Documentation**: This deployment guide
 
 ## 🎮 Play the Game
 
 After successful deployment, your game will be live at:
 
-**🎯 [Play Wacky Flip](https://wackyflipgame.me) 🎯**
+**🎯 [Play Drive Beyond Horizons](https://drivebeyondhorizon.com) 🎯**
 
 ---
 
-**Happy Gaming! 🎮**
+**Happy Gaming! 🏎️**

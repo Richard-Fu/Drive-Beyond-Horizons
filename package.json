@@ -1,7 +1,7 @@
 {
-  "name": "wacky-flip-game",
+  "name": "drivebeyondhorizon-game",
   "version": "1.0.0",
-  "description": "Wacky Flip - Physics-Based Parkour Adventure Game",
+  "description": "Drive Beyond Horizons - Open World Driving Simulation Game",
   "main": "index.html",
   "scripts": {
     "dev": "npx serve .",
@@ -10,21 +10,22 @@
     "deploy": "vercel --prod"
   },
   "keywords": [
-    "wacky-flip",
-    "physics-game",
-    "flip-game",
-    "parkour-game",
+    "drive-beyond-horizons",
+    "driving-simulation",
+    "open-world-racing",
+    "car-game",
+    "vehicle-tuning",
+    "multiplayer-driving",
+    "3d-racing-game",
     "html5-game",
-    "browser-game",
-    "stunt-game",
-    "ragdoll-physics"
+    "browser-game"
   ],
   "author": "Richard-Fu",
   "license": "MIT",
-  "homepage": "https://wackyflipgame.me",
+  "homepage": "https://drivebeyondhorizon.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Richard-Fu/wackyflipgame.git"
+    "url": "https://github.com/Richard-Fu/drivebeyondhorizons.git"
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.1"
