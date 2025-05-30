@@ -584,15 +584,35 @@
       }
 
       /* Theater Mode Styles */
+      .theater-mode {
+        overflow: hidden;
+      }
+
       .theater-mode .container {
         max-width: 100%;
         padding: 0;
+        margin: 0;
       }
 
       .theater-mode .game-container {
         margin: 0;
         border-radius: 0;
         box-shadow: none;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .theater-mode .game-header {
+        padding: 10px 20px;
+        margin-bottom: 0;
+        background: #2c3e50;
+        color: white;
+      }
+
+      .theater-mode .game-title {
+        color: white;
       }
 
       .theater-mode header,
@@ -606,99 +626,35 @@
       .theater-mode .game-frame {
         height: calc(100vh - 120px);
         max-height: none;
+        flex: 1;
+        border-radius: 0;
       }
 
       .theater-mode .game-control-bar {
         background: rgba(44, 62, 80, 0.95);
         backdrop-filter: blur(10px);
+        margin-top: 0;
+        border-radius: 0;
+        position: sticky;
+        bottom: 0;
       }
 
+      /* Theater mode mobile adjustments */
       @media (max-width: 768px) {
-        .container {
-          padding: 10px;
+        .theater-mode .game-frame {
+          height: calc(100vh - 140px);
         }
 
-        h1 {
-          font-size: 2em;
+        .theater-mode .game-control-bar {
+          padding: 10px 15px;
         }
 
-        .game-frame {
-          height: 400px;
+        .theater-mode .game-header {
+          padding: 8px 15px;
         }
 
-        .content-section {
-          padding: 20px;
-        }
-
-        .rating-display {
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .rating-score {
-          font-size: 2em;
-        }
-
-        .game-header {
-          flex-direction: column;
-          gap: 10px;
-          text-align: center;
-        }
-
-        .game-title {
-          font-size: 1em;
-        }
-
-        .fullscreen-btn {
-          padding: 10px 20px;
-          font-size: 1em;
-        }
-
-        .fullscreen-btn svg {
-          width: 18px;
-          height: 18px;
-        }
-
-        /* Mobile fullscreen adjustments */
-        .game-container.fullscreen .game-header {
-          padding: 15px;
-          flex-direction: row;
-          justify-content: space-between;
-        }
-
-        .game-container.fullscreen .game-title {
+        .theater-mode .game-title {
           font-size: 0.9em;
-        }
-
-        .game-container.fullscreen .fullscreen-btn {
-          padding: 8px 16px;
-          font-size: 0.9em;
-        }
-
-        /* Mobile game control bar */
-        .game-control-bar {
-          flex-direction: column;
-          gap: 15px;
-          padding: 15px;
-        }
-
-        .game-info {
-          justify-content: center;
-        }
-
-        .game-actions {
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 12px;
-        }
-
-        .action-btn {
-          padding: 12px;
-        }
-
-        .action-btn svg {
-          width: 18px;
-          height: 18px;
         }
       }
 
@@ -932,6 +888,68 @@
       }
 
       /* Mobile game control bar */
+      .game-control-bar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+      }
+
+      .game-info {
+        justify-content: center;
+      }
+
+      .game-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .action-btn {
+        padding: 12px;
+      }
+
+      .action-btn svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      /* Regular responsive styles */
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        h1 {
+          font-size: 2em;
+        }
+
+        .game-frame {
+          height: 400px;
+        }
+
+        .content-section {
+          padding: 20px;
+        }
+
+        .rating-display {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .rating-score {
+          font-size: 2em;
+        }
+
+        .game-header {
+          flex-direction: column;
+          gap: 10px;
+          text-align: center;
+        }
+
+        .game-title {
+          font-size: 1em;
+        }
+      }
     </style>
   </head>
   <body>
