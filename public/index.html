@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Wacky Flip - Play Free Online Physics Flip Game | Master Crazy Stunts
+      Drive Beyond Horizons - Play Free Online Driving Simulation Game | Open
+      World Racing Adventure
     </title>
     <meta
       name="description"
-      content="Play Wacky Flip Game free online! Master backflips, pike twists & crazy stunts in this addictive physics-based parkour game. No download required - start flipping now!"
+      content="Play Drive Beyond Horizons free online! Explore vast 3D open world with procedural terrains, vehicle tuning, multiplayer racing & dynamic weather. No download required - start driving now!"
     />
     <meta
       name="keywords"
-      content="Wacky Flip, flip game, physics game, parkour game, online game, free game, skill game, backflip, stunt game, ragdoll physics, browser game, HTML5 game"
+      content="Drive Beyond Horizons, driving simulation, open world racing, car game, vehicle tuning, multiplayer driving, 3D racing game, procedural terrain, HTML5 driving game, browser racing, free driving game, simulation sandbox, derby racing, vehicle customization"
     />
-    <link rel="canonical" href="https://wackyflipgame.me" />
+    <link rel="canonical" href="https://drivebeyondhorizons.com" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -102,88 +103,13 @@
         align-items: center;
       }
 
-      .fullscreen-btn {
-        background: #3498db;
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 0.9em;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        transition: all 0.3s ease;
-      }
-
-      .fullscreen-btn:hover {
-        background: #8e44ad;
-        color: white;
-      }
-
-      .fullscreen-btn.active {
-        background: #8e44ad;
-        color: white;
-      }
-
-      .fullscreen-btn svg {
-        width: 18px;
-        height: 18px;
-      }
-
       .game-frame {
         width: 100%;
         max-width: 1280px;
         height: 720px;
         border: none;
         border-radius: 8px;
-        display: block;
-        background: #f5f5f5;
-        will-change: transform, width, height;
-        transform: translateZ(0); /* 启用硬件加速 */
-      }
-
-      /* Loading indicator styles */
-      .loading-indicator {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        z-index: 10;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      }
-
-      .loading-spinner {
-        width: 40px;
-        height: 40px;
-        border: 4px solid #e0e0e0;
-        border-top: 4px solid #3498db;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 15px;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      .loading-indicator p {
-        margin: 0;
-        color: #2c3e50;
-        font-weight: 600;
-      }
-
-      .loading-indicator.hidden {
-        display: none;
+        transition: all 0.3s ease;
       }
 
       /* Game Control Bar Styles */
@@ -313,8 +239,13 @@
         color: white;
       }
 
-      .refresh-btn:hover {
-        background: #27ae60;
+      .theater-btn:hover {
+        background: #8e44ad;
+        color: white;
+      }
+
+      .theater-btn.active {
+        background: #8e44ad;
         color: white;
       }
 
@@ -652,102 +583,78 @@
         border-left: 4px solid #27ae60;
       }
 
+      /* Theater Mode Styles */
+      .theater-mode {
+        overflow: hidden;
+      }
+
+      .theater-mode .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      .theater-mode .game-container {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .theater-mode .game-header {
+        padding: 10px 20px;
+        margin-bottom: 0;
+        background: #2c3e50;
+        color: white;
+      }
+
+      .theater-mode .game-title {
+        color: white;
+      }
+
+      .theater-mode header,
+      .theater-mode .rating-section,
+      .theater-mode .comments-section,
+      .theater-mode .content-section,
+      .theater-mode footer {
+        display: none;
+      }
+
+      .theater-mode .game-frame {
+        height: calc(100vh - 120px);
+        max-height: none;
+        flex: 1;
+        border-radius: 0;
+      }
+
+      .theater-mode .game-control-bar {
+        background: rgba(44, 62, 80, 0.95);
+        backdrop-filter: blur(10px);
+        margin-top: 0;
+        border-radius: 0;
+        position: sticky;
+        bottom: 0;
+      }
+
+      /* Theater mode mobile adjustments */
       @media (max-width: 768px) {
-        .container {
-          padding: 10px;
+        .theater-mode .game-frame {
+          height: calc(100vh - 140px);
         }
 
-        h1 {
-          font-size: 2em;
-        }
-
-        .game-frame {
-          height: 400px;
-        }
-
-        .content-section {
-          padding: 20px;
-        }
-
-        .rating-display {
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .rating-score {
-          font-size: 2em;
-        }
-
-        .game-header {
-          flex-direction: column;
-          gap: 10px;
-          text-align: center;
-        }
-
-        .game-title {
-          font-size: 1em;
-        }
-
-        .fullscreen-btn {
-          padding: 10px 20px;
-          font-size: 1em;
-        }
-
-        .fullscreen-btn svg {
-          width: 18px;
-          height: 18px;
-        }
-
-        /* Mobile fullscreen adjustments */
-        .game-container.fullscreen .game-header {
-          padding: 15px;
-          flex-direction: row;
-          justify-content: space-between;
-        }
-
-        .game-container.fullscreen .game-title {
-          font-size: 0.9em;
-        }
-
-        .game-container.fullscreen .fullscreen-btn {
-          padding: 8px 16px;
-          font-size: 0.9em;
-        }
-
-        /* Mobile game control bar */
-        .game-control-bar {
-          flex-direction: column;
-          gap: 15px;
-          padding: 15px;
-        }
-
-        .game-info {
-          justify-content: center;
-        }
-
-        .game-actions {
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 12px;
-        }
-
-        .action-btn {
-          padding: 12px;
-        }
-
-        .action-btn svg {
-          width: 18px;
-          height: 18px;
-        }
-
-        /* Mobile fullscreen styles */
-        .game-container.fullscreen .game-control-bar {
-          height: 50px;
+        .theater-mode .game-control-bar {
           padding: 10px 15px;
         }
 
-        .game-container.fullscreen .game-frame {
-          height: calc(100vh - 50px);
+        .theater-mode .game-header {
+          padding: 8px 15px;
+        }
+
+        .theater-mode .game-title {
+          font-size: 0.9em;
         }
       }
 
@@ -947,82 +854,139 @@
         line-height: 1.5;
       }
 
-      /* Fullscreen styles */
-      .game-container.fullscreen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 9999;
-        background: #000;
-        display: flex;
-        flex-direction: column;
-        will-change: transform;
-        transform: translateZ(0); /* 启用硬件加速 */
-        backface-visibility: hidden; /* 防止渲染问题 */
-      }
-
-      .game-container.fullscreen .game-frame {
-        flex: 1;
-        width: 100%;
-        height: calc(100vh - 60px);
-        border-radius: 0;
-        border: none;
-        outline: none;
-        will-change: auto; /* 全屏时重置will-change */
-        transform: translateZ(0);
-      }
-
+      /* Mobile fullscreen adjustments */
       .game-container.fullscreen .game-control-bar {
-        height: 60px;
-        margin-top: 0;
-        border-radius: 0;
-        background: rgba(44, 62, 80, 0.95);
-        backdrop-filter: blur(10px);
-        flex-shrink: 0; /* 防止控制栏被压缩 */
+        padding: 10px 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .game-container.fullscreen .game-info {
+        flex-direction: row;
+        gap: 8px;
+      }
+
+      .game-container.fullscreen .game-actions {
+        gap: 8px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      .game-container.fullscreen .action-btn {
+        padding: 8px;
+        min-width: 40px;
+      }
+
+      .game-container.fullscreen .action-group {
+        gap: 2px;
+      }
+
+      .game-container.fullscreen .likes-count,
+      .game-container.fullscreen .dislikes-count {
+        font-size: 0.7em;
+      }
+
+      /* Mobile game control bar */
+      .game-control-bar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+      }
+
+      .game-info {
+        justify-content: center;
+      }
+
+      .game-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .action-btn {
+        padding: 12px;
+      }
+
+      .action-btn svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      /* Regular responsive styles */
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        h1 {
+          font-size: 2em;
+        }
+
+        .game-frame {
+          height: 400px;
+        }
+
+        .content-section {
+          padding: 20px;
+        }
+
+        .rating-display {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .rating-score {
+          font-size: 2em;
+        }
+
+        .game-header {
+          flex-direction: column;
+          gap: 10px;
+          text-align: center;
+        }
+
+        .game-title {
+          font-size: 1em;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="game-container" id="gameContainer">
-        <!-- 加载指示器 -->
-        <div class="loading-indicator" id="loadingIndicator">
-          <div class="loading-spinner"></div>
-          <p>Loading Wacky Flip Game...</p>
+        <div class="game-header">
+          <h3 class="game-title">
+            🏎️ Drive Beyond Horizons - Epic Racing Game
+          </h3>
         </div>
 
         <iframe
-          src="https://1games.io/embed/wacky-flip"
+          src="https://epicfreegames78.github.io/drive-beyond-horizons/"
           width="1280"
           height="720"
-          scrolling="no"
+          scrolling="none"
           frameborder="0"
           class="game-frame"
           id="gameFrame"
-          title="Wacky Flip Crazy Physics Game"
+          title="Drive Beyond Horizons Racing Game"
           allowfullscreen
-          allow="fullscreen; gamepad; microphone; camera"
-          sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals"
-          loading="lazy"
         >
-          <p>
-            Your browser does not support iframes.
-            <a href="https://1games.io/embed/wacky-flip" target="_blank"
-              >Click here to play the game</a
-            >
-          </p>
         </iframe>
 
         <!-- Game Control Bar -->
         <div class="game-control-bar">
           <div class="game-info">
             <div class="game-icon">
-              <img src="favicon.svg" alt="Wacky Flip" width="32" height="32" />
+              <img
+                src="favicon.svg"
+                alt="Drive Beyond Horizons"
+                width="32"
+                height="32"
+              />
             </div>
             <div class="game-details">
-              <h4>Wacky Flip</h4>
+              <h4>Drive Beyond Horizons</h4>
             </div>
           </div>
 
@@ -1050,7 +1014,7 @@
               >
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path
-                    d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"
+                    d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79-.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"
                   />
                 </svg>
               </button>
@@ -1104,25 +1068,13 @@
             </button>
 
             <button
-              class="action-btn refresh-btn"
-              id="refreshBtn"
-              title="Refresh game"
+              class="action-btn theater-btn"
+              id="theaterBtn"
+              title="Theater mode"
             >
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
-                  d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
-                />
-              </svg>
-            </button>
-
-            <button
-              class="action-btn fullscreen-btn"
-              id="fullscreenBtn"
-              title="Toggle fullscreen"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
+                  d="M19 6H5c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H5V8h14v8z"
                 />
               </svg>
             </button>
@@ -1186,7 +1138,7 @@
                 name="userComment"
                 required
                 maxlength="500"
-                placeholder="Share your thoughts about Wacky Flip..."
+                placeholder="Share your thoughts about Drive Beyond Horizons..."
               ></textarea>
             </div>
             <button type="submit" class="submit-btn">Post Comment</button>
@@ -1199,81 +1151,83 @@
       </div>
 
       <header>
-        <h1>🎮 Wacky Flip - Crazy Physics Flip Game</h1>
+        <h1>🏎️ Drive Beyond Horizons - Epic Racing Adventure</h1>
         <p class="subtitle">
-          Experience the most thrilling physics-based parkour game and master
-          perfect flip techniques!
+          Experience the most thrilling racing game and master epic driving
+          challenges across diverse landscapes!
         </p>
         <div class="highlight">
           <strong
-            >🎯 Free Online Game | 🚀 No Download | 🎪 Physics Engine | 🏆 Skill
-            Challenge</strong
+            >🎯 Free Online Game | 🚀 No Download | 🏁 Racing Engine | 🏆
+            Driving Challenge</strong
           >
         </div>
       </header>
 
       <section class="content-section">
-        <h2>🎪 About Wacky Flip Crazy Physics Game</h2>
+        <h2>🏁 About Drive Beyond Horizons Racing Game</h2>
         <p>
-          <strong>Wacky Flip</strong>
-          is an addictive physics-based parkour game that perfectly combines
-          real physics with pure parkour chaos. In this innovative flip game,
-          you need to master backflips, pike twists, and mid-air madness, launch
-          off rooftops, slam dunk into stunt hoops, and stick the most
-          ridiculous landings across urban playgrounds.
+          <strong>Drive Beyond Horizons</strong>
+          is an addictive racing game that perfectly combines realistic driving
+          physics with epic racing challenges. In this innovative driving game,
+          you need to master high-speed racing, navigate challenging tracks, and
+          conquer diverse terrains while pushing your driving skills to the
+          limit across stunning landscapes.
         </p>
 
         <div class="highlight">
           <p>
             <strong>🌟 Game Features:</strong>
-            The world is your stunt gym, and gravity is your playground. This
-            innovative flip game perfectly blends style, skill, and serious fun!
+            The world is your racing track, and speed is your ally. This
+            innovative racing game perfectly blends style, skill, and serious
+            driving fun!
           </p>
         </div>
 
         <h3>🎯 Core Gameplay</h3>
         <p>
-          Wacky Flip starts simple: launch your athlete, flip through the air,
-          and aim for a clean landing inside the target zone. Each flip earns
-          you points—but only if you nail the landing. The more stylish and
-          complex your combos, the higher your score. Just don't lose control
-          midair, or it's an instant wipeout.
+          Drive Beyond Horizons starts with choosing your vehicle and track.
+          Race through diverse environments, master challenging turns, and aim
+          for the best lap times. Each race tests your driving skills—but only
+          if you maintain control at high speeds. The more precise and fast your
+          driving, the higher your score. Just don't lose control on the track,
+          or it's game over.
         </p>
       </section>
 
       <section class="content-section">
-        <h2>🎮 How to Play Wacky Flip</h2>
+        <h2>🎮 How to Play Drive Beyond Horizons</h2>
         <div class="how-to-play">
           <div class="step">
-            <h4>🚀 Step 1: Prepare to Launch</h4>
+            <h4>🚗 Step 1: Choose Your Vehicle</h4>
             <p>
-              Hold the left mouse button to adjust jump power and angle. The
-              power bar will show your jump intensity, and the angle determines
-              your flight trajectory.
+              Select from various high-performance vehicles, each with unique
+              handling characteristics. Choose the car that matches your driving
+              style and the track ahead.
             </p>
           </div>
           <div class="step">
-            <h4>🎪 Step 2: Launch into Air</h4>
+            <h4>🏁 Step 2: Master the Controls</h4>
             <p>
-              Release the left mouse button to launch into the air. Your
-              character will fly into the air according to the set power and
-              angle, ready to start the flip performance.
+              Use keyboard controls to accelerate, brake, and steer your
+              vehicle. Learn the optimal racing lines and braking points for
+              each track section.
             </p>
           </div>
           <div class="step">
-            <h4>🤸 Step 3: Mid-Air Flips</h4>
+            <h4>🏎️ Step 3: Navigate the Track</h4>
             <p>
-              Click the mouse while in the air to start flipping. You can
-              perform various flip moves like Pike, Scissor, and Layout flips to
-              earn higher scores.
+              Race through challenging tracks with varying terrain, weather
+              conditions, and obstacles. Master each turn and straightaway to
+              achieve the best times.
             </p>
           </div>
           <div class="step">
-            <h4>🎯 Step 4: Perfect Landing</h4>
+            <h4>🏆 Step 4: Achieve Victory</h4>
             <p>
-              Click the mouse again to lock the landing position. Timing is
-              everything! Perfect landing timing will determine whether you get
-              high scores or crash spectacularly.
+              Complete races in the shortest time possible while maintaining
+              control. Unlock new tracks and vehicles as you progress through
+              the racing challenges.
             </p>
           </div>
         </div>
@@ -1282,71 +1236,72 @@
           <h3>🎮 Game Controls</h3>
           <ul>
             <li>
-              <strong>Hold Left Mouse Button:</strong> Adjust jump power and
-              angle
+              <strong>Arrow Keys / WASD:</strong> Steer and control your vehicle
             </li>
-            <li><strong>Release Mouse:</strong> Launch into the air</li>
-            <li><strong>Click in Air:</strong> Start flip action</li>
+            <li><strong>Up Arrow / W:</strong> Accelerate</li>
+            <li><strong>Down Arrow / S:</strong> Brake/Reverse</li>
             <li>
-              <strong>Click Again:</strong> Lock landing (timing is crucial)
+              <strong>Left/Right Arrows / A/D:</strong> Steer left and right
             </li>
           </ul>
         </div>
       </section>
 
       <section class="content-section">
-        <h2>🌟 Wacky Flip Game Advantages</h2>
+        <h2>🌟 Drive Beyond Horizons Game Advantages</h2>
         <div class="advantages">
           <div class="advantage">
             <div class="advantage-icon">🎯</div>
-            <h3>Simple to Learn</h3>
+            <h3>Easy to Learn</h3>
             <p>
-              The game mechanics are easy to understand, suitable for players of
-              all ages and skill levels. Just control your character's movement
-              and master the flip techniques.
+              The game controls are intuitive and easy to master, suitable for
+              players of all ages and skill levels. Just get behind the wheel
+              and start your racing adventure.
             </p>
           </div>
           <div class="advantage">
             <div class="advantage-icon">🚀</div>
             <h3>No Installation Required</h3>
             <p>
-              Wacky Flip is free to play and requires no downloads or
+              Drive Beyond Horizons is free to play and requires no downloads or
               installations. You can access the game directly from your browser
-              and start playing immediately.
+              and start racing immediately.
             </p>
           </div>
           <div class="advantage">
             <div class="advantage-icon">🧠</div>
-            <h3>Enhances Focus</h3>
+            <h3>Enhances Reflexes</h3>
             <p>
-              The game requires quick reflexes and concentration. As the
-              character's speed increases, it helps players improve hand-eye
-              coordination and reaction time.
+              The game requires quick reflexes and concentration at high speeds.
+              It helps players improve hand-eye coordination, reaction time, and
+              spatial awareness.
             </p>
           </div>
           <div class="advantage">
-            <div class="advantage-icon">🎪</div>
-            <h3>Physics Engine Fun</h3>
+            <div class="advantage-icon">🏁</div>
+            <h3>Realistic Physics</h3>
             <p>
-              The realistic physics engine makes every flip full of surprises.
-              Even failures create hilarious ragdoll physics effects that are
-              entertaining to watch.
+              The advanced driving physics engine makes every race feel
+              authentic. Experience realistic vehicle handling, momentum, and
+              track interactions.
             </p>
           </div>
           <div class="advantage">
             <div class="advantage-icon">🏆</div>
-            <h3>Skill Challenge</h3>
+            <h3>Racing Challenge</h3>
             <p>
-              Master various flip combinations, from simple backflips to complex
-              consecutive moves, constantly challenging higher score records.
+              Master various track layouts, weather conditions, and racing
+              scenarios. Constantly challenge yourself to achieve faster lap
+              times and better rankings.
             </p>
           </div>
           <div class="advantage">
             <div class="advantage-icon">🎨</div>
-            <h3>Style Variety</h3>
+            <h3>Diverse Environments</h3>
             <p>
-              Multiple flip moves and landing methods allow you to create unique
-              styles and impressive stunt performances.
+              Race through multiple stunning environments, from city streets to
+              mountain passes, each offering unique challenges and visual
+              experiences.
             </p>
           </div>
         </div>
@@ -1355,314 +1310,93 @@
       <section class="content-section">
         <h2>❓ Frequently Asked Questions</h2>
         <div class="faq-item">
-          <div class="faq-question">How do I start playing Wacky Flip?</div>
+          <div class="faq-question">
+            How do I start playing Drive Beyond Horizons?
+          </div>
           <div class="faq-answer">
             <p>
               Very simple! The game automatically loads in the game area above.
-              Use your mouse to control the character's jumping and flipping,
-              and follow the in-game prompts to start your flip adventure.
-            </p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">What are the controls for Wacky Flip?</div>
-          <div class="faq-answer">
-            <p>
-              In Wacky Flip, use the left mouse button to control your
-              character. Hold to adjust power and angle, release to launch,
-              click in air to start flipping, click again to lock landing.
-            </p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">How do I get high scores in the game?</div>
-          <div class="faq-answer">
-            <p>
-              Get high scores by completing complex flip combinations and
-              perfect landings. Try different moves like Pike flips, Scissor
-              flips, and ensure perfect landings in the target zone to get score
-              multipliers.
+              Use your keyboard to control the vehicle, and follow the in-game
+              prompts to start your racing adventure.
             </p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            Are there different difficulty levels in the game?
+            What are the controls for Drive Beyond Horizons?
           </div>
           <div class="faq-answer">
             <p>
-              Yes, Wacky Flip contains multiple different levels and challenge
-              areas, from rooftops to water towers, each area has unique stunt
-              setups and difficulty challenges.
+              In Drive Beyond Horizons, use the arrow keys or WASD to control
+              your vehicle. Up arrow or W to accelerate, down arrow or S to
+              brake, and left/right arrows or A/D to steer.
             </p>
           </div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">What happens if I fail a flip?</div>
+          <div class="faq-question">
+            How do I get better lap times in the game?
+          </div>
           <div class="faq-answer">
             <p>
-              Even failures are fun! The game's ragdoll physics engine creates
-              hilarious crash effects, with each failure producing fresh and
-              entertaining results.
+              Improve your lap times by learning the optimal racing lines,
+              braking points, and acceleration zones. Practice smooth steering
+              inputs and maintain consistent speed through corners.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            Are there different tracks and vehicles in the game?
+          </div>
+          <div class="faq-answer">
+            <p>
+              Yes, Drive Beyond Horizons features multiple tracks with varying
+              difficulty levels and environmental conditions, along with
+              different vehicles to choose from.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What happens if I crash during a race?</div>
+          <div class="faq-answer">
+            <p>
+              Crashes will affect your lap time and overall performance. The
+              game features realistic damage and recovery systems, so try to
+              maintain control at all times.
             </p>
           </div>
         </div>
       </section>
 
       <section class="content-section">
-        <h2>🎮 Similar Physics Sports Games</h2>
+        <h2>🎮 Similar Racing Games</h2>
         <p>
-          If you enjoy Wacky Flip, you might also like these physics-based skill
-          games:
+          If you enjoy Drive Beyond Horizons, you might also like these racing
+          and driving games:
         </p>
         <ul style="margin-top: 15px; padding-left: 20px">
-          <li><strong>Goal Rush</strong> - Soccer skill challenge game</li>
-          <li><strong>Flip Runner</strong> - Parkour flip adventure</li>
+          <li><strong>Highway Racer</strong> - High-speed highway racing</li>
+          <li><strong>City Car Driving</strong> - Urban driving simulation</li>
           <li>
-            <strong>Volley Random</strong> - Random volleyball physics game
+            <strong>Mountain Rally</strong> - Off-road rally racing challenge
           </li>
           <li>
-            <strong>Basketball Superstars</strong> - Basketball skill game
+            <strong>Speed Champions</strong> - Professional racing circuit
           </li>
         </ul>
       </section>
     </div>
 
     <footer>
-      <p>&copy; 2025 Wacky Flip Game Site. All rights reserved.</p>
-      <p>Enjoy the best online flip game experience!</p>
+      <p>&copy; 2025 Drive Beyond Horizons Game Site. All rights reserved.</p>
+      <p>Enjoy the best online racing game experience!</p>
     </footer>
 
     <script>
-      // Fullscreen functionality
-      let isFullscreen = false;
-      const gameContainer = document.getElementById("gameContainer");
-      const gameFrame = document.getElementById("gameFrame");
-      const fullscreenBtn = document.getElementById("fullscreenBtn");
-      const loadingIndicator = document.getElementById("loadingIndicator");
-      const originalSrc = "https://1games.io/embed/wacky-flip";
+      // Fullscreen functionality REMOVED
 
-      // iframe加载状态管理
-      let iframeLoaded = false;
-      let loadTimeout;
-
-      // 显示加载指示器
-      function showLoading() {
-        if (loadingIndicator) {
-          loadingIndicator.classList.remove("hidden");
-        }
-      }
-
-      // 隐藏加载指示器
-      function hideLoading() {
-        if (loadingIndicator) {
-          loadingIndicator.classList.add("hidden");
-        }
-      }
-
-      // iframe加载成功处理
-      function onIframeLoad() {
-        console.log("Iframe loaded successfully");
-
-        // 延迟验证，确保内容真正加载完成
-        setTimeout(() => {
-          // 双重验证iframe状态
-          if (gameFrame.src && gameFrame.src !== "about:blank") {
-            iframeLoaded = true;
-            hideLoading();
-            clearTimeout(loadTimeout);
-            updateFullscreenButtonState(); // 更新按钮状态
-            console.log("Game fully loaded and ready");
-          }
-        }, 1000); // 给游戏1秒时间完全初始化
-      }
-
-      // iframe加载错误处理
-      function onIframeError() {
-        console.log("Iframe failed to load, attempting reload...");
-        iframeLoaded = false;
-        showLoading();
-
-        // 延迟重新加载
-        setTimeout(() => {
-          if (!iframeLoaded) {
-            gameFrame.src = originalSrc;
-          }
-        }, 2000);
-      }
-
-      // 设置加载超时
-      function setLoadTimeout() {
-        clearTimeout(loadTimeout);
-        loadTimeout = setTimeout(() => {
-          if (!iframeLoaded) {
-            console.log("Iframe load timeout, reloading...");
-            onIframeError();
-          }
-        }, 10000); // 10秒超时
-      }
-
-      // iframe保护机制
-      function protectIframe() {
-        if (!gameFrame.src || gameFrame.src === "about:blank") {
-          console.log("Iframe src lost, restoring...");
-          iframeLoaded = false;
-          showLoading();
-          gameFrame.src = originalSrc;
-          setLoadTimeout();
-        }
-
-        // 检查iframe是否真正加载了内容
-        try {
-          const frameDoc =
-            gameFrame.contentDocument || gameFrame.contentWindow.document;
-          if (
-            frameDoc &&
-            frameDoc.body &&
-            frameDoc.body.innerHTML.trim() === ""
-          ) {
-            console.log("Iframe content is empty, reloading...");
-            onIframeError();
-          }
-        } catch (e) {
-          // 跨域时无法访问，这是正常的
-          // 但如果iframe完全空白，浏览器通常不会抛出错误
-        }
-      }
-
-      // 监听iframe事件
-      gameFrame.addEventListener("load", onIframeLoad);
-      gameFrame.addEventListener("error", onIframeError);
-
-      // 初始化加载
-      showLoading();
-      setLoadTimeout();
-
-      // 更新全屏按钮状态
-      function updateFullscreenButtonState() {
-        const fullscreenBtn = document.getElementById("fullscreenBtn");
-        if (!iframeLoaded) {
-          fullscreenBtn.style.opacity = "0.5";
-          fullscreenBtn.title = "Waiting for game to load...";
-          fullscreenBtn.style.cursor = "wait";
-        } else {
-          fullscreenBtn.style.opacity = "1";
-          fullscreenBtn.title = isFullscreen
-            ? "Exit fullscreen"
-            : "Toggle fullscreen";
-          fullscreenBtn.style.cursor = "pointer";
-        }
-      }
-
-      // 初始化按钮状态
-      updateFullscreenButtonState();
-
-      // 定期检查iframe状态
-      setInterval(protectIframe, 5000);
-
-      function toggleFullscreen() {
-        // 如果游戏还在加载中，先等待加载完成
-        if (!iframeLoaded) {
-          console.log("Game is still loading, waiting...");
-          const checkLoaded = setInterval(() => {
-            if (iframeLoaded) {
-              clearInterval(checkLoaded);
-              toggleFullscreen();
-            }
-          }, 500);
-          return;
-        }
-
-        if (!isFullscreen) {
-          enterFullscreen();
-        } else {
-          exitFullscreen();
-        }
-      }
-
-      function enterFullscreen() {
-        // 使用requestAnimationFrame确保渲染完成
-        requestAnimationFrame(() => {
-          // 预先检查iframe状态
-          protectIframe();
-
-          // 添加全屏类
-          gameContainer.classList.add("fullscreen");
-          isFullscreen = true;
-          fullscreenBtn.classList.add("active");
-
-          // 强制重绘，避免渲染问题
-          gameFrame.style.display = "none";
-          gameFrame.offsetHeight; // 触发重排
-          gameFrame.style.display = "block";
-
-          // Track fullscreen event
-          trackEvent("game_fullscreen", {
-            action: "enter",
-            game: "wacky_flip",
-          });
-
-          // Update button icon for exit fullscreen
-          fullscreenBtn.querySelector("svg").innerHTML =
-            '<path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/>';
-
-          // Update title
-          fullscreenBtn.title = "Exit fullscreen";
-
-          // Hide page scroll
-          document.body.style.overflow = "hidden";
-        });
-      }
-
-      function exitFullscreen() {
-        requestAnimationFrame(() => {
-          gameContainer.classList.remove("fullscreen");
-          isFullscreen = false;
-          fullscreenBtn.classList.remove("active");
-
-          // 强制重绘
-          gameFrame.style.display = "none";
-          gameFrame.offsetHeight; // 触发重排
-          gameFrame.style.display = "block";
-
-          // Track fullscreen event
-          trackEvent("game_fullscreen", {
-            action: "exit",
-            game: "wacky_flip",
-          });
-
-          // Update button icon for enter fullscreen
-          fullscreenBtn.querySelector("svg").innerHTML =
-            '<path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>';
-
-          // Update title
-          fullscreenBtn.title = "Toggle fullscreen";
-
-          // Restore page scroll
-          document.body.style.overflow = "";
-
-          // 延迟检查iframe状态，确保渲染完成
-          setTimeout(() => {
-            protectIframe();
-          }, 500);
-        });
-      }
-
-      // Fullscreen button click handler
-      fullscreenBtn.addEventListener("click", toggleFullscreen);
-
-      // Keyboard shortcuts for fullscreen
-      document.addEventListener("keydown", (e) => {
-        // F key for fullscreen toggle
-        if (e.key === "f" || e.key === "F") {
-          e.preventDefault();
-          toggleFullscreen();
-        }
-        // Escape key to exit fullscreen
-        if (e.key === "Escape" && isFullscreen) {
-          exitFullscreen();
-        }
-      });
+      // Additional debugging for container state REMOVED
 
       // Analytics Event Tracking
       function trackEvent(eventName, eventData = {}) {
@@ -1680,9 +1414,10 @@
       // Rating System with daily limits and analytics
       let userRating = 0;
       const ratings =
-        JSON.parse(localStorage.getItem("wackyFlipRatings")) || [];
+        JSON.parse(localStorage.getItem("driveBeyondHorizonsRatings")) || [];
       const userActions =
-        JSON.parse(localStorage.getItem("wackyFlipUserActions")) || {};
+        JSON.parse(localStorage.getItem("driveBeyondHorizonsUserActions")) ||
+        {};
 
       // Get today's date string
       function getTodayString() {
@@ -1777,7 +1512,7 @@
           // Track rating event
           trackEvent("game_rated", {
             rating: rating,
-            game: "wacky_flip",
+            game: "drive_beyond_horizons",
           });
 
           // Update button states
@@ -1793,12 +1528,15 @@
 
           // Save rating and user action
           ratings.push(rating);
-          localStorage.setItem("wackyFlipRatings", JSON.stringify(ratings));
+          localStorage.setItem(
+            "driveBeyondHorizonsRatings",
+            JSON.stringify(ratings)
+          );
 
           // Update user actions
           userActions.lastRatingDate = getTodayString();
           localStorage.setItem(
-            "wackyFlipUserActions",
+            "driveBeyondHorizonsUserActions",
             JSON.stringify(userActions)
           );
 
@@ -1817,7 +1555,7 @@
 
       // Comments System with daily limits and analytics
       const comments = JSON.parse(
-        localStorage.getItem("wackyFlipComments")
+        localStorage.getItem("driveBeyondHorizonsComments")
       ) || [
         {
           author: "GameMaster2024",
@@ -1953,7 +1691,7 @@
 
         // Track comment event
         trackEvent("comment_posted", {
-          game: "wacky_flip",
+          game: "drive_beyond_horizons",
           comment_length: userComment.length,
         });
 
@@ -1964,7 +1702,10 @@
         };
 
         comments.push(newComment);
-        localStorage.setItem("wackyFlipComments", JSON.stringify(comments));
+        localStorage.setItem(
+          "driveBeyondHorizonsComments",
+          JSON.stringify(comments)
+        );
 
         // Update user actions
         const today = getTodayString();
@@ -1975,7 +1716,7 @@
           userActions.commentCount = 1;
         }
         localStorage.setItem(
-          "wackyFlipUserActions",
+          "driveBeyondHorizonsUserActions",
           JSON.stringify(userActions)
         );
 
@@ -1996,7 +1737,7 @@
       // Track game interactions
       document.querySelector(".game-frame").addEventListener("load", () => {
         trackEvent("game_loaded", {
-          game: "wacky_flip",
+          game: "drive_beyond_horizons",
         });
       });
 
@@ -2048,7 +1789,9 @@
         if (lastCleanup !== today) {
           // Reset daily counters if it's a new day
           const actions =
-            JSON.parse(localStorage.getItem("wackyFlipUserActions")) || {};
+            JSON.parse(
+              localStorage.getItem("driveBeyondHorizonsUserActions")
+            ) || {};
           if (actions.lastRatingDate !== today) {
             delete actions.lastRatingDate;
           }
@@ -2056,7 +1799,10 @@
             delete actions.lastCommentDate;
             delete actions.commentCount;
           }
-          localStorage.setItem("wackyFlipUserActions", JSON.stringify(actions));
+          localStorage.setItem(
+            "driveBeyondHorizonsUserActions",
+            JSON.stringify(actions)
+          );
           localStorage.setItem("lastCleanup", today);
         }
       }
@@ -2098,7 +1844,7 @@
                 issue_type: issueType,
                 has_email: !!email,
                 description_length: description.length,
-                game: "wacky_flip",
+                game: "drive_beyond_horizons",
               });
 
               // Simulate report submission
@@ -2114,12 +1860,15 @@
       });
 
       // Game Control Bar functionality
-      let userLiked = localStorage.getItem("wackyFlipLiked") === "true";
-      let userDisliked = localStorage.getItem("wackyFlipDisliked") === "true";
+      let userLiked =
+        localStorage.getItem("driveBeyondHorizonsLiked") === "true";
+      let userDisliked =
+        localStorage.getItem("driveBeyondHorizonsDisliked") === "true";
       let likesCount =
-        parseInt(localStorage.getItem("wackyFlipLikesCount")) || 4500;
+        parseInt(localStorage.getItem("driveBeyondHorizonsLikesCount")) || 4500;
       let dislikesCount =
-        parseInt(localStorage.getItem("wackyFlipDislikesCount")) || 489;
+        parseInt(localStorage.getItem("driveBeyondHorizonsDislikesCount")) ||
+        489;
 
       function updateGameStats() {
         document.getElementById("likesCount").textContent =
@@ -2157,7 +1906,7 @@
           // Unlike
           userLiked = false;
           likesCount--;
-          trackEvent("game_unliked", { game: "wacky_flip" });
+          trackEvent("game_unliked", { game: "drive_beyond_horizons" });
         } else {
           // Like
           userLiked = true;
@@ -2167,13 +1916,13 @@
             userDisliked = false;
             dislikesCount--;
           }
-          trackEvent("game_liked", { game: "wacky_flip" });
+          trackEvent("game_liked", { game: "drive_beyond_horizons" });
         }
 
-        localStorage.setItem("wackyFlipLiked", userLiked);
-        localStorage.setItem("wackyFlipDisliked", userDisliked);
-        localStorage.setItem("wackyFlipLikesCount", likesCount);
-        localStorage.setItem("wackyFlipDislikesCount", dislikesCount);
+        localStorage.setItem("driveBeyondHorizonsLiked", userLiked);
+        localStorage.setItem("driveBeyondHorizonsDisliked", userDisliked);
+        localStorage.setItem("driveBeyondHorizonsLikesCount", likesCount);
+        localStorage.setItem("driveBeyondHorizonsDislikesCount", dislikesCount);
         updateGameStats();
       });
 
@@ -2183,7 +1932,7 @@
           // Remove dislike
           userDisliked = false;
           dislikesCount--;
-          trackEvent("game_undisliked", { game: "wacky_flip" });
+          trackEvent("game_undisliked", { game: "drive_beyond_horizons" });
         } else {
           // Dislike
           userDisliked = true;
@@ -2193,13 +1942,13 @@
             userLiked = false;
             likesCount--;
           }
-          trackEvent("game_disliked", { game: "wacky_flip" });
+          trackEvent("game_disliked", { game: "drive_beyond_horizons" });
         }
 
-        localStorage.setItem("wackyFlipLiked", userLiked);
-        localStorage.setItem("wackyFlipDisliked", userDisliked);
-        localStorage.setItem("wackyFlipLikesCount", likesCount);
-        localStorage.setItem("wackyFlipDislikesCount", dislikesCount);
+        localStorage.setItem("driveBeyondHorizonsLiked", userLiked);
+        localStorage.setItem("driveBeyondHorizonsDisliked", userDisliked);
+        localStorage.setItem("driveBeyondHorizonsLikesCount", likesCount);
+        localStorage.setItem("driveBeyondHorizonsDislikesCount", dislikesCount);
         updateGameStats();
       });
 
@@ -2208,8 +1957,8 @@
         .getElementById("shareBtn")
         .addEventListener("click", async () => {
           const shareData = {
-            title: "Wacky Flip - Physics Flip Game",
-            text: "Check out this amazing physics-based flip game! Master crazy stunts and perfect landings.",
+            title: "Drive Beyond Horizons - Epic Racing Game",
+            text: "Check out this amazing racing game! Master epic driving challenges.",
             url: window.location.href,
           };
 
@@ -2218,7 +1967,7 @@
               await navigator.share(shareData);
               trackEvent("game_shared", {
                 method: "native",
-                game: "wacky_flip",
+                game: "drive_beyond_horizons",
               });
             } else {
               // Fallback to clipboard
@@ -2228,7 +1977,7 @@
               );
               trackEvent("game_shared", {
                 method: "clipboard",
-                game: "wacky_flip",
+                game: "drive_beyond_horizons",
               });
             }
           } catch (err) {
@@ -2243,7 +1992,7 @@
             alert("Game link copied to clipboard!");
             trackEvent("game_shared", {
               method: "fallback",
-              game: "wacky_flip",
+              game: "drive_beyond_horizons",
             });
           }
         });
@@ -2252,7 +2001,7 @@
       document.getElementById("reportBtn").addEventListener("click", () => {
         const modal = createReportModal();
         document.body.appendChild(modal);
-        trackEvent("report_modal_opened", { game: "wacky_flip" });
+        trackEvent("report_modal_opened", { game: "drive_beyond_horizons" });
       });
 
       function createReportModal() {
@@ -2310,7 +2059,7 @@
         const howToPlaySection = document.querySelector("h2");
         if (howToPlaySection) {
           howToPlaySection.scrollIntoView({ behavior: "smooth" });
-          trackEvent("help_clicked", { game: "wacky_flip" });
+          trackEvent("help_clicked", { game: "drive_beyond_horizons" });
         }
       });
 
@@ -2318,33 +2067,7 @@
       document.getElementById("changelogBtn").addEventListener("click", () => {
         const modal = createChangelogModal();
         document.body.appendChild(modal);
-        trackEvent("changelog_opened", { game: "wacky_flip" });
-      });
-
-      // Refresh button functionality
-      document.getElementById("refreshBtn").addEventListener("click", () => {
-        // Show loading indicator
-        showLoading();
-
-        // Reset iframe state
-        iframeLoaded = false;
-
-        // Force reload the iframe
-        const currentSrc = gameFrame.src;
-        gameFrame.src = "about:blank";
-
-        setTimeout(() => {
-          gameFrame.src = originalSrc;
-          setLoadTimeout();
-        }, 100);
-
-        // Track refresh event
-        trackEvent("game_refreshed", {
-          game: "wacky_flip",
-          manual_refresh: true,
-        });
-
-        console.log("Game manually refreshed by user");
+        trackEvent("changelog_opened", { game: "drive_beyond_horizons" });
       });
 
       function createChangelogModal() {
@@ -2397,6 +2120,58 @@
           modal.remove();
         }
       };
+
+      // Theater Mode functionality
+      let isTheaterMode = false;
+
+      document.getElementById("theaterBtn").addEventListener("click", () => {
+        toggleTheaterMode();
+        trackEvent("theater_mode_toggled", {
+          game: "drive_beyond_horizons",
+          enabled: isTheaterMode,
+        });
+      });
+
+      function toggleTheaterMode() {
+        const body = document.body;
+        const theaterBtn = document.getElementById("theaterBtn");
+
+        isTheaterMode = !isTheaterMode;
+
+        if (isTheaterMode) {
+          body.classList.add("theater-mode");
+          theaterBtn.classList.add("active");
+          theaterBtn.title = "Exit theater mode";
+
+          // Scroll to game container
+          document.querySelector(".game-container").scrollIntoView({
+            behavior: "smooth",
+          });
+        } else {
+          body.classList.remove("theater-mode");
+          theaterBtn.classList.remove("active");
+          theaterBtn.title = "Theater mode";
+        }
+
+        // Adjust game frame size after mode change
+        setTimeout(adjustGameFrame, 300);
+      }
+
+      // Add keyboard shortcut for theater mode (T key)
+      document.addEventListener("keydown", (e) => {
+        if (
+          e.key.toLowerCase() === "t" &&
+          !e.ctrlKey &&
+          !e.altKey &&
+          !e.metaKey
+        ) {
+          // Only trigger if not typing in an input field
+          if (!["input", "textarea"].includes(e.target.tagName.toLowerCase())) {
+            e.preventDefault();
+            toggleTheaterMode();
+          }
+        }
+      });
     </script>
   </body>
 </html>

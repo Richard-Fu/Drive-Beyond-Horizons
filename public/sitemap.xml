@@ -6,7 +6,7 @@
   
   <!-- Main Game Page -->
   <url>
-    <loc>https://wackyflipgame.me/</loc>
+    <loc>https://drivebeyondhorizon.com/</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,28 +14,28 @@
   
   <!-- Game Page with specific anchor links for better SEO -->
   <url>
-    <loc>https://wackyflipgame.me/#how-to-play</loc>
+    <loc>https://drivebeyondhorizon.com/#how-to-play</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://wackyflipgame.me/#game-features</loc>
+    <loc>https://drivebeyondhorizon.com/#game-features</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://wackyflipgame.me/#faq</loc>
+    <loc>https://drivebeyondhorizon.com/#faq</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://wackyflipgame.me/#comments</loc>
+    <loc>https://drivebeyondhorizon.com/#comments</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
