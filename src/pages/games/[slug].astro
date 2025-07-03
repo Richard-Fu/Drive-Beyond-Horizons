@@ -104,8 +104,8 @@ const categoryName = game.data.categories?.[0]?.toLowerCase() || 'games';
     <GamePlayer 
       title={game.data.title}
       description={game.data.description}
-      image={game.data.image}
-      embedUrl={game.data.embedUrl}
+      image={game.data.image || "/images/default-game.jpg"}
+      embedUrl={game.data.embedUrl || "#"}
       rating={game.data.rating}
       category={game.data.categories?.[0]}
       playTime={game.data.playTime}
@@ -164,6 +164,8 @@ const categoryName = game.data.categories?.[0]?.toLowerCase() || 'games';
       gameSlug={game.slug}
       initialRating={game.data.rating || 4.2}
       totalVotes={67}
+      gameTitle={game.data.title}
+      gameDescription={game.data.description}
     />
   </main>
 
@@ -336,7 +338,7 @@ const categoryName = game.data.categories?.[0]?.toLowerCase() || 'games';
     </div>
   </section>
 
-  <script define:vars={{ embedUrl: game.data.embedUrl, gameTitle: game.data.title }}>
+  <script define:vars={{ embedUrl: game.data.embedUrl, gameTitle: game.data.title }} is:inline>
     // Function to start the game - copied from homepage
     window.startGame = function() {
       const gamePreview = document.getElementById('gamePreview');
@@ -411,7 +413,7 @@ const categoryName = game.data.categories?.[0]?.toLowerCase() || 'games';
       }
       
       if (bannerPlayContainer) {
-        bannerPlayContainer.addEventListener('click', function(e) {
+        bannerPlayContainer.addEventListener('click', function() {
           // Scroll to game area first, then start game
           document.getElementById('gamePreview').scrollIntoView({ 
             behavior: 'smooth', 

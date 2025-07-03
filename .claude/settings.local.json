@@ -19,7 +19,8 @@
       "Bash(npm init:*)",
       "Bash(mkdir:*)",
       "Bash(npm test)",
-      "Bash(npx playwright test:*)"
+      "Bash(npx playwright test:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }

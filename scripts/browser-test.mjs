@@ -54,16 +54,16 @@ async function testGameFramework() {
     await page.goto('http://localhost:4321/games/slope/', { waitUntil: 'networkidle' });
     
     // 检查Play按钮
-    const playButton = await page.locator('#playButton');
-    const playButtonVisible = await playButton.isVisible();
+    const playButton = page.locator('#playButton, #gameImagePlayButton, #secondaryPlayButton');
+    const playButtonVisible = await playButton.first().isVisible();
     console.log(`✅ Play按钮显示: ${playButtonVisible}`);
     
     // 测试游戏加载
     if (playButtonVisible) {
-      await playButton.click();
+      await playButton.first().click();
       await page.waitForTimeout(2000);
       
-      const gameFrame = await page.locator('#gameFrame');
+      const gameFrame = page.locator('#gameFrame');
       const gameLoaded = await gameFrame.isVisible();
       console.log(`✅ 游戏iframe加载: ${gameLoaded}`);
     }
@@ -96,10 +96,10 @@ async function testGameFramework() {
     // 5. 性能测试
     console.log('\n⚡ 性能测试...');
     const metrics = await page.evaluate(() => {
-      const timing = performance.timing;
+      const navigation = performance.getEntriesByType('navigation')[0];
       return {
-        domContentLoaded: timing.domContentLoadedEventEnd - timing.navigationStart,
-        loadComplete: timing.loadEventEnd - timing.navigationStart,
+        domContentLoaded: navigation?.domContentLoadedEventEnd || 0,
+        loadComplete: navigation?.loadEventEnd || 0,
         firstPaint: performance.getEntriesByType('paint')[0]?.startTime || 0
       };
     });

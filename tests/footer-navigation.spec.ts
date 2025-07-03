@@ -169,8 +169,7 @@ test.describe('Footer Navigation Tests', () => {
     const footer = page.locator('footer').first();
     await footer.scrollIntoViewIfNeeded();
 
-    // Look for newsletter form
-    const newsletterForm = footer.locator('form[action*="newsletter"], form[action*="subscribe"]').first();
+    // Look for newsletter form and email input
     const emailInput = footer.locator('input[type="email"]').first();
     
     if (await emailInput.isVisible()) {

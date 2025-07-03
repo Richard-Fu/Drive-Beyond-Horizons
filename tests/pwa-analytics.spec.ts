@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import './types';
 
 test.describe('PWA and Analytics Tests', () => {
   test('should register service worker', async ({ page }) => {
@@ -115,17 +116,16 @@ test.describe('PWA and Analytics Tests', () => {
   });
 
   test('should track game play events', async ({ page }) => {
-    const analyticsEvents: any[] = [];
     
     // Intercept analytics calls
-    await page.evaluateOnNewDocument(() => {
+    await page.addInitScript(() => {
       window.analyticsEvents = [];
       
       // Override gtag if it exists
       if (window.gtag) {
         const originalGtag = window.gtag;
         window.gtag = function(...args: any[]) {
-          window.analyticsEvents.push(args);
+          window.analyticsEvents?.push(args);
           return originalGtag.apply(this, args);
         };
       }
@@ -134,7 +134,7 @@ test.describe('PWA and Analytics Tests', () => {
       if (window.dataLayer) {
         const originalPush = window.dataLayer.push;
         window.dataLayer.push = function(...args: any[]) {
-          window.analyticsEvents.push(args);
+          window.analyticsEvents?.push(args);
           return originalPush.apply(this, args);
         };
       }
@@ -200,8 +200,8 @@ test.describe('PWA and Analytics Tests', () => {
     const gtmScript = page.locator('script[src*="googletagmanager.com"]').first();
     const hasGTMScript = await gtmScript.isVisible();
     
-    // Check for GTM noscript
-    const gtmNoscript = page.locator('noscript iframe[src*="googletagmanager.com"]').first();
+    // Check for GTM noscript (if needed for future use)
+    // const gtmNoscript = page.locator('noscript iframe[src*="googletagmanager.com"]').first();
     
     // Check dataLayer
     const hasDataLayer = await page.evaluate(() => {
@@ -216,7 +216,7 @@ test.describe('PWA and Analytics Tests', () => {
         return window.dataLayer;
       });
       
-      console.log('DataLayer events:', dataLayerEvents.length);
+      console.log('DataLayer events:', dataLayerEvents?.length || 0);
     }
   });
 });

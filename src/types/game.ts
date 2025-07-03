@@ -1,16 +1,32 @@
 // Game-related TypeScript interfaces for better type safety
 
+export type GameType = 'geography' | 'quiz' | 'puzzle' | 'strategy' | 'action' | 'education' | 'arcade' | 'sports' | 'shooting' | 'survival';
+export type Difficulty = 'easy' | 'medium' | 'hard';
+export type EmbedType = 'iframe' | 'redirect' | 'internal';
+export type Language = 'en' | 'zh' | 'es' | 'fr' | 'de';
+
 export interface Game {
   title: string;
   description: string;
-  image: string;
-  embedUrl: string;
+  image?: string;
+  embedUrl?: string;
   categories: string[];
-  gameType: string;
+  tags: string[];
+  gameType: GameType;
+  difficulty: Difficulty;
   rating?: number;
-  featured?: boolean;
+  featured: boolean;
+  popular: boolean;
   playTime?: string;
+  players: string;
   pubDate: Date;
+  embedType: EmbedType;
+  external: boolean;
+  keywords: string[];
+  language: Language;
+  developer?: string;
+  version?: string;
+  lastUpdated?: Date;
 }
 
 export interface GameCardProps {

@@ -5,7 +5,7 @@
     <loc>https://geo-guessr.io/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <lastmod>2025-07-02T12:42:43.229Z</lastmod>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
   </url>
   
   <!-- 分类页面 -->
@@ -14,25 +14,25 @@
     <loc>https://geo-guessr.io/action/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2025-07-02T12:42:43.229Z</lastmod>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
   </url>
   <url>
     <loc>https://geo-guessr.io/puzzle/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2025-07-02T12:42:43.229Z</lastmod>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
   </url>
   <url>
     <loc>https://geo-guessr.io/sports/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2025-07-02T12:42:43.229Z</lastmod>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
   </url>
   <url>
     <loc>https://geo-guessr.io/racing/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2025-07-02T12:42:43.229Z</lastmod>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
   </url>
   
   <!-- 游戏页面 -->
@@ -414,6 +414,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <lastmod>2024-11-27T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://geo-guessr.io/games/geoguessr/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-01-20T00:00:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://geo-guessr.io/games/geometry-dash/</loc>
@@ -1106,25 +1112,61 @@
     <lastmod>2024-07-11T00:00:00.000Z</lastmod>
   </url>
   
+  <!-- 功能页面 -->
+  <url>
+    <loc>https://geo-guessr.io/search/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
+  </url>
+  <url>
+    <loc>https://geo-guessr.io/popular/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
+  </url>
+  <url>
+    <loc>https://geo-guessr.io/new-games/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
+  </url>
+  
   <!-- 其他重要页面 -->
   <url>
-    <loc>https://geo-guessr.io/about-us/</loc>
+    <loc>https://geo-guessr.io/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
   </url>
   <url>
-    <loc>https://geo-guessr.io/privacy-policy/</loc>
+    <loc>https://geo-guessr.io/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
   </url>
   <url>
-    <loc>https://geo-guessr.io/term-of-use/</loc>
+    <loc>https://geo-guessr.io/privacy/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
   </url>
   <url>
-    <loc>https://geo-guessr.io/contact-us/</loc>
+    <loc>https://geo-guessr.io/terms/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
+  </url>
+  <url>
+    <loc>https://geo-guessr.io/dmca/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
+  </url>
+  <url>
+    <loc>https://geo-guessr.io/cookies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2025-07-03T06:46:53.587Z</lastmod>
   </url>
 </urlset>

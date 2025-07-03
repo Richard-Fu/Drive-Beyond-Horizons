@@ -7,7 +7,7 @@ export interface Props {
   image?: string;
   pubDate?: Date;
   type?: 'website' | 'article';
-  keywords?: string[];
+  keywords?: string[] | string;
   author?: string;
   canonical?: string;
 }
@@ -28,7 +28,8 @@ const ogImage = image ? new URL(image, siteUrl) : new URL(themeConfig.seo.defaul
 const canonicalURL = canonical || Astro.url.href;
 
 // Combine with theme keywords
-const allKeywords = [...new Set([...themeConfig.mainKeyword.variants, ...keywords])];
+const keywordArray = Array.isArray(keywords) ? keywords : (keywords ? keywords.split(', ') : []);
+const allKeywords = [...new Set([...themeConfig.mainKeyword.variants, ...keywordArray])];
 ---
 
 <!-- Basic SEO -->

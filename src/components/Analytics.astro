@@ -30,7 +30,7 @@ const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
 )}
 
 <!-- Custom Events Helper -->
-<script>
+<script is:inline>
   // Helper function to track custom events
   window.trackEvent = function(eventName, parameters) {
     if (typeof gtag !== 'undefined') {
@@ -46,7 +46,7 @@ const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
   
   // Track game plays
   window.trackGamePlay = function(gameName) {
-    trackEvent('play_game', {
+    window.trackEvent('play_game', {
       game_name: gameName,
       event_category: 'engagement',
       event_label: gameName
@@ -55,14 +55,14 @@ const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
   
   // Track search
   window.trackSearch = function(searchTerm) {
-    trackEvent('search', {
+    window.trackEvent('search', {
       search_term: searchTerm
     });
   };
   
   // Track social share
   window.trackShare = function(method, contentType, itemId) {
-    trackEvent('share', {
+    window.trackEvent('share', {
       method: method,
       content_type: contentType,
       item_id: itemId

@@ -154,7 +154,7 @@ test.describe('Search Functionality Tests', () => {
       // Test first filter
       const firstFilter = filters.first();
       
-      if ((await firstFilter.tagName()) === 'SELECT') {
+      if ((await firstFilter.evaluate(el => el.tagName)) === 'SELECT') {
         // Get options
         const options = firstFilter.locator('option');
         const optionCount = await options.count();

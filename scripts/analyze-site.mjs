@@ -1,6 +1,5 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs/promises';
-import path from 'path';
 
 async function analyzeSite() {
   console.log('开始分析游戏站框架...');
@@ -22,10 +21,10 @@ async function analyzeSite() {
     
     // 获取页面性能数据
     const performanceData = await page.evaluate(() => {
-      const timing = performance.timing;
+      const navigation = performance.getEntriesByType('navigation')[0];
       return {
-        loadTime: timing.loadEventEnd - timing.navigationStart,
-        domReady: timing.domContentLoadedEventEnd - timing.navigationStart,
+        loadTime: navigation?.loadEventEnd || 0,
+        domReady: navigation?.domContentLoadedEventEnd || 0,
         firstPaint: performance.getEntriesByType('paint')[0]?.startTime || 0
       };
     });

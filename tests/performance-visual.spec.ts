@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Performance and Visual Tests', () => {
   test('should check page load performance', async ({ page }) => {
-    const performanceMetrics: any = {};
     
     await page.goto('/');
     await page.waitForLoadState('networkidle');
@@ -155,7 +154,7 @@ test.describe('Performance and Visual Tests', () => {
     const slowResources: any[] = [];
     
     page.on('requestfinished', async (request) => {
-      const timing = await request.timing();
+      const timing = request.timing();
       const resourceType = request.resourceType();
       const url = request.url();
       
