@@ -1,6 +1,14 @@
 {
   "buildCommand": "npm run build:production",
-  "installCommand": "npm install --legacy-peer-deps",
+  "installCommand": "npm install",
   "outputDirectory": "dist",
-  "framework": "astro"
+  "framework": "astro",
+  "functions": {
+    "src/pages/api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "env": {
+    "NODE_OPTIONS": "--max-old-space-size=4096"
+  }
 }
