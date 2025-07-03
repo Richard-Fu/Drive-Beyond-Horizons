@@ -1,0 +1,217 @@
+---
+import themeConfig from '@/config/theme.config.js';
+import { getLangFromUrl, getAlternateLanguageUrls, useTranslations } from '@/i18n/utils';
+import { languages } from '@/i18n/translations';
+
+const currentPath = Astro.url.pathname;
+const isActive = (path: string) => currentPath === path;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const alternateUrls = getAlternateLanguageUrls(Astro.url);
+---
+
+<nav class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center space-x-8">
+        <a href="/" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
+            {themeConfig.site.name}
+          </span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-1">
+          <a 
+            href="/" 
+            class={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+              isActive('/') 
+                ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg' 
+                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+            }`}
+          >
+            {t('nav.home')}
+          </a>
+          
+          <!-- Categories Dropdown -->
+          <div class="relative group">
+            <button class="px-4 py-2 rounded-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 flex items-center space-x-1">
+              <span>{t('nav.categories')}</span>
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            <!-- Dropdown Menu -->
+            <div class="absolute top-full left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+                {Object.entries(themeConfig.categories).map(([key, category]) => (
+                  <a 
+                    href={`/${key}/`}
+                    class="flex items-center px-4 py-3 hover:bg-gradient-to-r hover:from-green-50 hover:to-blue-50 dark:hover:from-gray-700 dark:hover:to-gray-700 transition-colors duration-300"
+                  >
+                    <span class="text-2xl mr-3">{category.icon}</span>
+                    <div>
+                      <p class="font-medium text-gray-900 dark:text-white">{category.title}</p>
+                      <p class="text-xs text-gray-500 dark:text-gray-400">{category.description}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <a 
+            href="/new-games" 
+            class="px-4 py-2 rounded-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+          >
+            {t('nav.newGames')}
+          </a>
+          
+          <a 
+            href="/popular" 
+            class="px-4 py-2 rounded-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+          >
+            {t('nav.popular')}
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Side -->
+      <div class="flex items-center space-x-4">
+        <!-- Search Button -->
+        <a href="/search" class="p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </a>
+
+        <!-- Language Switcher -->
+        <div class="relative group">
+          <button class="p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300 flex items-center space-x-1">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+            </svg>
+            <span class="text-sm font-medium uppercase">{lang}</span>
+          </button>
+          
+          <!-- Language Dropdown -->
+          <div class="absolute top-full right-0 mt-2 w-32 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+              {Object.entries(languages).map(([langCode, langName]) => (
+                <a 
+                  href={alternateUrls[langCode as keyof typeof languages]}
+                  class={`flex items-center px-4 py-3 hover:bg-gradient-to-r hover:from-green-50 hover:to-blue-50 dark:hover:from-gray-700 dark:hover:to-gray-700 transition-colors duration-300 ${
+                    lang === langCode ? 'bg-green-50 dark:bg-gray-700 text-green-600 dark:text-green-400' : 'text-gray-700 dark:text-gray-300'
+                  }`}
+                >
+                  <span class="text-sm font-medium uppercase mr-2">{langCode}</span>
+                  <span class="text-sm">{langName}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Dark Mode Toggle -->
+        <button 
+          id="darkModeToggle"
+          class="p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
+        >
+          <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd" />
+          </svg>
+          <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button 
+          id="mobileMenuToggle"
+          class="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden fixed inset-0 top-16 bg-white dark:bg-gray-900 transform -translate-x-full transition-transform duration-300">
+    <div class="p-4 space-y-2">
+      <a href="/" class="block px-4 py-3 rounded-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+        {t('nav.home')}
+      </a>
+      
+      <div class="px-4 py-2">
+        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">{t('nav.categories')}</p>
+        {Object.entries(themeConfig.categories).map(([key, category]) => (
+          <a 
+            href={`/${key}/`}
+            class="flex items-center px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+          >
+            <span class="text-xl mr-3">{category.icon}</span>
+            <span class="text-gray-700 dark:text-gray-300">{category.title}</span>
+          </a>
+        ))}
+      </div>
+      
+      <a href="/new-games" class="block px-4 py-3 rounded-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+        {t('nav.newGames')}
+      </a>
+      
+      <a href="/popular" class="block px-4 py-3 rounded-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+        {t('nav.popular')}
+      </a>
+      
+      <!-- Mobile Language Switcher -->
+      <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2 px-4">Language</p>
+        {Object.entries(languages).map(([langCode, langName]) => (
+          <a 
+            href={alternateUrls[langCode as keyof typeof languages]}
+            class={`flex items-center px-4 py-2 mx-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 ${
+              lang === langCode ? 'bg-green-50 dark:bg-gray-700 text-green-600 dark:text-green-400' : 'text-gray-700 dark:text-gray-300'
+            }`}
+          >
+            <span class="text-sm font-medium uppercase mr-2">{langCode}</span>
+            <span class="text-sm">{langName}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  
+  mobileMenuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('-translate-x-full');
+  });
+
+  // Dark mode toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  
+  darkModeToggle?.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('darkMode', document.documentElement.classList.contains('dark') ? 'true' : 'false');
+  });
+
+  // Check saved dark mode preference
+  if (localStorage.getItem('darkMode') === 'true' || 
+      (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+</script>

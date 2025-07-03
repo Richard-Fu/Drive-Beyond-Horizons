@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import ModernGameCard from '../components/ModernGameCard.astro';
+import SEO from '../components/SEO.astro';
+import { t } from '../i18n/utils';
+
+const lang = 'en';
+const allGames = await getCollection('games');
+const adventureGames = allGames.filter(game => 
+  game.data.gameType === 'adventure' || 
+  game.data.categories?.includes('Adventure') ||
+  game.data.title.toLowerCase().includes('adventure')
+);
+
+// If no adventure games, show some action games as fallback
+const games = adventureGames.length > 0 ? adventureGames : allGames.filter(game => game.data.gameType === 'action').slice(0, 12);
+---
+
+<BaseLayout title="Adventure Games - GeoGuessr Free">
+  <SEO 
+    slot="head"
+    title="Adventure Games - Play Free Online Adventure Games"
+    description="Embark on exciting adventures with our collection of free online adventure games. Explore, quest, and discover in these thrilling games."
+    keywords="adventure games, exploration games, quest games, free adventure games online"
+  />
+  
+  <div class="container mx-auto px-4 py-8">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+        {t('categories.adventure.title', lang)}
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        {t('categories.adventure.description', lang)}
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {games.map(game => (
+        <ModernGameCard 
+          title={game.data.title}
+          description={game.data.description}
+          image={game.data.image}
+          rating={game.data.rating}
+          categories={game.data.categories}
+          slug={game.slug}
+          featured={game.data.featured}
+          playTime={game.data.playTime}
+        />
+      ))}
+    </div>
+    
+    {games.length === 0 && (
+      <div class="text-center py-12">
+        <p class="text-lg text-gray-600 dark:text-gray-400">
+          {t('categories.noGames', lang)}
+        </p>
+        <a href="/categories/" class="mt-4 inline-block text-blue-600 hover:text-blue-700 dark:text-blue-400">
+          {t('categories.browseAll', lang)}
+        </a>
+      </div>
+    )}
+  </div>
+</BaseLayout>

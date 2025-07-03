@@ -1,0 +1,348 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ModernGameCard from '../components/ModernGameCard.astro';
+import GamePlayer from '../components/GamePlayer.astro';
+import RatingSystem from '../components/RatingSystem.astro';
+import CommentSystem from '../components/CommentSystem.astro';
+import { getCollection } from 'astro:content';
+
+// Get all "games" data from content collection
+// Sort by publication date in descending order, newest games first
+const allGames = (await getCollection('games')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// Get a diverse set of games for recommendations - mix of featured, high-rated, and random
+const featuredGames = allGames.filter(g => g.data.featured);
+const highRatedGames = allGames
+  .filter(g => !g.data.featured && (g.data.rating || 0) >= 8)
+  .sort((a, b) => (b.data.rating || 0) - (a.data.rating || 0));
+const regularGames = allGames
+  .filter(g => !g.data.featured && (g.data.rating || 0) < 8)
+  .sort(() => Math.random() - 0.5); // Randomize
+
+// Combine for diversity: 3 featured + 3 high-rated + 2 random
+const otherGames = [
+  ...featuredGames.slice(0, 3),
+  ...highRatedGames.slice(0, 3),
+  ...regularGames.slice(0, 2)
+].slice(0, 8);
+
+// Get the featured game for the main section (GeoGuessr specifically)
+const featuredGame = allGames.find(game => 
+  game.data.title.toLowerCase().includes('geoguessr')
+) || allGames.find(game => 
+  game.data.title.toLowerCase().includes('openguessr')
+) || allGames.find(game => 
+  game.data.title.toLowerCase().includes('guessr') && 
+  !game.data.title.toLowerCase().includes('globe')
+) || allGames[0];
+---
+
+<BaseLayout 
+  title="GeoGuessr Free - Play Unlimited Geography Game Online" 
+  description="Explore the world with GeoGuessr Free! Guess locations from street view images in this addictive geography game. Play unlimited rounds for free!"
+>
+  
+  <!-- Custom CSS for GeoGuessr-style design -->
+  <style>
+    @import '../styles/modern.css';
+    
+    :root {
+      --primary-green: #4fad82;
+      --primary-red: #b44541;
+      --dark-bg: #2b2a37;
+      --light-bg: #f8f8f7;
+      --text-gray: #666;
+    }
+    
+    body {
+      background-color: var(--light-bg);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      padding: 20px 0;
+    }
+    
+    @media (max-width: 1024px) {
+      .games-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <main class="min-h-screen bg-gray-50">
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-white border-b border-gray-200 py-3">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex items-center space-x-2 text-sm">
+          <a href="/" class="text-green-600 hover:text-green-700 font-medium">Home</a>
+          <span class="text-gray-400">/</span>
+          <span class="text-gray-600">GeoGuessr Free</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Game Player -->
+    <div class="hero-section">
+      <GamePlayer 
+        title={featuredGame?.data.title || "GeoGuessr Free"}
+        description={featuredGame?.data.description || "Explore the world with GeoGuessr Free! Guess locations from street view images in this addictive geography game."}
+        image={featuredGame?.data.image || "https://geoguessr.io/data/image/posts/geoguessr-free-banner2.jpg"}
+        embedUrl={featuredGame?.data.embedUrl || "https://openguessr.com/"}
+        rating={featuredGame?.data.rating || 8.5}
+        category={featuredGame?.data.gameType || "Geographic"}
+        playTime={featuredGame?.data.playTime || "15-30 min"}
+      />
+    </div>
+    
+
+    <!-- Other Amazing Games Section -->
+    <section class="bg-white py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Other Amazing Games</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Discover more exciting games and expand your gaming horizons
+          </p>
+        </div>
+
+        <!-- Games Grid -->
+        <div class="games-grid">
+          {otherGames.slice(0, 8).map((gameEntry) => (
+            <ModernGameCard 
+              title={gameEntry.data.title}
+              description={gameEntry.data.description}
+              image={gameEntry.data.image}
+              rating={gameEntry.data.rating}
+              categories={gameEntry.data.categories}
+              slug={gameEntry.slug}
+              featured={gameEntry.data.featured}
+              playTime={gameEntry.data.playTime}
+            />
+          ))}
+        </div>
+
+        <!-- View All Games Button -->
+        <div class="text-center mt-12">
+          <a 
+            href="/action" 
+            class="inline-flex items-center px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-300"
+          >
+            View All Games
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Rating and Social Share Section -->
+    <RatingSystem 
+      gameSlug="geoguessr-free"
+      initialRating={featuredGame?.data.rating || 8.5}
+      totalVotes={67}
+      gameTitle={featuredGame?.data.title || "GeoGuessr Free"}
+      gameDescription={featuredGame?.data.description || "Explore the world with GeoGuessr Free! Guess locations from street view images."}
+    />
+  </main>
+
+  <!-- Article Content -->
+  <article class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">GeoGuessr Free: The Ultimate Unlimited Geography Guessing Game</h2>
+        
+        <p class="text-lg text-gray-700 mb-6">
+          Welcome to <strong>GeoGuessr Free</strong>, the premier <strong>free GeoGuessr alternative</strong> that offers unlimited gameplay without restrictions! Our <strong>unblocked geography game</strong> provides the same thrilling experience as the original GeoGuessr, completely free and accessible from anywhere. Whether you're a geography enthusiast or looking for an educational gaming experience, our <strong>GeoGuessr unlimited</strong> platform delivers hours of engaging entertainment.
+        </p>
+
+        <h3 class="text-2xl font-semibold mt-8 mb-4">What is GeoGuessr Free Alternative?</h3>
+        <p class="mb-6">
+          Our <strong>free GeoGuessr game</strong> is an <strong>open GeoGuessr</strong> platform that takes you on virtual journeys across the globe. Using Street View technology, the game drops you in random locations worldwide, and your mission is to guess where you are by exploring the environment, analyzing clues, and applying your geographical knowledge. As the best <strong>GeoGuessr alternative</strong>, we offer unlimited gameplay across multiple regions including <strong>GeoGuessr USA</strong>, <strong>GeoGuessr Europe</strong>, <strong>GeoGuessr Asia</strong>, and <strong>GeoGuessr Africa</strong>.
+        </p>
+
+        <h3 class="text-2xl font-semibold mt-8 mb-4">GeoGuessr Unblocked - Play Anywhere, Anytime</h3>
+        <p class="mb-6">
+          Our <strong>GeoGuessr unblocked</strong> platform ensures you can enjoy geography games regardless of network restrictions. Unlike other sites, our <strong>unblocked GeoGuessr</strong> works seamlessly in schools, offices, and other environments where gaming sites might be restricted. Experience the thrill of <strong>GeoGuessr unlimited</strong> gameplay without any barriers.
+        </p>
+
+        <div class="my-8">
+          <div class="relative cursor-pointer max-w-2xl mx-auto" id="bannerPlayContainer">
+            <img src="https://geoguessr.io/data/image/posts/geoguessr-free-banner2.jpg" alt="GeoGuessr Free Banner" class="w-full rounded-lg shadow-lg transition-opacity duration-300 hover:opacity-80">
+            <!-- Play Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg">
+              <button id="bannerPlayButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                ▶️ Play Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Why Choose Our Free GeoGuessr Alternative?</h3>
+        <ul class="space-y-4 mb-8">
+          <li>
+            <strong>💯 Completely Free & Unlimited</strong>: Unlike the original <strong>GeoGuessr</strong> that requires subscriptions, our <strong>free GeoGuessr alternative</strong> offers unlimited gameplay at no cost. Play as many rounds as you want without any restrictions!
+          </li>
+          <li>
+            <strong>🚫 Unblocked Access</strong>: Our <strong>GeoGuessr unblocked</strong> platform works everywhere - schools, offices, public WiFi. No restrictions, no blocked access, just pure geography gaming fun.
+          </li>
+          <li>
+            <strong>🌍 Multiple Game Modes</strong>: Experience <strong>GeoGuessr worldwide</strong>, <strong>GeoGuessr USA</strong>, <strong>GeoGuessr Europe</strong>, and explore famous monuments. Each mode offers unique challenges and learning opportunities.
+          </li>
+          <li>
+            <strong>📚 Educational & Entertaining</strong>: Perfect for geography students, travel enthusiasts, and anyone curious about the world. Our <strong>geography guessing game</strong> combines education with entertainment.
+          </li>
+          <li>
+            <strong>🔓 Open Source Alternative</strong>: As an <strong>open GeoGuessr</strong> platform, we're committed to keeping geography gaming accessible to everyone, everywhere.
+          </li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold mt-8 mb-4">GeoGuessr Game Modes - Explore the World</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+          <div class="border rounded-lg p-6">
+            <h4 class="font-bold text-lg mb-2">🌍 GeoGuessr Worldwide</h4>
+            <p>Experience the ultimate <strong>GeoGuessr unlimited</strong> challenge with locations from every continent. From bustling cities to remote villages, test your global geography knowledge.</p>
+          </div>
+          <div class="border rounded-lg p-6">
+            <h4 class="font-bold text-lg mb-2">🇺🇸 GeoGuessr USA</h4>
+            <p>Master American geography with our <strong>GeoGuessr USA</strong> mode. Explore all 50 states, from New York's skyscrapers to California's beaches.</p>
+          </div>
+          <div class="border rounded-lg p-6">
+            <h4 class="font-bold text-lg mb-2">🇪🇺 GeoGuessr Europe</h4>
+            <p>Journey through European countries with <strong>GeoGuessr Europe</strong>. Discover historic cities, diverse cultures, and beautiful landscapes across the continent.</p>
+          </div>
+          <div class="border rounded-lg p-6">
+            <h4 class="font-bold text-lg mb-2">🏛️ Famous Monuments</h4>
+            <p>Visit world-famous landmarks and monuments. Perfect for learning about global heritage and iconic structures.</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Advanced Features of Our GeoGuessr Alternative</h3>
+        <ul class="space-y-3">
+          <li><strong>🎲 Randomized Global Locations</strong>: Every <strong>free GeoGuessr game</strong> session starts with completely random locations, ensuring endless replayability and fresh challenges.</li>
+          <li><strong>🗺️ Street View Navigation</strong>: Full 360-degree exploration capabilities just like the original, letting you examine every detail to identify your location.</li>
+          <li><strong>📊 Advanced Scoring System</strong>: Earn points based on accuracy - the closer your guess, the higher your score! Perfect for <strong>GeoGuessr competition</strong> practice.</li>
+          <li><strong>👥 Social Gaming</strong>: Share your best scores and challenge friends to beat your <strong>GeoGuessr</strong> achievements.</li>
+          <li><strong>🚫 No Restrictions</strong>: Unlike paid versions, enjoy truly <strong>unlimited GeoGuessr</strong> gameplay without time limits or daily caps.</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold mt-8 mb-4">GeoGuessr Tips & Strategies</h3>
+        <div class="bg-blue-50 rounded-lg p-6 my-6">
+          <h4 class="font-bold mb-3">🎯 Master the Art of Geography Guessing</h4>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Look for <strong>language signs</strong> to identify countries - street signs, shop names, and road markings are key clues</li>
+            <li>Observe <strong>architecture styles</strong> - European buildings differ greatly from American or Asian structures</li>
+            <li>Check <strong>driving sides</strong> - left-hand traffic narrows down possibilities significantly</li>
+            <li>Notice <strong>landscape and vegetation</strong> - climate zones can help identify continents and regions</li>
+            <li>Study <strong>license plates</strong> and car models popular in different countries</li>
+            <li>Use <strong>sun position</strong> to determine if you're in northern or southern hemisphere</li>
+          </ul>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">How to Play GeoGuessr Game Online Free?</h2>
+        
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Get started with Geoguessr</h3>
+        <ol class="space-y-4">
+          <li><strong>Start the Game</strong>: Visit <strong>GeoGuessr Free</strong> website and click on the "<strong>Play Now</strong>" button to begin.</li>
+          <li><strong>Explore the Location:</strong> Use the arrows to move around and look for hints such as road signs, buildings, and natural landmarks.</li>
+          <li><strong>Make Your Guess</strong>: Once you think you know where you are, click on the map to place your guess.</li>
+          <li><strong>Earn Points</strong>: Receive points based on how close your guess is to the actual location. The closer you are, the higher your score!</li>
+        </ol>
+
+        <h3 class="text-2xl font-semibold mt-8 mb-4">More Geography Games Like GeoGuessr</h3>
+        <p>If you love the thrill of <strong>GeoGuessr Free</strong>, you might be interested in exploring other <em>geography-based games</em> that offer similar excitement and educational value. Here's a list of games like <strong>GeoGuessr</strong> that will take you on virtual journeys around the world and challenge your knowledge of global locations.</p>
+
+        <h4 class="text-xl font-semibold mt-6 mb-3">City Guesser</h4>
+        <p><strong><a href="/city-guesser" class="text-blue-600 hover:underline">City Guesser</a></strong> is a fun and interactive game that challenges you to guess the city based on video footage. Unlike <strong>GeoGuessr</strong>, which uses <em>Street View</em>, <strong>City Guesser</strong> provides real-time videos of cities around the world, making it a dynamic and visually appealing alternative.</p>
+
+        <h4 class="text-xl font-semibold mt-6 mb-3">Geotastic</h4>
+        <p><a href="/geotastic" class="text-blue-600 hover:underline"><strong>Geotastic</strong></a> is a free, multiplayer geography quiz game that offers different game modes, including a <strong>GeoGuessr</strong>-like mode where you guess locations based on <em>Street View</em> images. You can play solo or compete with friends and other players worldwide.</p>
+
+        <p class="font-semibold mt-6"><strong>OpenGuessr - Geoguessr but free</strong></p>
+        <p><strong><a href="/openguessr" class="text-blue-600 hover:underline">OpenGuessr</a></strong> is a free, open-source alternative to <strong>GeoGuessr</strong>. It allows players to explore the world through <em>Street View</em> images and guess their location.</p>
+
+        <hr class="my-8 border-gray-300" />
+
+        <p class="text-center"><em><strong>For the best experience and latest updates, bookmark GeoGuessr Free (Ctrl + D) and follow us on social media. Happy exploring!</strong></em></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Comments Section -->
+  <CommentSystem 
+    gameSlug="geoguessr-free"
+    gameTitle="GeoGuessr Free"
+  />
+
+    <!-- Play New Games Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Play New Games</h2>
+        
+        <div class="games-grid">
+          {allGames.slice(0, 10).map((gameEntry) => (
+            <ModernGameCard 
+              title={gameEntry.data.title}
+              description={gameEntry.data.description}
+              image={gameEntry.data.image}
+              rating={gameEntry.data.rating}
+              categories={gameEntry.data.categories}
+              slug={gameEntry.slug}
+              featured={gameEntry.data.featured}
+              playTime={gameEntry.data.playTime}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+    </main>
+
+  <script>
+    // 文章中的banner点击处理
+    document.addEventListener('DOMContentLoaded', function() {
+      const bannerPlayContainer = document.getElementById('bannerPlayContainer');
+      const bannerPlayButton = document.getElementById('bannerPlayButton');
+      
+      function scrollToGame() {
+        const gameSection = document.querySelector('.bg-gray-900.py-12');
+        if (gameSection) {
+          gameSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      
+      if (bannerPlayContainer) {
+        bannerPlayContainer.addEventListener('click', scrollToGame);
+      }
+      
+      if (bannerPlayButton) {
+        bannerPlayButton.addEventListener('click', function(e) {
+          e.stopPropagation();
+          scrollToGame();
+        });
+      }
+    });
+  </script>
+</BaseLayout> 

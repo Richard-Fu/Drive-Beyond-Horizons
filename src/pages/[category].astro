@@ -1,0 +1,153 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ModernGameCard from '../components/ModernGameCard.astro';
+
+export async function getStaticPaths() {
+  const allGames = await getCollection('games');
+  
+  // 定义分类映射，基于1games.io的分类系统
+  const categoryMap = {
+    'action': {
+      title: 'Action Games',
+      description: 'Fast-paced action games that test your reflexes and skills. Battle enemies, dodge obstacles, and master epic moves!',
+      keywords: ['action', 'fighting', 'combat', 'fast-paced', 'adventure'],
+      gradient: 'from-red-500 to-orange-600'
+    },
+    'arcade': {
+      title: 'Arcade Games', 
+      description: 'Classic arcade games with fast-paced action and high scores. Master quick reflexes and relive the arcade excitement!',
+      keywords: ['arcade', 'classic', 'retro', 'score', 'skill'],
+      gradient: 'from-purple-500 to-pink-600'
+    },
+    'puzzle': {
+      title: 'Puzzle Games',
+      description: 'Challenge your mind with brain teasers, logic puzzles, and pattern recognition. Boost your IQ today!',
+      keywords: ['puzzle', 'logic', 'brain', 'strategy', 'thinking'],
+      gradient: 'from-blue-500 to-cyan-600'
+    },
+    'sports': {
+      title: 'Sports Games',
+      description: 'Experience the thrill of sports competition! Play basketball, football, soccer and more sports games!',
+      keywords: ['sports', 'basketball', 'football', 'soccer', 'competition'],
+      gradient: 'from-green-500 to-emerald-600'
+    }
+  };
+
+  const categories = Object.keys(categoryMap);
+  
+  return categories.map(category => {
+    // 根据类别筛选游戏
+    const categoryGames = allGames.filter(game => {
+      const gameCategories = game.data.categories?.map(cat => cat.toLowerCase()) || [];
+      const gameType = game.data.gameType?.toLowerCase() || '';
+      const keywords = categoryMap[category].keywords;
+      
+      return keywords.some(keyword => 
+        gameCategories.some(cat => cat.includes(keyword)) ||
+        gameType.includes(keyword) ||
+        game.data.title?.toLowerCase().includes(keyword) ||
+        game.data.description?.toLowerCase().includes(keyword)
+      );
+    });
+
+    return {
+      params: { category },
+      props: { 
+        games: categoryGames, 
+        categoryInfo: categoryMap[category],
+        category
+      }
+    };
+  });
+}
+
+const { games, categoryInfo, category } = Astro.props;
+---
+
+<BaseLayout 
+  title={`${categoryInfo.title} - Play Free Online Games`}
+  description={categoryInfo.description}
+>
+  <!-- Category Header -->
+  <section class={`bg-gradient-to-r ${categoryInfo.gradient} text-white py-16`}>
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        {categoryInfo.title}
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+        {categoryInfo.description}
+      </p>
+      <div class="flex justify-center items-center space-x-4">
+        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
+          {games.length} Games Available
+        </span>
+        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
+          🎮 All Free to Play
+        </span>
+        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
+          🚀 No Download Required
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games Grid -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      {games.length > 0 ? (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {games.map(game => (
+            <ModernGameCard 
+              title={game.data.title}
+              description={game.data.description}
+              image={game.data.image}
+              rating={game.data.rating}
+              categories={game.data.categories}
+              slug={game.slug}
+              featured={game.data.featured}
+              playTime={game.data.playTime}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16">
+          <div class="text-6xl mb-4">🎮</div>
+          <h2 class="text-2xl font-bold text-slate-800 mb-4">No Games Found</h2>
+          <p class="text-slate-600 mb-8">We're working on adding more {categoryInfo.title.toLowerCase()} to our collection!</p>
+          <a href="/" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+            Browse All Games
+          </a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Category Information -->
+  <section class="bg-slate-50 py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6">
+          About {categoryInfo.title}
+        </h2>
+        <div class="prose prose-lg mx-auto text-slate-600">
+          <p class="text-lg leading-relaxed">
+            {categoryInfo.description} Our {categoryInfo.title.toLowerCase()} collection features the best free online games 
+            that you can play instantly in your browser. No downloads, no registration required - just pure gaming fun!
+          </p>
+          <p class="mt-4">
+            Whether you're looking for a quick 5-minute break or an extended gaming session, our {categoryInfo.title.toLowerCase()} 
+            offer endless entertainment for players of all skill levels. Each game is carefully selected to ensure quality 
+            gameplay and maximum fun.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose {
+    max-width: none;
+  }
+</style> 

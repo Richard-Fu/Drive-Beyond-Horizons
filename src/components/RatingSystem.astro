@@ -1,0 +1,198 @@
+---
+import SocialShare from './SocialShare.astro';
+
+export interface Props {
+  gameSlug: string;
+  initialRating?: number;
+  totalVotes?: number;
+  gameTitle: string;
+  gameDescription: string;
+}
+
+const { gameSlug, initialRating = 4.2, totalVotes = 67, gameTitle, gameDescription } = Astro.props;
+
+// 使用10分制评分显示
+const displayRating = initialRating ? Math.round(initialRating * 10) / 10 : 8.4;
+---
+
+<!-- Rating and Social Share Section -->
+<section class="py-8 bg-white border-t">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+      
+      <!-- Rating -->
+      <div class="flex items-center space-x-4">
+        <span class="text-gray-700 font-medium">Rate:</span>
+        <div class="flex items-center space-x-1" id="star-rating">
+          {[1,2,3,4,5].map(star => (
+            <svg 
+              class="w-6 h-6 text-gray-300 hover:text-yellow-400 cursor-pointer transition-colors star-icon" 
+              viewBox="0 0 24 24"
+              data-star={star}
+            >
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+          ))}
+        </div>
+        <span class="text-gray-700" id="rating-display">{displayRating} / 10</span>
+        <span class="text-gray-500" id="votes-count">{totalVotes} votes</span>
+        <span class="text-gray-500" id="shares-count">1.2m Shares</span>
+      </div>
+
+      <!-- Social Share Buttons -->
+      <SocialShare 
+        title={gameTitle}
+        description={gameDescription}
+        class="flex items-center space-x-3"
+      />
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ gameSlug, initialRating: displayRating, totalVotes }}>
+  // Initialize rating system on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    initRatingSystem();
+  });
+
+  function initRatingSystem() {
+    const stars = document.querySelectorAll('.star-icon');
+    const ratingDisplay = document.getElementById('rating-display');
+    const votesCount = document.getElementById('votes-count');
+    
+    // Load saved rating from localStorage
+    const savedData = localStorage.getItem(`rating-${gameSlug}`);
+    let currentRating = initialRating;
+    let currentVotes = totalVotes;
+    let userRating = 0;
+    
+    if (savedData) {
+      const data = JSON.parse(savedData);
+      currentRating = data.rating;
+      currentVotes = data.votes;
+      userRating = data.userRating || 0;
+    }
+    
+    updateStarDisplay(userRating);
+    updateRatingDisplay(currentRating, currentVotes);
+    
+    // Add click handlers to stars
+    stars.forEach(star => {
+      star.addEventListener('click', function() {
+        const rating = parseInt(this.dataset.star);
+        submitRating(rating);
+      });
+      
+      star.addEventListener('mouseenter', function() {
+        const rating = parseInt(this.dataset.star);
+        highlightStars(rating);
+      });
+    });
+    
+    // Reset on mouse leave
+    document.getElementById('star-rating').addEventListener('mouseleave', function() {
+      updateStarDisplay(userRating);
+    });
+  }
+  
+  function highlightStars(rating) {
+    const stars = document.querySelectorAll('.star-icon');
+    stars.forEach((star, index) => {
+      if (index < rating) {
+        star.classList.add('text-yellow-400');
+        star.classList.add('fill-current');
+        star.classList.remove('text-gray-300');
+      } else {
+        star.classList.remove('text-yellow-400');
+        star.classList.remove('fill-current');
+        star.classList.add('text-gray-300');
+      }
+    });
+  }
+  
+  function updateStarDisplay(rating) {
+    const stars = document.querySelectorAll('.star-icon');
+    stars.forEach((star, index) => {
+      if (index < rating) {
+        star.classList.add('text-yellow-400');
+        star.classList.add('fill-current');
+        star.classList.remove('text-gray-300');
+      } else {
+        star.classList.remove('text-yellow-400');
+        star.classList.remove('fill-current');
+        star.classList.add('text-gray-300');
+      }
+    });
+  }
+  
+  function submitRating(newRating) {
+    // Get current data
+    const savedData = localStorage.getItem(`rating-${gameSlug}`);
+    let currentRating = initialRating;
+    let currentVotes = totalVotes;
+    let userRating = 0;
+    
+    if (savedData) {
+      const data = JSON.parse(savedData);
+      currentRating = data.rating;
+      currentVotes = data.votes;
+      userRating = data.userRating || 0;
+    }
+    
+    // Calculate new average
+    let newAverage;
+    let newVotes;
+    
+    if (userRating === 0) {
+      // First time rating
+      newAverage = ((currentRating * currentVotes) + newRating) / (currentVotes + 1);
+      newVotes = currentVotes + 1;
+    } else {
+      // Update existing rating
+      newAverage = ((currentRating * currentVotes) - userRating + newRating) / currentVotes;
+      newVotes = currentVotes;
+    }
+    
+    // Save to localStorage
+    const ratingData = {
+      rating: Math.round(newAverage * 10) / 10,
+      votes: newVotes,
+      userRating: newRating
+    };
+    
+    localStorage.setItem(`rating-${gameSlug}`, JSON.stringify(ratingData));
+    
+    // Update display
+    updateStarDisplay(newRating);
+    updateRatingDisplay(ratingData.rating, ratingData.votes);
+    
+    // Show feedback
+    showRatingFeedback(newRating);
+  }
+  
+  function updateRatingDisplay(rating, votes) {
+    const ratingDisplay = document.getElementById('rating-display');
+    const votesCount = document.getElementById('votes-count');
+    
+    if (ratingDisplay) ratingDisplay.textContent = `${rating} / 10`;
+    if (votesCount) votesCount.textContent = `${votes} votes`;
+  }
+  
+  function showRatingFeedback(rating) {
+    // Create temporary feedback element
+    const feedback = document.createElement('div');
+    feedback.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 transition-all duration-300';
+    feedback.textContent = `Thanks! You rated ${rating} star${rating > 1 ? 's' : ''}`;
+    
+    document.body.appendChild(feedback);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+      feedback.style.opacity = '0';
+      setTimeout(() => {
+        document.body.removeChild(feedback);
+      }, 300);
+    }, 3000);
+  }
+  
+</script> 

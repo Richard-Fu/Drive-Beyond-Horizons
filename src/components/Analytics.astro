@@ -1,0 +1,71 @@
+---
+// Analytics component for GA4 and GTM integration
+const GA_ID = import.meta.env.PUBLIC_GA_ID || '';
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
+---
+
+{GA_ID && (
+  <!-- Google Analytics 4 -->
+  <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+  <script define:vars={{ GA_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', GA_ID, {
+      page_path: window.location.pathname,
+      cookie_flags: 'max-age=7200;secure;samesite=none'
+    });
+  </script>
+)}
+
+{GTM_ID && (
+  <!-- Google Tag Manager -->
+  <script define:vars={{ GTM_ID }}>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer',GTM_ID);
+  </script>
+)}
+
+<!-- Custom Events Helper -->
+<script>
+  // Helper function to track custom events
+  window.trackEvent = function(eventName, parameters) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', eventName, parameters);
+    }
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: eventName,
+        ...parameters
+      });
+    }
+  };
+  
+  // Track game plays
+  window.trackGamePlay = function(gameName) {
+    trackEvent('play_game', {
+      game_name: gameName,
+      event_category: 'engagement',
+      event_label: gameName
+    });
+  };
+  
+  // Track search
+  window.trackSearch = function(searchTerm) {
+    trackEvent('search', {
+      search_term: searchTerm
+    });
+  };
+  
+  // Track social share
+  window.trackShare = function(method, contentType, itemId) {
+    trackEvent('share', {
+      method: method,
+      content_type: contentType,
+      item_id: itemId
+    });
+  };
+</script>

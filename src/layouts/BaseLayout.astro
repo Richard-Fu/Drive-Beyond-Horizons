@@ -1,0 +1,83 @@
+---
+// Import global styles and components
+import '../styles/global.css';
+import '../styles/modern.css';
+import ModernNavigation from '@/components/ModernNavigation.astro';
+import Footer from '@/components/Footer.astro';
+import SEO from '@/components/SEO.astro';
+import Analytics from '@/components/Analytics.astro';
+import themeConfig from '@/config/theme.config.js';
+
+// Props interface for SEO and social sharing
+export interface Props {
+  title: string;
+  description: string;
+  image?: string; // Page sharing image path
+  pubDate?: Date; // Page publication date
+}
+
+const { title, description, image, pubDate } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Component -->
+    <SEO 
+      title={title}
+      description={description}
+      image={image}
+      pubDate={pubDate}
+    />
+    
+    <!-- Analytics -->
+    <Analytics />
+  </head>
+  <body class="bg-white text-gray-900">
+    
+    <!-- Navigation: Shared top navigation bar for all pages -->
+    <ModernNavigation />
+
+    <!-- Main content area: Specific content for different pages -->
+    <main class="min-h-screen">
+      <!-- <slot /> is a placeholder representing all content from pages using this layout -->
+      <slot />
+    </main>
+
+    <!-- Footer: Comprehensive footer component -->
+    <Footer />
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
+
+    <script>
+      // Back to top functionality
+      const backToTopButton = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove('opacity-0', 'invisible');
+          backToTopButton.classList.add('opacity-100', 'visible');
+        } else {
+          backToTopButton.classList.add('opacity-0', 'invisible');
+          backToTopButton.classList.remove('opacity-100', 'visible');
+        }
+      });
+      
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    </script>
+  </body>
+</html> 

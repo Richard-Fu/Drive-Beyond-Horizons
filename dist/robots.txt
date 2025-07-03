@@ -1,0 +1,23 @@
+# Robots.txt for Game Hub
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://geo-guessr.io/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_astro/
+
+# Allow search engines to access everything else
+Allow: /games/
+Allow: /categories/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.gif$

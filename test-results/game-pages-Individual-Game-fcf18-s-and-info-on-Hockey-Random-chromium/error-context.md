@@ -1,0 +1,568 @@
+# Page snapshot
+
+```yaml
+- navigation:
+  - link "GeoGuessr Free":
+    - /url: /
+    - img
+    - text: GeoGuessr Free
+  - link "Home":
+    - /url: /
+  - button "Categories":
+    - text: Categories
+    - img
+  - link "New Games":
+    - /url: /new-games
+  - link "Popular":
+    - /url: /popular
+  - link:
+    - /url: /search
+    - img
+  - button "en":
+    - img
+    - text: en
+  - button:
+    - img
+- main:
+  - main:
+    - navigation:
+      - link "Home":
+        - /url: /
+      - text: /
+      - link "sports Games":
+        - /url: /sports
+      - text: / Hockey Random
+    - img "Hockey Random"
+    - button "Play Hockey Random":
+      - img
+      - text: Play Hockey Random
+    - heading "Hockey Random" [level=1]
+    - paragraph: Master your sports skills in Hockey Random! Victory awaits the dedicated player.
+    - text: ✓
+    - paragraph:
+      - strong: 100% Free to Play
+      - text: "- No downloads, no registration required"
+    - text: ✓
+    - paragraph:
+      - strong: Instant Gaming
+      - text: "- Start playing immediately in your browser"
+    - text: ✓
+    - paragraph:
+      - strong: Cross-Platform
+      - text: "- Works on desktop, tablet, and mobile devices"
+    - text: ★ 8.8/10 🎮 Sports ⏱️ 10-20 minutes 🌐 Online Game
+    - button "🎮 Start Playing Hockey Random"
+    - heading "Other Amazing Games" [level=2]
+    - paragraph: Discover more exciting games and expand your gaming horizons
+    - link "Featured Escape Road 6.4/10 Escape Road Action Experience thrilling action in Escape Road! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+      - /url: /games/escape-road/
+      - img
+      - text: Featured
+      - img "Escape Road"
+      - img
+      - img
+      - text: 6.4/10
+      - heading "Escape Road" [level=3]
+      - text: Action
+      - paragraph: Experience thrilling action in Escape Road! Fast-paced gameplay with exciting challenges.
+      - img
+      - text: 10-20 minutes FREE
+    - link "Featured Kitten Defense 8.8/10 Kitten Defense Action Jump into the action with Kitten Defense! Non-stop excitement awaits. 10-20 minutes FREE":
+      - /url: /games/kitten-defense/
+      - img
+      - text: Featured
+      - img "Kitten Defense"
+      - img
+      - img
+      - text: 8.8/10
+      - heading "Kitten Defense" [level=3]
+      - text: Action
+      - paragraph: Jump into the action with Kitten Defense! Non-stop excitement awaits.
+      - img
+      - text: 10-20 minutes FREE
+    - link "Featured Unchill Guy Clicker 7.2/10 Unchill Guy Clicker Arcade Enjoy classic arcade fun with Unchill Guy Clicker! Simple controls, endless entertainment. 10-20 minutes FREE":
+      - /url: /games/unchill-guy-clicker/
+      - img
+      - text: Featured
+      - img "Unchill Guy Clicker"
+      - img
+      - img
+      - text: 7.2/10
+      - heading "Unchill Guy Clicker" [level=3]
+      - text: Arcade
+      - paragraph: Enjoy classic arcade fun with Unchill Guy Clicker! Simple controls, endless entertainment.
+      - img
+      - text: 10-20 minutes FREE
+    - link "Featured Crazy Animal City 7.4/10 Crazy Animal City Action Experience thrilling action in Crazy Animal City! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+      - /url: /games/crazy-animal-city/
+      - img
+      - text: Featured
+      - img "Crazy Animal City"
+      - img
+      - img
+      - text: 7.4/10
+      - heading "Crazy Animal City" [level=3]
+      - text: Action
+      - paragraph: Experience thrilling action in Crazy Animal City! Fast-paced gameplay with exciting challenges.
+      - img
+      - text: 10-20 minutes FREE
+    - link "Golf Hit 10/10 Golf Hit Sports Master your sports skills in Golf Hit! Victory awaits the dedicated player. 10-20 minutes FREE":
+      - /url: /games/golf-hit/
+      - img "Golf Hit"
+      - img
+      - img
+      - text: 10/10
+      - heading "Golf Hit" [level=3]
+      - text: Sports
+      - paragraph: Master your sports skills in Golf Hit! Victory awaits the dedicated player.
+      - img
+      - text: 10-20 minutes FREE
+    - link "Smash Karts 10/10 Smash Karts Action Jump into the action with Smash Karts! Non-stop excitement awaits. 10-20 minutes FREE":
+      - /url: /games/smash-karts/
+      - img "Smash Karts"
+      - img
+      - img
+      - text: 10/10
+      - heading "Smash Karts" [level=3]
+      - text: Action
+      - paragraph: Jump into the action with Smash Karts! Non-stop excitement awaits.
+      - img
+      - text: 10-20 minutes FREE
+    - link "Egg Race 10/10 Egg Race Action Experience thrilling action in Egg Race! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+      - /url: /games/egg-race/
+      - img "Egg Race"
+      - img
+      - img
+      - text: 10/10
+      - heading "Egg Race" [level=3]
+      - text: Action
+      - paragraph: Experience thrilling action in Egg Race! Fast-paced gameplay with exciting challenges.
+      - img
+      - text: 10-20 minutes FREE
+    - link "Traffic Rider 9.9/10 Traffic Rider Action Traffic Rider delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+      - /url: /games/traffic-rider/
+      - img "Traffic Rider"
+      - img
+      - img
+      - text: 9.9/10
+      - heading "Traffic Rider" [level=3]
+      - text: Action
+      - paragraph: Traffic Rider delivers intense action gameplay with stunning visuals and engaging mechanics.
+      - img
+      - text: 10-20 minutes FREE
+    - link "Forest Mouse 6.7/10 Forest Mouse Action Experience thrilling action in Forest Mouse! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+      - /url: /games/forest-mouse/
+      - img "Forest Mouse"
+      - img
+      - img
+      - text: 6.7/10
+      - heading "Forest Mouse" [level=3]
+      - text: Action
+      - paragraph: Experience thrilling action in Forest Mouse! Fast-paced gameplay with exciting challenges.
+      - img
+      - text: 10-20 minutes FREE
+    - link "Orbit Dash 7/10 Orbit Dash Action Experience thrilling action in Orbit Dash! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+      - /url: /games/orbit-dash/
+      - img "Orbit Dash"
+      - img
+      - img
+      - text: 7/10
+      - heading "Orbit Dash" [level=3]
+      - text: Action
+      - paragraph: Experience thrilling action in Orbit Dash! Fast-paced gameplay with exciting challenges.
+      - img
+      - text: 10-20 minutes FREE
+    - link "View More Sports":
+      - /url: /sports
+      - text: View More Sports
+      - img
+    - text: "Rate:"
+    - img
+    - img
+    - img
+    - img
+    - img
+    - text: "8.8 / 10 67 votes 1.2m Shares Share:"
+    - link "Share on Facebook":
+      - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4321%2Fgames%2Fhockey-random%2F
+      - img
+    - link "Share on Twitter":
+      - /url: https://twitter.com/intent/tweet?text=undefined&url=http%3A%2F%2Flocalhost%3A4321%2Fgames%2Fhockey-random%2F
+      - img
+    - link "Share on WhatsApp":
+      - /url: https://wa.me/?text=undefined%20http%3A%2F%2Flocalhost%3A4321%2Fgames%2Fhockey-random%2F
+      - img
+    - link "Share on Reddit":
+      - /url: https://reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4321%2Fgames%2Fhockey-random%2F&title=undefined
+      - img
+    - button "Copy link":
+      - img
+  - article:
+    - 'heading "Hockey Random: The Ultimate Free Online Game Experience" [level=2]'
+    - paragraph:
+      - text: Welcome to
+      - strong: Hockey Random
+      - text: ", an incredible"
+      - strong: free online game
+      - text: that offers unlimited entertainment without any restrictions! Our
+      - strong: unblocked game
+      - text: provides hours of engaging gameplay, completely free and accessible from anywhere. Whether you're looking for a quick gaming break or an extended play session,
+      - strong: Hockey Random
+      - text: delivers the perfect gaming experience.
+    - heading "What is Hockey Random?" [level=3]
+    - paragraph:
+      - strong: Hockey Random
+      - text: is an exciting
+      - strong: sports game
+      - text: that combines entertainment with engaging gameplay mechanics. As one of the best
+      - strong: free games online
+      - text: ", it offers unlimited gameplay across multiple modes and challenges. Experience the thrill of this amazing"
+      - strong: sports game
+      - text: that has captivated players worldwide.
+    - heading "Hockey Random Unblocked - Play Anywhere, Anytime" [level=3]
+    - paragraph:
+      - text: Our
+      - strong: Hockey Random unblocked
+      - text: platform ensures you can enjoy gaming regardless of network restrictions. Unlike other sites, our
+      - strong: unblocked Hockey Random
+      - text: works seamlessly in schools, offices, and other environments where gaming sites might be restricted. Experience unlimited gameplay without any barriers.
+    - img "Hockey Random Banner"
+    - button "▶️ Play Now"
+    - heading "Why Choose Our Free Hockey Random Game?" [level=3]
+    - list:
+      - listitem:
+        - strong: 💯 Completely Free & Unlimited
+        - text: ": Unlike many games that require subscriptions, our"
+        - strong: free Hockey Random
+        - text: offers unlimited gameplay at no cost. Play as many rounds as you want without any restrictions!
+      - listitem:
+        - strong: 🚫 Unblocked Access
+        - text: ": Our"
+        - strong: Hockey Random unblocked
+        - text: platform works everywhere - schools, offices, public WiFi. No restrictions, no blocked access, just pure gaming fun.
+      - listitem:
+        - strong: 🎮 Multiple Game Modes
+        - text: ": Experience various challenges and gameplay styles that keep the entertainment fresh and exciting."
+      - listitem:
+        - strong: 🌟 High-Quality Gaming
+        - text: ": Enjoy smooth gameplay, excellent graphics, and responsive controls that make every gaming session enjoyable."
+      - listitem:
+        - strong: 🔓 Browser-Based Gaming
+        - text: ": No downloads required! Play instantly in your browser with our optimized"
+        - strong: online Hockey Random
+        - text: platform.
+    - heading "Game Features & Highlights" [level=3]
+    - heading "🎯 Engaging Gameplay" [level=4]
+    - paragraph: Experience addictive and challenging gameplay that keeps you coming back for more. Perfect for quick sessions or extended play.
+    - heading "🚀 Instant Play" [level=4]
+    - paragraph: No downloads, no installations. Just click and play immediately in your browser with our optimized gaming platform.
+    - heading "🎨 High-Quality Graphics" [level=4]
+    - paragraph: Enjoy beautiful visuals and smooth animations that enhance your gaming experience across all devices.
+    - heading "📱 Mobile Friendly" [level=4]
+    - paragraph: Play on any device - desktop, tablet, or mobile. Our responsive design ensures perfect gameplay everywhere.
+    - heading "Advanced Features" [level=3]
+    - list:
+      - listitem:
+        - strong: ⚡ Fast Loading
+        - text: ": Optimized for quick load times, get into the game faster than ever before."
+      - listitem:
+        - strong: 🎵 Sound Effects
+        - text: ": Immersive audio that enhances the gaming experience (can be muted if needed)."
+      - listitem:
+        - strong: 📊 Progress Tracking
+        - text: ": Keep track of your achievements and see how you improve over time."
+      - listitem:
+        - strong: 👥 Share & Compete
+        - text: ": Share your scores and challenge friends to beat your achievements."
+      - listitem:
+        - strong: 🔄 Regular Updates
+        - text: ": Enjoy new features and improvements with our regularly updated game."
+    - heading "Tips & Strategies for Hockey Random" [level=3]
+    - heading "🎯 Master the Game" [level=4]
+    - list:
+      - listitem: Take your time to understand the game mechanics before rushing into advanced strategies
+      - listitem: Practice regularly to improve your skills and reaction times
+      - listitem: Pay attention to patterns and learn from your mistakes
+      - listitem: Use the pause feature if available to plan your next moves
+      - listitem: Stay focused and avoid distractions for the best gaming experience
+      - listitem: Don't get frustrated with difficult levels - persistence is key to success
+    - heading "How to Play Hockey Random Online Free?" [level=2]
+    - heading "Getting Started with Hockey Random" [level=3]
+    - list:
+      - listitem:
+        - text: Click the
+        - strong: "\"Play Now\""
+        - text: button above to start the game instantly
+      - listitem: Wait for the game to load - this usually takes just a few seconds
+      - listitem: Follow the on-screen instructions to learn the basic controls
+      - listitem: Start with easier levels to get familiar with the gameplay
+      - listitem: Gradually progress to more challenging levels as you improve
+      - listitem: Have fun and don't forget to share your high scores!
+    - heading "System Requirements" [level=3]
+    - paragraph:
+      - strong: Hockey Random
+      - text: "is designed to work on virtually any device with a modern web browser. Here are the minimal requirements:"
+    - list:
+      - listitem: Any modern web browser (Chrome, Firefox, Safari, Edge)
+      - listitem: Stable internet connection
+      - listitem: JavaScript enabled
+      - listitem: Mouse, keyboard, or touch screen for controls
+    - heading "🎮 Ready to Play Hockey Random?" [level=4]
+    - paragraph:
+      - text: Join millions of players who have already discovered the excitement of
+      - strong: Hockey Random
+      - text: . This free online game offers endless entertainment and is perfect for players of all skill levels.
+    - paragraph: Click the Play Now button at the top of this page to start your gaming adventure today!
+    - heading "Hockey Random" [level=1]
+    - paragraph: Master your sports skills in Hockey Random! Victory awaits the dedicated player.
+    - heading "Game Features" [level=2]
+    - list:
+      - listitem:
+        - strong: Rating
+        - text: ": 8.8/10"
+      - listitem:
+        - strong: Category
+        - text: ": Sports"
+      - listitem:
+        - strong: Difficulty
+        - text: ": hard"
+      - listitem:
+        - strong: Play Time
+        - text: ": 10-20 minutes"
+      - listitem:
+        - strong: Platform
+        - text: ": Browser (HTML5)"
+    - heading "How to Play" [level=2]
+    - paragraph: Click the play button above to start Hockey Random! This game runs directly in your browser - no downloads required.
+    - heading "About Hockey Random" [level=2]
+    - paragraph: Master your sports skills in Hockey Random! Victory awaits the dedicated player. Perfect for players who enjoy sports games and want to have fun online.
+    - heading "Similar Games" [level=2]
+    - paragraph:
+      - text: Looking for more sports games? Check out our
+      - link "Sports Games":
+        - /url: /categories/sports
+      - text: collection for more exciting options!
+  - 'heading "Discuss: Hockey Random" [level=2]'
+  - text: Comments (2) Sort by
+  - combobox:
+    - option "Newest" [selected]
+    - option "Oldest"
+    - option "Popular"
+  - text: A Alex 1 day ago
+  - paragraph: Amazing game! Really enjoyed playing this. The graphics are stunning and the gameplay is so addictive!
+  - button "Reply":
+    - img
+    - text: Reply
+  - button "12":
+    - img
+    - text: "12"
+  - button "2":
+    - img
+    - text: "2"
+  - text: k keradent 2 weeks ago
+  - paragraph: I love playing this game it's so cool and it's my favorite game theme!
+  - button "Reply":
+    - img
+    - text: Reply
+  - button "6":
+    - img
+    - text: "6"
+  - button "1":
+    - img
+    - text: "1"
+  - heading "Leave a Comment" [level=3]
+  - textbox "Name"
+  - textbox "Email (optional)"
+  - textbox "Content"
+  - checkbox "I'd read and agree to the terms and conditions."
+  - text: I'd read and agree to the terms and conditions.
+  - button "Comment"
+  - heading "Play New Games" [level=2]
+  - link "Basket Random 9.4/10 Basket Random Action Basket Random delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/basket-random/
+    - img "Basket Random"
+    - img
+    - img
+    - text: 9.4/10
+    - heading "Basket Random" [level=3]
+    - text: Action
+    - paragraph: Basket Random delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Slope 3 6.6/10 Slope 3 Action Experience thrilling action in Slope 3! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/slope-3/
+    - img "Slope 3"
+    - img
+    - img
+    - text: 6.6/10
+    - heading "Slope 3" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Slope 3! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Slope Snowball 9.1/10 Slope Snowball Action Slope Snowball delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/slope-snowball/
+    - img "Slope Snowball"
+    - img
+    - img
+    - text: 9.1/10
+    - heading "Slope Snowball" [level=3]
+    - text: Action
+    - paragraph: Slope Snowball delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Tralalero Tralala Clicker 7.9/10 Tralalero Tralala Clicker Arcade Relive the golden age of gaming with Tralalero Tralala Clicker! Easy to learn, hard to master. 10-20 minutes FREE":
+    - /url: /games/tralalero-tralala-clicker/
+    - img "Tralalero Tralala Clicker"
+    - img
+    - img
+    - text: 7.9/10
+    - heading "Tralalero Tralala Clicker" [level=3]
+    - text: Arcade
+    - paragraph: Relive the golden age of gaming with Tralalero Tralala Clicker! Easy to learn, hard to master.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Mayhem Drive 7.2/10 Mayhem Drive Action Experience thrilling action in Mayhem Drive! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/mayhem-drive/
+    - img "Mayhem Drive"
+    - img
+    - img
+    - text: 7.2/10
+    - heading "Mayhem Drive" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Mayhem Drive! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Tap Road Beat 7.9/10 Tap Road Beat Action Experience thrilling action in Tap Road Beat! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/tap-road-beat/
+    - img "Tap Road Beat"
+    - img
+    - img
+    - text: 7.9/10
+    - heading "Tap Road Beat" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Tap Road Beat! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Shooter Hero 8.4/10 Shooter Hero Action Jump into the action with Shooter Hero! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/shooter-hero/
+    - img "Shooter Hero"
+    - img
+    - img
+    - text: 8.4/10
+    - heading "Shooter Hero" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Shooter Hero! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Escape Road 6.4/10 Escape Road Action Experience thrilling action in Escape Road! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/escape-road/
+    - img
+    - text: Featured
+    - img "Escape Road"
+    - img
+    - img
+    - text: 6.4/10
+    - heading "Escape Road" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Escape Road! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Scary Wheels 6.1/10 Scary Wheels Action Jump into the action with Scary Wheels! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/scary-wheels/
+    - img "Scary Wheels"
+    - img
+    - img
+    - text: 6.1/10
+    - heading "Scary Wheels" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Scary Wheels! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Tiny Fishing 7.4/10 Tiny Fishing Action Tiny Fishing delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/tiny-fishing/
+    - img "Tiny Fishing"
+    - img
+    - img
+    - text: 7.4/10
+    - heading "Tiny Fishing" [level=3]
+    - text: Action
+    - paragraph: Tiny Fishing delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+- contentinfo:
+  - img
+  - text: GeoGuessr Free
+  - paragraph: Play the best free online games instantly in your browser. No downloads, no registration required.
+  - link "Facebook":
+    - /url: https://facebook.com/geoguessr
+    - img
+  - link "Twitter":
+    - /url: https://twitter.com/geoguessr
+    - img
+  - link "Discord":
+    - /url: https://discord.gg/geoguessr
+    - img
+  - link "YouTube":
+    - /url: https://youtube.com/@geoguessr
+    - img
+  - heading "Quick Links" [level=3]
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: /
+    - listitem:
+      - link "Popular Games":
+        - /url: /popular
+    - listitem:
+      - link "New Games":
+        - /url: /new-games
+    - listitem:
+      - link "All Categories":
+        - /url: /categories
+  - heading "Categories" [level=3]
+  - list:
+    - listitem:
+      - link "Action Games":
+        - /url: /action
+    - listitem:
+      - link "Puzzle Games":
+        - /url: /puzzle
+    - listitem:
+      - link "Sports Games":
+        - /url: /sports
+    - listitem:
+      - link "Arcade Games":
+        - /url: /arcade
+    - listitem:
+      - link "Adventure Games":
+        - /url: /adventure
+  - heading "Support" [level=3]
+  - list:
+    - listitem:
+      - link "Contact Us":
+        - /url: /contact
+    - listitem:
+      - link "About Us":
+        - /url: /about
+    - listitem:
+      - link "Privacy Policy":
+        - /url: /privacy
+    - listitem:
+      - link "Terms of Service":
+        - /url: /terms
+    - listitem:
+      - link "DMCA":
+        - /url: /dmca
+  - heading "Subscribe to Our Newsletter" [level=3]
+  - paragraph: Get the latest game updates and exclusive offers!
+  - textbox "Enter your email"
+  - button "Subscribe"
+  - text: © 2025 GeoGuessr Free. All rights reserved.
+  - link "Sitemap":
+    - /url: /sitemap
+  - text: "|"
+  - link "Cookie Policy":
+    - /url: /cookies
+  - text: "| Made with ❤️ by GeoGuessr Free Team"
+```

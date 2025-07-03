@@ -1,0 +1,125 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import themeConfig from '@/config/theme.config.js';
+
+const pageTitle = `DMCA Policy - ${themeConfig.site.name}`;
+const pageDescription = `DMCA Copyright Policy for ${themeConfig.site.name}. Learn about our copyright infringement notice procedure.`;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600 mb-4">
+          DMCA Policy
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          Digital Millennium Copyright Act Compliance
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-10 space-y-8">
+        <!-- Introduction -->
+        <section>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Copyright Infringement Notice Procedure</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            {themeConfig.site.name} respects the intellectual property rights of others and expects our users to do the same. In accordance with the Digital Millennium Copyright Act of 1998 ("DMCA"), we will respond expeditiously to claims of copyright infringement committed using our website.
+          </p>
+        </section>
+
+        <!-- DMCA Notice Requirements -->
+        <section>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Filing a DMCA Notice</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+            If you believe that your copyrighted work has been copied in a way that constitutes copyright infringement and is accessible on this site, please notify our copyright agent as set forth below. For your complaint to be valid under the DMCA, you must provide the following information in writing:
+          </p>
+          <ol class="list-decimal list-inside space-y-3 text-gray-600 dark:text-gray-400 ml-4">
+            <li>
+              <strong>Electronic or physical signature</strong> of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed
+            </li>
+            <li>
+              <strong>Identification of the copyrighted work</strong> claimed to have been infringed, or a representative list of such works
+            </li>
+            <li>
+              <strong>Identification of the material</strong> that is claimed to be infringing or to be the subject of infringing activity, including information reasonably sufficient to permit us to locate the material (e.g., URL)
+            </li>
+            <li>
+              <strong>Your contact information</strong>, including your address, telephone number, and email address
+            </li>
+            <li>
+              <strong>A statement by you</strong> that you have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law
+            </li>
+            <li>
+              <strong>A statement</strong>, made under penalty of perjury, that the information in your notice is accurate and that you are the copyright owner or are authorized to act on the copyright owner's behalf
+            </li>
+          </ol>
+        </section>
+
+        <!-- Designated Agent -->
+        <section>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Designated Copyright Agent</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+            Please send your DMCA takedown notice to our designated copyright agent:
+          </p>
+          <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-6">
+            <p class="text-gray-700 dark:text-gray-300 font-mono">
+              <strong>DMCA Agent</strong><br />
+              {themeConfig.site.name}<br />
+              Email: dmca@{themeConfig.site.url.replace('https://', '').replace('http://', '')}<br />
+              Subject Line: DMCA Takedown Notice
+            </p>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mt-4">
+            Please note that under Section 512(f) of the DMCA, any person who knowingly materially misrepresents that material or activity is infringing may be subject to liability.
+          </p>
+        </section>
+
+        <!-- Counter-Notice -->
+        <section>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Counter-Notification Procedure</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+            If you believe that your content was wrongfully removed due to a mistake or misidentification, you may submit a counter-notification to our designated agent with the following information:
+          </p>
+          <ol class="list-decimal list-inside space-y-3 text-gray-600 dark:text-gray-400 ml-4">
+            <li>Your physical or electronic signature</li>
+            <li>Identification of the material that has been removed or to which access has been disabled, and the location at which the material appeared before it was removed or access to it was disabled</li>
+            <li>A statement under penalty of perjury that you have a good faith belief that the material was removed or disabled as a result of mistake or misidentification</li>
+            <li>Your name, address, telephone number, and email address</li>
+            <li>A statement that you consent to the jurisdiction of the Federal District Court for the judicial district in which your address is located, and that you will accept service of process from the person who provided the original DMCA notification or an agent of such person</li>
+          </ol>
+        </section>
+
+        <!-- Repeat Infringers -->
+        <section>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Repeat Infringer Policy</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            In accordance with the DMCA and other applicable law, {themeConfig.site.name} has adopted a policy of terminating, in appropriate circumstances and at our sole discretion, users who are deemed to be repeat infringers. We may also, at our sole discretion, limit access to the website and/or terminate the accounts of any users who infringe any intellectual property rights of others, whether or not there is any repeat infringement.
+          </p>
+        </section>
+
+        <!-- Modifications -->
+        <section>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text:white mb-4">Modifications to Policy</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            {themeConfig.site.name} reserves the right to modify this policy at any time. We will post any changes on this page, so please check back periodically.
+          </p>
+        </section>
+
+        <!-- Note -->
+        <section class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2 flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+            </svg>
+            Important Note
+          </h3>
+          <p class="text-blue-800 dark:text-blue-200 text-sm">
+            This page is provided for informational purposes only and does not constitute legal advice. If you have questions about copyright law or the DMCA, please consult with a qualified attorney.
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

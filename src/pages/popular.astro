@@ -1,0 +1,75 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ModernGameCard from '@/components/ModernGameCard.astro';
+import { getCollection } from 'astro:content';
+
+// 获取高评分和热门游戏
+const allGames = await getCollection('games');
+
+// 按评分排序，获取评分最高的游戏
+const popularGames = allGames
+  .filter(game => game.data.rating && game.data.rating >= 8)
+  .sort((a, b) => (b.data.rating || 0) - (a.data.rating || 0))
+  .slice(0, 20);
+
+// 如果高评分游戏不够，添加一些featured游戏
+if (popularGames.length < 20) {
+  const featuredGames = allGames
+    .filter(game => game.data.featured && !popularGames.includes(game))
+    .slice(0, 20 - popularGames.length);
+  popularGames.push(...featuredGames);
+}
+---
+
+<BaseLayout 
+  title="Popular Games - Top Rated Free Online Games"
+  description="Play the most popular and highest rated free online games. Community favorites!"
+>
+  <!-- Header Section -->
+  <section class="bg-gradient-to-r from-orange-500 to-red-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        🔥 Popular Games
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+        The most played and highest rated games in our collection. Join millions of players!
+      </p>
+      <div class="flex justify-center items-center space-x-4">
+        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
+          ⭐ 8+ Rating
+        </span>
+        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
+          🏆 Community Favorites
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games Grid -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="game-grid">
+        {popularGames.map((game) => (
+          <ModernGameCard 
+            title={game.data.title}
+            description={game.data.description}
+            image={game.data.image}
+            rating={game.data.rating}
+            categories={game.data.categories}
+            slug={game.slug}
+            featured={game.data.featured}
+            playTime={game.data.playTime}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .game-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+</style>

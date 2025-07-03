@@ -1,0 +1,65 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ModernGameCard from '@/components/ModernGameCard.astro';
+import { getCollection } from 'astro:content';
+
+// 获取最新的20个游戏
+const allGames = (await getCollection('games')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const newGames = allGames.slice(0, 20);
+---
+
+<BaseLayout 
+  title="New Games - Latest Free Online Games"
+  description="Play the newest and latest free online games. Fresh games added daily!"
+>
+  <!-- Header Section -->
+  <section class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        🎮 New Games
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+        Discover the latest additions to our game collection. Fresh games added daily!
+      </p>
+      <div class="flex justify-center items-center space-x-4">
+        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
+          {newGames.length} New Games
+        </span>
+        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
+          🆕 Updated Daily
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games Grid -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="game-grid">
+        {newGames.map((game) => (
+          <ModernGameCard 
+            title={game.data.title}
+            description={game.data.description}
+            image={game.data.image}
+            rating={game.data.rating}
+            categories={game.data.categories}
+            slug={game.slug}
+            featured={game.data.featured}
+            playTime={game.data.playTime}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .game-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+</style>

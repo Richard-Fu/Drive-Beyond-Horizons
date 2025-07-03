@@ -1,0 +1,270 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GamePlayer from '../../components/GamePlayer.astro';
+import ModernGameCard from '../../components/ModernGameCard.astro';
+import RatingSystem from '../../components/RatingSystem.astro';
+import SocialShare from '../../components/SocialShare.astro';
+import CommentSystem from '../../components/CommentSystem.astro';
+import SEO from '../../components/SEO.astro';
+import { getCollection } from 'astro:content';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages } from '../../i18n/translations';
+
+export async function getStaticPaths() {
+  return Object.keys(languages)
+    .filter(lang => lang !== 'en') // 排除默认语言
+    .map(lang => ({
+      params: { lang }
+    }));
+}
+
+const { lang } = Astro.params;
+const allGames = await getCollection('games');
+const t = useTranslations(lang as keyof typeof languages);
+
+// 选择特色游戏 - 查找GeoGuessr相关游戏
+const featuredGame = allGames.find(game => 
+  game.data.title.toLowerCase().includes('geoguessr')
+) || allGames.find(game => 
+  game.data.title.toLowerCase().includes('openguessr')
+) || allGames.find(game => 
+  game.data.title.toLowerCase().includes('guessr') && 
+  !game.data.title.toLowerCase().includes('globe')
+) || allGames[0];
+
+// 获取其他推荐游戏
+const otherGames = allGames
+  .filter(game => game.slug !== featuredGame?.slug)
+  .filter(game => game.data.featured || game.data.popular)
+  .slice(0, 8);
+
+const newGames = allGames
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+  .slice(0, 10);
+
+const pageTitle = t('seo.homeTitle');
+const pageDescription = t('seo.homeDescription');
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <SEO 
+    slot="head"
+    title={pageTitle}
+    description={pageDescription}
+    keywords="free games, online games, browser games, no download games"
+    canonical={Astro.url.href}
+  />
+  
+  <main class="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 py-3">
+        <div class="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+          <a href={`/${lang}/`} class="hover:text-green-600 dark:hover:text-green-400 transition-colors">
+            {t('nav.home')}
+          </a>
+          <span>/</span>
+          <span class="text-gray-900 dark:text-white">GeoGuessr Free</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section with Featured Game -->
+    <section class="hero-section py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Game Preview -->
+          <div class="order-2 lg:order-1">
+            <GamePlayer 
+              title={featuredGame?.data.title || "GeoGuessr Free"}
+              description={featuredGame?.data.description || t('seo.homeDescription')}
+              image={featuredGame?.data.image || "https://geoguessr.io/data/image/posts/geoguessr-free-banner2.jpg"}
+              embedUrl={featuredGame?.data.embedUrl || "https://openguessr.com/"}
+              rating={featuredGame?.data.rating}
+              category={featuredGame?.data.gameType || 'Geography'}
+              playTime={featuredGame?.data.playTime}
+              lang={lang}
+            />
+          </div>
+
+          <!-- Game Info -->
+          <div class="order-1 lg:order-2 space-y-8">
+            <div>
+              <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600 mb-4">
+                {featuredGame?.data.title || "GeoGuessr Free"}
+              </h1>
+              <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+                {featuredGame?.data.description || t('seo.homeDescription')}
+              </p>
+            </div>
+
+            <!-- Features -->
+            <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-sm">✓</span>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300">
+                  <strong>{t('game.freeToPlay')}</strong> - {t('game.noDownload')}
+                </p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-sm">✓</span>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300">
+                  <strong>{t('game.instantGaming')}</strong> - {t('game.playInstantly')}
+                </p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-sm">✓</span>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300">
+                  <strong>{t('game.crossPlatform')}</strong> - {t('game.worksEverywhere')}
+                </p>
+              </div>
+            </div>
+
+            <!-- Game Stats -->
+            <div class="flex flex-wrap gap-4 text-sm">
+              <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 px-3 py-2 rounded-full">
+                <span>⭐</span>
+                <span class="font-medium">{featuredGame?.data.rating || '8.5'}/10</span>
+              </div>
+              <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 px-3 py-2 rounded-full">
+                <span>🎮</span>
+                <span class="font-medium">{featuredGame?.data.gameType || 'geography'}</span>
+              </div>
+              <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 px-3 py-2 rounded-full">
+                <span>⏱️</span>
+                <span class="font-medium">{featuredGame?.data.playTime || '15-30 min'}</span>
+              </div>
+              <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 px-3 py-2 rounded-full">
+                <span>🌐</span>
+                <span class="font-medium">{t('game.freeToPlay')}</span>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              🎮 {t('common.playNow')} {featuredGame?.data.title || "GeoGuessr"}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Games Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('game.moreGames')}
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-400">
+            Discover more exciting games and expand your gaming horizons
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+          {otherGames.map((game) => (
+            <ModernGameCard 
+              title={game.data.title}
+              description={game.data.description}
+              image={game.data.image}
+              rating={game.data.rating}
+              categories={game.data.categories}
+              slug={game.slug}
+              featured={game.data.featured}
+              playTime={game.data.playTime}
+            />
+          ))}
+        </div>
+
+        <div class="text-center">
+          <a 
+            href={`/${lang}/action`}
+            class="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <span>{t('common.viewAll')} {t('common.allGames')}</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rating & Social -->
+    <section class="py-8">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+          <RatingSystem gameTitle="GeoGuessr Free" />
+          <SocialShare 
+            title="GeoGuessr Free"
+            url={Astro.url.href}
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Game Description Article -->
+  <article class="bg-white dark:bg-gray-900 py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+        <h2>GeoGuessr Free: The Ultimate Unlimited Geography Guessing Game</h2>
+        <p>
+          Welcome to <strong>GeoGuessr Free</strong>, the premier <strong>free GeoGuessr alternative</strong> that offers unlimited gameplay without restrictions! Our <strong>unblocked geography game</strong> provides the same thrilling experience as the original GeoGuessr, completely free and accessible from anywhere. Whether you're a geography enthusiast or looking for an educational gaming experience, our <strong>GeoGuessr unlimited</strong> platform delivers hours of engaging entertainment.
+        </p>
+
+        <h3>What is GeoGuessr Free Alternative?</h3>
+        <p>
+          Our <strong>free GeoGuessr game</strong> is an <strong>open GeoGuessr</strong> platform that takes you on virtual journeys across the globe. Using Street View technology, the game drops you in random locations worldwide, and your mission is to guess where you are by exploring the environment, analyzing clues, and applying your geographical knowledge. As the best <strong>GeoGuessr alternative</strong>, we offer unlimited gameplay across multiple regions including <strong>GeoGuessr USA</strong>, <strong>GeoGuessr Europe</strong>, <strong>GeoGuessr Asia</strong>, and <strong>GeoGuessr Africa</strong>.
+        </p>
+
+        <h3>GeoGuessr Unblocked - Play Anywhere, Anytime</h3>
+        <p>
+          Our <strong>GeoGuessr unblocked</strong> platform ensures you can enjoy geography games regardless of network restrictions. Unlike other sites, our <strong>unblocked GeoGuessr</strong> works seamlessly in schools, offices, and other environments where gaming sites might be restricted. Experience the thrill of <strong>GeoGuessr unlimited</strong> gameplay without any barriers.
+        </p>
+
+        <div class="text-center my-8">
+          <img src="https://geoguessr.io/data/image/posts/geoguessr-free-banner2.jpg" alt="GeoGuessr Free Banner" class="rounded-lg shadow-lg mx-auto" />
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="mt-4 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300">
+            ▶️ {t('common.playNow')}
+          </button>
+        </div>
+
+        <!-- More content would be added here in the same pattern -->
+      </div>
+    </div>
+  </article>
+
+  <!-- Comments Section -->
+  <CommentSystem gameTitle="GeoGuessr Free" />
+
+  <!-- New Games Section -->
+  <section class="bg-gray-50 dark:bg-gray-800 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        {t('nav.newGames')}
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        {newGames.map((game) => (
+          <ModernGameCard 
+            title={game.data.title}
+            description={game.data.description}
+            image={game.data.image}
+            rating={game.data.rating}
+            categories={game.data.categories}
+            slug={game.slug}
+            featured={game.data.featured}
+            playTime={game.data.playTime}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout> 

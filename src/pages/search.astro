@@ -1,0 +1,242 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ModernGameCard from '../components/ModernGameCard.astro';
+import { getCollection } from 'astro:content';
+import SEO from '../components/SEO.astro';
+import { t } from '../i18n/utils';
+
+// Get all games
+const allGames = await getCollection('games');
+const lang = 'en';
+
+const pageTitle = t('seo.searchTitle', lang);
+const pageDescription = t('seo.searchDescription', lang);
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <SEO 
+    slot="head"
+    title={pageTitle}
+    description={pageDescription}
+    keywords="search games, find games, game search, online games"
+  />
+  <div class="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600 mb-4">
+          Search Games
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          Find your next gaming adventure
+        </p>
+      </div>
+
+      <!-- Search Box -->
+      <div class="max-w-2xl mx-auto mb-12">
+        <div class="relative">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for games..."
+            class="w-full px-6 py-4 pr-12 text-lg border border-gray-300 dark:border-gray-600 rounded-full focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-all duration-300 shadow-lg"
+            autofocus
+          />
+          <svg class="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        
+        <!-- Search Filters -->
+        <div class="mt-4 flex flex-wrap gap-2 justify-center">
+          <button class="filter-btn active" data-filter="all">
+            {t('common.allGames', lang)}
+          </button>
+          <button class="filter-btn" data-filter="action">
+            Action
+          </button>
+          <button class="filter-btn" data-filter="sports">
+            Sports
+          </button>
+          <button class="filter-btn" data-filter="puzzle">
+            Puzzle
+          </button>
+          <button class="filter-btn" data-filter="popular">
+            Popular
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Count -->
+      <div class="text-center mb-8">
+        <p class="text-gray-600 dark:text-gray-400">
+          <span id="resultCount">{allGames.length}</span> games found
+        </p>
+      </div>
+
+      <!-- Search Results -->
+      <div id="searchResults" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {allGames.map((game) => (
+          <div 
+            class="game-item" 
+            data-title={game.data.title.toLowerCase()}
+            data-description={game.data.description.toLowerCase()}
+            data-category={game.data.gameType}
+            data-tags={game.data.categories.join(',').toLowerCase()}
+          >
+            <ModernGameCard 
+              title={game.data.title}
+              description={game.data.description}
+              image={game.data.image}
+              rating={game.data.rating}
+              categories={game.data.categories}
+              slug={game.slug}
+              featured={game.data.featured}
+              playTime={game.data.playTime}
+            />
+          </div>
+        ))}
+      </div>
+
+      <!-- No Results Message -->
+      <div id="noResults" class="hidden text-center py-16">
+        <div class="text-6xl mb-4">🎮</div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('common.noResults', lang)}</h3>
+        <p class="text-gray-600 dark:text-gray-400">{t('common.tryDifferentKeywords', lang)}</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .filter-btn {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-300;
+    @apply bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300;
+    @apply border border-gray-300 dark:border-gray-600;
+    @apply hover:border-green-500 hover:text-green-600 dark:hover:text-green-400;
+  }
+  
+  .filter-btn.active {
+    @apply bg-gradient-to-r from-green-500 to-emerald-600 text-white border-transparent;
+  }
+</style>
+
+<script>
+  // Search functionality
+  const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+  const searchResults = document.getElementById('searchResults');
+  const noResults = document.getElementById('noResults');
+  const resultCount = document.getElementById('resultCount');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const gameItems = document.querySelectorAll('.game-item') as NodeListOf<HTMLElement>;
+  
+  let currentFilter = 'all';
+  let searchTimeout: number | null = null;
+  
+  // Debounce function to improve performance
+  function debounce(func: Function, delay: number) {
+    return function(...args: any[]) {
+      if (searchTimeout) clearTimeout(searchTimeout);
+      searchTimeout = window.setTimeout(() => func.apply(this, args), delay);
+    };
+  }
+  
+  // Search function with error handling
+  function performSearch() {
+    try {
+      const searchTerm = searchInput?.value?.toLowerCase() || '';
+      let visibleCount = 0;
+      
+      gameItems.forEach((item) => {
+        const title = (item.dataset.title || '').toLowerCase();
+        const description = (item.dataset.description || '').toLowerCase();
+        const category = (item.dataset.category || '').toLowerCase();
+        const tags = (item.dataset.tags || '').toLowerCase();
+        
+        const matchesSearch = searchTerm === '' || 
+          title.includes(searchTerm) || 
+          description.includes(searchTerm) ||
+          tags.includes(searchTerm);
+          
+        const matchesFilter = currentFilter === 'all' || category === currentFilter;
+        
+        if (matchesSearch && matchesFilter) {
+          item.style.display = 'block';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      
+      // Update result count
+      if (resultCount) {
+        resultCount.textContent = visibleCount.toString();
+      }
+      
+      // Show/hide no results message
+      if (searchResults && noResults) {
+        if (visibleCount === 0) {
+          searchResults.style.display = 'none';
+          noResults.classList.remove('hidden');
+        } else {
+          searchResults.style.display = 'grid';
+          noResults.classList.add('hidden');
+        }
+      }
+    } catch (error) {
+      console.error('Search error:', error);
+    }
+  }
+  
+  // Debounced search function
+  const debouncedSearch = debounce(performSearch, 300);
+  
+  // Filter function
+  function setFilter(filter: string) {
+    currentFilter = filter;
+    
+    // Update active button
+    filterButtons.forEach((btn) => {
+      if (btn.getAttribute('data-filter') === filter) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    
+    performSearch();
+  }
+  
+  // Event listeners with cleanup
+  if (searchInput) {
+    searchInput.addEventListener('input', debouncedSearch);
+  }
+  
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      try {
+        const filter = btn.getAttribute('data-filter') || 'all';
+        setFilter(filter);
+      } catch (error) {
+        console.error('Filter error:', error);
+      }
+    });
+  });
+  
+  // Handle search from URL parameter
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('q');
+    if (searchQuery && searchInput) {
+      searchInput.value = searchQuery;
+      performSearch();
+    }
+  } catch (error) {
+    console.error('URL parameter error:', error);
+  }
+  
+  // Cleanup on page unload
+  window.addEventListener('beforeunload', () => {
+    if (searchTimeout) clearTimeout(searchTimeout);
+  });
+</script>

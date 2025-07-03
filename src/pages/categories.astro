@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import SEO from '../components/SEO.astro';
+import { t } from '../i18n/utils';
+
+const lang = 'en';
+const games = await getCollection('games');
+const categories = [
+  { id: 'action', name: 'Action Games' },
+  { id: 'sports', name: 'Sports Games' },
+  { id: 'puzzle', name: 'Puzzle Games' },
+  { id: 'popular', name: 'Popular Games' }
+];
+---
+
+<BaseLayout title="All Game Categories - GeoGuessr Free">
+  <SEO 
+    slot="head"
+    title="All Game Categories - GeoGuessr Free"
+    description="Browse all game categories including action, sports, puzzle, and more. Find your favorite type of games to play online for free."
+    keywords="game categories, online games, free games, action games, sports games, puzzle games"
+  />
+  
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white">
+      {t('categories.title', lang)}
+    </h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {categories.map(category => {
+        const categoryGames = games.filter(game => game.data.gameType === category.id);
+        return (
+          <a 
+            href={`/${category.id}/`}
+            class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <div class="aspect-video bg-gradient-to-br from-purple-500 to-pink-500 relative">
+              {categoryGames[0] && (
+                <img 
+                  src={categoryGames[0].data.image} 
+                  alt={category.name}
+                  class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                  loading="lazy"
+                />
+              )}
+              <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all"></div>
+            </div>
+            <div class="absolute inset-0 flex flex-col justify-end p-6">
+              <h2 class="text-2xl font-bold text-white mb-2">{category.name}</h2>
+              <p class="text-white/90">{categoryGames.length} {t('categories.games', lang)}</p>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+    
+    <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-8">
+      <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+        {t('categories.popular.title', lang)}
+      </h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-6">
+        {t('categories.popular.description', lang)}
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {games.slice(0, 8).map(game => (
+          <a 
+            href={`/games/${game.slug}/`}
+            class="text-center p-4 bg-white dark:bg-gray-700 rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img 
+              src={game.data.image} 
+              alt={game.data.title}
+              class="w-full h-20 object-cover rounded mb-2"
+              loading="lazy"
+            />
+            <span class="text-sm font-medium text-gray-900 dark:text-white">{game.data.title}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

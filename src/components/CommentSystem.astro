@@ -1,0 +1,363 @@
+---
+export interface Props {
+  gameSlug: string;
+  gameTitle: string;
+}
+
+const { gameSlug, gameTitle } = Astro.props;
+---
+
+<!-- Comments Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-gray-900">Discuss: {gameTitle}</h2>
+    
+    <!-- Comments Header -->
+    <div class="flex items-center justify-between mb-6">
+      <span class="text-gray-700" id="comments-count">Comments (0)</span>
+      <div class="flex items-center space-x-2">
+        <span class="text-gray-700">Sort by</span>
+        <select id="sort-select" class="border border-gray-300 rounded px-3 py-1 text-sm">
+          <option value="newest" selected>Newest</option>
+          <option value="oldest">Oldest</option>
+          <option value="popular">Popular</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Comments List -->
+    <div id="comments-list" class="space-y-6 mb-8">
+      <!-- Comments will be dynamically loaded here -->
+    </div>
+
+    <!-- Comment Form -->
+    <div class="bg-gray-50 rounded-lg p-6">
+      <h3 class="text-lg font-semibold mb-4 text-gray-900">Leave a Comment</h3>
+      <form id="comment-form" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input 
+            type="text" 
+            id="comment-name" 
+            placeholder="Name" 
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          >
+          <input 
+            type="email" 
+            id="comment-email" 
+            placeholder="Email (optional)" 
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          >
+        </div>
+        <textarea 
+          id="comment-content" 
+          placeholder="Content" 
+          rows="4" 
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+        ></textarea>
+        <div class="flex items-center space-x-2">
+          <input type="checkbox" id="terms" required class="rounded">
+          <label for="terms" class="text-sm text-gray-700">I'd read and agree to the terms and conditions.</label>
+        </div>
+        <button 
+          type="submit" 
+          class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+        >
+          Comment
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ gameSlug, gameTitle }}>
+  // Initialize comment system on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    initCommentSystem();
+  });
+
+  function initCommentSystem() {
+    loadComments();
+    initCommentForm();
+    initSortingFunction();
+  }
+
+  function loadComments() {
+    const comments = getCommentsFromStorage();
+    displayComments(comments);
+    updateCommentsCount(comments.length);
+  }
+
+  function getCommentsFromStorage() {
+    const saved = localStorage.getItem(`comments-${gameSlug}`);
+    if (saved) {
+      return JSON.parse(saved);
+    }
+    
+    // Return default comments for demo
+    return [
+      {
+        id: 1,
+        name: 'Alex',
+        email: '',
+        content: 'Amazing game! Really enjoyed playing this. The graphics are stunning and the gameplay is so addictive!',
+        timestamp: Date.now() - 86400000, // 1 day ago
+        likes: 12,
+        dislikes: 2,
+        avatar: 'A'
+      },
+      {
+        id: 2,
+        name: 'keradent',
+        email: '',
+        content: 'I love playing this game it\'s so cool and it\'s my favorite game theme!',
+        timestamp: Date.now() - 1209600000, // 2 weeks ago
+        likes: 6,
+        dislikes: 1,
+        avatar: 'k'
+      }
+    ];
+  }
+
+  function saveCommentsToStorage(comments) {
+    localStorage.setItem(`comments-${gameSlug}`, JSON.stringify(comments));
+  }
+
+  function displayComments(comments) {
+    const commentsList = document.getElementById('comments-list');
+    const sortValue = document.getElementById('sort-select').value;
+    
+    // Sort comments based on selected option
+    let sortedComments = [...comments];
+    switch(sortValue) {
+      case 'newest':
+        sortedComments.sort((a, b) => b.timestamp - a.timestamp);
+        break;
+      case 'oldest':
+        sortedComments.sort((a, b) => a.timestamp - b.timestamp);
+        break;
+      case 'popular':
+        sortedComments.sort((a, b) => (b.likes - b.dislikes) - (a.likes - a.dislikes));
+        break;
+    }
+    
+    // 清空并重新构建评论列表，避免XSS攻击
+    commentsList.innerHTML = '';
+    
+    sortedComments.forEach(comment => {
+      const commentDiv = document.createElement('div');
+      commentDiv.className = 'border-b border-gray-200 pb-6';
+      
+      commentDiv.innerHTML = `
+        <div class="flex items-start space-x-3">
+          <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold">
+            <span class="comment-avatar"></span>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center space-x-2 mb-2">
+              <span class="font-semibold text-gray-900 comment-name"></span>
+              <span class="text-gray-500 text-sm comment-time"></span>
+            </div>
+            <p class="text-gray-700 mb-3 comment-content"></p>
+            <div class="flex items-center space-x-4">
+              <button class="flex items-center space-x-1 text-gray-500 hover:text-gray-700">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
+                </svg>
+                <span>Reply</span>
+              </button>
+              <button 
+                class="flex items-center space-x-1 text-green-600 like-btn" 
+                data-comment-id="${comment.id}"
+                data-action="like"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7 14l3-3 3 3"></path>
+                </svg>
+                <span class="like-count"></span>
+              </button>
+              <button 
+                class="flex items-center space-x-1 text-red-600 dislike-btn" 
+                data-comment-id="${comment.id}"
+                data-action="dislike"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17 10l-3 3-3-3"></path>
+                </svg>
+                <span class="dislike-count"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      // 安全地设置文本内容，防止XSS
+      commentDiv.querySelector('.comment-avatar').textContent = comment.avatar;
+      commentDiv.querySelector('.comment-name').textContent = comment.name;
+      commentDiv.querySelector('.comment-time').textContent = formatTimestamp(comment.timestamp);
+      commentDiv.querySelector('.comment-content').textContent = comment.content;
+      commentDiv.querySelector('.like-count').textContent = comment.likes;
+      commentDiv.querySelector('.dislike-count').textContent = comment.dislikes;
+      
+      commentsList.appendChild(commentDiv);
+    });
+    
+    // Add event listeners for like/dislike buttons
+    addLikeDislikeListeners();
+  }
+
+  function addLikeDislikeListeners() {
+    const likeButtons = document.querySelectorAll('.like-btn');
+    const dislikeButtons = document.querySelectorAll('.dislike-btn');
+    
+    likeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const commentId = parseInt(this.dataset.commentId);
+        handleLikeDislike(commentId, 'like');
+      });
+    });
+    
+    dislikeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const commentId = parseInt(this.dataset.commentId);
+        handleLikeDislike(commentId, 'dislike');
+      });
+    });
+  }
+
+  function handleLikeDislike(commentId, action) {
+    const comments = getCommentsFromStorage();
+    const comment = comments.find(c => c.id === commentId);
+    
+    if (comment) {
+      // Check if user has already voted (using localStorage)
+      const voteKey = `vote-${gameSlug}-${commentId}`;
+      const existingVote = localStorage.getItem(voteKey);
+      
+      if (existingVote === action) {
+        // Remove vote
+        if (action === 'like') comment.likes--;
+        else comment.dislikes--;
+        localStorage.removeItem(voteKey);
+      } else {
+        // Add new vote or change existing vote
+        if (existingVote) {
+          // Remove previous vote
+          if (existingVote === 'like') comment.likes--;
+          else comment.dislikes--;
+        }
+        
+        // Add new vote
+        if (action === 'like') comment.likes++;
+        else comment.dislikes++;
+        localStorage.setItem(voteKey, action);
+      }
+      
+      saveCommentsToStorage(comments);
+      displayComments(comments);
+    }
+  }
+
+  function formatTimestamp(timestamp) {
+    const now = Date.now();
+    const diff = now - timestamp;
+    
+    const minute = 60 * 1000;
+    const hour = 60 * minute;
+    const day = 24 * hour;
+    const week = 7 * day;
+    const month = 30 * day;
+    
+    if (diff < hour) {
+      const minutes = Math.floor(diff / minute);
+      return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`;
+    } else if (diff < day) {
+      const hours = Math.floor(diff / hour);
+      return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
+    } else if (diff < week) {
+      const days = Math.floor(diff / day);
+      return `${days} day${days !== 1 ? 's' : ''} ago`;
+    } else if (diff < month) {
+      const weeks = Math.floor(diff / week);
+      return `${weeks} week${weeks !== 1 ? 's' : ''} ago`;
+    } else {
+      return new Date(timestamp).toLocaleDateString();
+    }
+  }
+
+  function updateCommentsCount(count) {
+    const commentsCount = document.getElementById('comments-count');
+    if (commentsCount) {
+      commentsCount.textContent = `Comments (${count})`;
+    }
+  }
+
+  function initCommentForm() {
+    const form = document.getElementById('comment-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitComment();
+    });
+  }
+
+  function submitComment() {
+    const name = document.getElementById('comment-name').value.trim();
+    const email = document.getElementById('comment-email').value.trim();
+    const content = document.getElementById('comment-content').value.trim();
+    const terms = document.getElementById('terms').checked;
+    
+    if (!name || !content || !terms) {
+      alert('Please fill in all required fields and agree to the terms.');
+      return;
+    }
+    
+    const comments = getCommentsFromStorage();
+    const newComment = {
+      id: Date.now(), // Simple ID generation
+      name: name,
+      email: email,
+      content: content,
+      timestamp: Date.now(),
+      likes: 0,
+      dislikes: 0,
+      avatar: name.charAt(0).toUpperCase()
+    };
+    
+    comments.unshift(newComment); // Add to beginning
+    saveCommentsToStorage(comments);
+    
+    // Reset form
+    document.getElementById('comment-form').reset();
+    
+    // Reload comments
+    displayComments(comments);
+    updateCommentsCount(comments.length);
+    
+    // Show success message
+    showCommentSuccess();
+  }
+
+  function showCommentSuccess() {
+    const success = document.createElement('div');
+    success.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 transition-all duration-300';
+    success.textContent = 'Comment added successfully!';
+    
+    document.body.appendChild(success);
+    
+    setTimeout(() => {
+      success.style.opacity = '0';
+      setTimeout(() => {
+        document.body.removeChild(success);
+      }, 300);
+    }, 3000);
+  }
+
+  function initSortingFunction() {
+    const sortSelect = document.getElementById('sort-select');
+    sortSelect.addEventListener('change', function() {
+      const comments = getCommentsFromStorage();
+      displayComments(comments);
+    });
+  }
+</script>

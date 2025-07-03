@@ -1,0 +1,1764 @@
+# Page snapshot
+
+```yaml
+- navigation:
+  - link "GeoGuessr Free":
+    - /url: /
+    - img
+    - text: GeoGuessr Free
+  - link:
+    - /url: /search
+    - img
+  - button "en":
+    - img
+    - text: en
+  - button:
+    - img
+  - button:
+    - img
+  - link "Home":
+    - /url: /
+  - paragraph: Categories
+  - link "⚔️ Action Games":
+    - /url: /action/
+  - link "🧩 Puzzle Games":
+    - /url: /puzzle/
+  - link "⚽ Sports Games":
+    - /url: /sports/
+  - link "🏎️ Racing Games":
+    - /url: /racing/
+  - link "New Games":
+    - /url: /new-games
+  - link "Popular":
+    - /url: /popular
+  - paragraph: Language
+  - link "en English":
+    - /url: /action
+  - link "es Español":
+    - /url: /es/action
+  - link "zh 中文":
+    - /url: /zh/action
+- main:
+  - heading "Action Games" [level=1]
+  - paragraph: Fast-paced action games that test your reflexes and skills. Battle enemies, dodge obstacles, and master epic moves!
+  - text: 147 Games Available 🎮 All Free to Play 🚀 No Download Required
+  - link "1v1.Lol 6.1/10 1v1.Lol Action Jump into the action with 1v1.Lol! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/1v1lol/
+    - img "1v1.Lol"
+    - img
+    - img
+    - text: 6.1/10
+    - heading "1v1.Lol" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with 1v1.Lol! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Age Of War 7.5/10 Age Of War Action Jump into the action with Age Of War! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/age-of-war/
+    - img "Age Of War"
+    - img
+    - img
+    - text: 7.5/10
+    - heading "Age Of War" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Age Of War! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Basket Random 9.4/10 Basket Random Action Basket Random delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/basket-random/
+    - img "Basket Random"
+    - img
+    - img
+    - text: 9.4/10
+    - heading "Basket Random" [level=3]
+    - text: Action
+    - paragraph: Basket Random delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Basketball Stars 6.7/10 Basketball Stars Sports Basketball Stars brings realistic sports action to your browser with engaging gameplay. 10-20 minutes FREE":
+    - /url: /games/basketball-stars/
+    - img "Basketball Stars"
+    - img
+    - img
+    - text: 6.7/10
+    - heading "Basketball Stars" [level=3]
+    - text: Sports
+    - paragraph: Basketball Stars brings realistic sports action to your browser with engaging gameplay.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Battle Karts 9/10 Battle Karts Action Experience thrilling action in Battle Karts! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/battle-karts/
+    - img "Battle Karts"
+    - img
+    - img
+    - text: 9/10
+    - heading "Battle Karts" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Battle Karts! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Bitlife 9.2/10 Bitlife Action Experience thrilling action in Bitlife! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/bitlife/
+    - img "Bitlife"
+    - img
+    - img
+    - text: 9.2/10
+    - heading "Bitlife" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Bitlife! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Block Blast 3D 7.7/10 Block Blast 3D Action Block Blast 3D delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/block-blast-3d/
+    - img "Block Blast 3D"
+    - img
+    - img
+    - text: 7.7/10
+    - heading "Block Blast 3D" [level=3]
+    - text: Action
+    - paragraph: Block Blast 3D delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Block Slide 8.3/10 Block Slide Action Experience thrilling action in Block Slide! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/block-slide/
+    - img "Block Slide"
+    - img
+    - img
+    - text: 8.3/10
+    - heading "Block Slide" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Block Slide! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Blocky Hunter 9.1/10 Blocky Hunter Action Experience thrilling action in Blocky Hunter! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/blocky-hunter/
+    - img "Blocky Hunter"
+    - img
+    - img
+    - text: 9.1/10
+    - heading "Blocky Hunter" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Blocky Hunter! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Blocky Overtake X 8.8/10 Blocky Overtake X Action Experience thrilling action in Blocky Overtake X! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/blocky-overtake-x/
+    - img "Blocky Overtake X"
+    - img
+    - img
+    - text: 8.8/10
+    - heading "Blocky Overtake X" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Blocky Overtake X! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Bombardino Crocodilo Clicker 7.3/10 Bombardino Crocodilo Clicker Arcade Bombardino Crocodilo Clicker delivers retro arcade action with modern twists and addictive gameplay. 10-20 minutes FREE":
+    - /url: /games/bombardino-crocodilo-clicker/
+    - img "Bombardino Crocodilo Clicker"
+    - img
+    - img
+    - text: 7.3/10
+    - heading "Bombardino Crocodilo Clicker" [level=3]
+    - text: Arcade
+    - paragraph: Bombardino Crocodilo Clicker delivers retro arcade action with modern twists and addictive gameplay.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Bottle Jump 8.6/10 Bottle Jump Action Jump into the action with Bottle Jump! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/bottle-jump/
+    - img "Bottle Jump"
+    - img
+    - img
+    - text: 8.6/10
+    - heading "Bottle Jump" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Bottle Jump! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Breakout Racing 7.1/10 Breakout Racing Action Experience thrilling action in Breakout Racing! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/breakout-racing/
+    - img "Breakout Racing"
+    - img
+    - img
+    - text: 7.1/10
+    - heading "Breakout Racing" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Breakout Racing! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Bricky Blast 8.5/10 Bricky Blast Action Jump into the action with Bricky Blast! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/bricky-blast/
+    - img "Bricky Blast"
+    - img
+    - img
+    - text: 8.5/10
+    - heading "Bricky Blast" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Bricky Blast! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Bricky Break 7.2/10 Bricky Break Action Bricky Break delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/bricky-break/
+    - img "Bricky Break"
+    - img
+    - img
+    - text: 7.2/10
+    - heading "Bricky Break" [level=3]
+    - text: Action
+    - paragraph: Bricky Break delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Chicken Jockey Combat 8.1/10 Chicken Jockey Combat Action Jump into the action with Chicken Jockey Combat! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/chicken-jockey-combat/
+    - img
+    - text: Featured
+    - img "Chicken Jockey Combat"
+    - img
+    - img
+    - text: 8.1/10
+    - heading "Chicken Jockey Combat" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Chicken Jockey Combat! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Chill Clicker 9.6/10 Chill Clicker Arcade Chill Clicker delivers retro arcade action with modern twists and addictive gameplay. 10-20 minutes FREE":
+    - /url: /games/chill-clicker/
+    - img "Chill Clicker"
+    - img
+    - img
+    - text: 9.6/10
+    - heading "Chill Clicker" [level=3]
+    - text: Arcade
+    - paragraph: Chill Clicker delivers retro arcade action with modern twists and addictive gameplay.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Chill Girl Clicker 7.4/10 Chill Girl Clicker Arcade Chill Girl Clicker delivers retro arcade action with modern twists and addictive gameplay. 10-20 minutes FREE":
+    - /url: /games/chill-girl-clicker/
+    - img
+    - text: Featured
+    - img "Chill Girl Clicker"
+    - img
+    - img
+    - text: 7.4/10
+    - heading "Chill Girl Clicker" [level=3]
+    - text: Arcade
+    - paragraph: Chill Girl Clicker delivers retro arcade action with modern twists and addictive gameplay.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Color Rush 6.8/10 Color Rush Action Experience thrilling action in Color Rush! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/color-rush/
+    - img "Color Rush"
+    - img
+    - img
+    - text: 6.8/10
+    - heading "Color Rush" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Color Rush! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Crazy Animal City 7.4/10 Crazy Animal City Action Experience thrilling action in Crazy Animal City! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/crazy-animal-city/
+    - img
+    - text: Featured
+    - img "Crazy Animal City"
+    - img
+    - img
+    - text: 7.4/10
+    - heading "Crazy Animal City" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Crazy Animal City! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Crazy Bull City 8.8/10 Crazy Bull City Action Experience thrilling action in Crazy Bull City! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/crazy-bull-city/
+    - img "Crazy Bull City"
+    - img
+    - img
+    - text: 8.8/10
+    - heading "Crazy Bull City" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Crazy Bull City! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Crazy Mouse Battle 8.2/10 Crazy Mouse Battle Action Jump into the action with Crazy Mouse Battle! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/crazy-mouse-battle/
+    - img "Crazy Mouse Battle"
+    - img
+    - img
+    - text: 8.2/10
+    - heading "Crazy Mouse Battle" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Crazy Mouse Battle! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Crossy Road 6.7/10 Crossy Road Action Jump into the action with Crossy Road! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/crossy-road/
+    - img "Crossy Road"
+    - img
+    - img
+    - text: 6.7/10
+    - heading "Crossy Road" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Crossy Road! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Cuby Road Halloween 6.6/10 Cuby Road Halloween Action Cuby Road Halloween delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/cuby-road-halloween/
+    - img "Cuby Road Halloween"
+    - img
+    - img
+    - text: 6.6/10
+    - heading "Cuby Road Halloween" [level=3]
+    - text: Action
+    - paragraph: Cuby Road Halloween delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Cuby Road 6.3/10 Cuby Road Action Jump into the action with Cuby Road! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/cuby-road/
+    - img "Cuby Road"
+    - img
+    - img
+    - text: 6.3/10
+    - heading "Cuby Road" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Cuby Road! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Curve Rush 8.9/10 Curve Rush Action Experience thrilling action in Curve Rush! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/curve-rush/
+    - img "Curve Rush"
+    - img
+    - img
+    - text: 8.9/10
+    - heading "Curve Rush" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Curve Rush! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Dark Loop 7.1/10 Dark Loop Action Experience thrilling action in Dark Loop! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/dark-loop/
+    - img "Dark Loop"
+    - img
+    - img
+    - text: 7.1/10
+    - heading "Dark Loop" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Dark Loop! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Dino Dash 3D 9.8/10 Dino Dash 3D Action Dino Dash 3D delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/dino-dash-3d/
+    - img
+    - text: Featured
+    - img "Dino Dash 3D"
+    - img
+    - img
+    - text: 9.8/10
+    - heading "Dino Dash 3D" [level=3]
+    - text: Action
+    - paragraph: Dino Dash 3D delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Doom Rider 7.1/10 Doom Rider Action Doom Rider delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/doom-rider/
+    - img "Doom Rider"
+    - img
+    - img
+    - text: 7.1/10
+    - heading "Doom Rider" [level=3]
+    - text: Action
+    - paragraph: Doom Rider delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Drift Boss 7.2/10 Drift Boss Action Jump into the action with Drift Boss! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/drift-boss/
+    - img "Drift Boss"
+    - img
+    - img
+    - text: 7.2/10
+    - heading "Drift Boss" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Drift Boss! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Drift Hunters 7.5/10 Drift Hunters Action Drift Hunters delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/drift-hunters/
+    - img "Drift Hunters"
+    - img
+    - img
+    - text: 7.5/10
+    - heading "Drift Hunters" [level=3]
+    - text: Action
+    - paragraph: Drift Hunters delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Drift Road 7.1/10 Drift Road Action Jump into the action with Drift Road! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/drift-road/
+    - img "Drift Road"
+    - img
+    - img
+    - text: 7.1/10
+    - heading "Drift Road" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Drift Road! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Drive Mad 9.9/10 Drive Mad Action Jump into the action with Drive Mad! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/drive-mad/
+    - img
+    - text: Featured
+    - img "Drive Mad"
+    - img
+    - img
+    - text: 9.9/10
+    - heading "Drive Mad" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Drive Mad! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Duck Life 8.9/10 Duck Life Action Jump into the action with Duck Life! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/duck-life/
+    - img "Duck Life"
+    - img
+    - img
+    - text: 8.9/10
+    - heading "Duck Life" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Duck Life! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Egg Race 10/10 Egg Race Action Experience thrilling action in Egg Race! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/egg-race/
+    - img "Egg Race"
+    - img
+    - img
+    - text: 10/10
+    - heading "Egg Race" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Egg Race! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Eggy Car 7.8/10 Eggy Car Action Experience thrilling action in Eggy Car! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/eggy-car/
+    - img "Eggy Car"
+    - img
+    - img
+    - text: 7.8/10
+    - heading "Eggy Car" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Eggy Car! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Escape Jump 7.7/10 Escape Jump Action Jump into the action with Escape Jump! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/escape-jump/
+    - img
+    - text: Featured
+    - img "Escape Jump"
+    - img
+    - img
+    - text: 7.7/10
+    - heading "Escape Jump" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Escape Jump! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Escape Road 2 8.7/10 Escape Road 2 Action Escape Road 2 delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/escape-road-2/
+    - img "Escape Road 2"
+    - img
+    - img
+    - text: 8.7/10
+    - heading "Escape Road 2" [level=3]
+    - text: Action
+    - paragraph: Escape Road 2 delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Escape Road City 2 7.8/10 Escape Road City 2 Action Escape Road City 2 delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/escape-road-city-2/
+    - img "Escape Road City 2"
+    - img
+    - img
+    - text: 7.8/10
+    - heading "Escape Road City 2" [level=3]
+    - text: Action
+    - paragraph: Escape Road City 2 delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Escape Road City 6.5/10 Escape Road City Action Experience thrilling action in Escape Road City! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/escape-road-city/
+    - img "Escape Road City"
+    - img
+    - img
+    - text: 6.5/10
+    - heading "Escape Road City" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Escape Road City! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Escape Road Halloween 6.8/10 Escape Road Halloween Action Escape Road Halloween delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/escape-road-halloween/
+    - img "Escape Road Halloween"
+    - img
+    - img
+    - text: 6.8/10
+    - heading "Escape Road Halloween" [level=3]
+    - text: Action
+    - paragraph: Escape Road Halloween delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Escape Road Winter 6.9/10 Escape Road Winter Action Experience thrilling action in Escape Road Winter! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/escape-road-winter/
+    - img "Escape Road Winter"
+    - img
+    - img
+    - text: 6.9/10
+    - heading "Escape Road Winter" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Escape Road Winter! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Escape Road 6.4/10 Escape Road Action Experience thrilling action in Escape Road! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/escape-road/
+    - img
+    - text: Featured
+    - img "Escape Road"
+    - img
+    - img
+    - text: 6.4/10
+    - heading "Escape Road" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Escape Road! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Escape Vehicles 8.1/10 Escape Vehicles Action Jump into the action with Escape Vehicles! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/escape-vehicles/
+    - img
+    - text: Featured
+    - img "Escape Vehicles"
+    - img
+    - img
+    - text: 8.1/10
+    - heading "Escape Vehicles" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Escape Vehicles! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Fall Flat Battle 6.8/10 Fall Flat Battle Action Fall Flat Battle delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/fall-flat-battle/
+    - img "Fall Flat Battle"
+    - img
+    - img
+    - text: 6.8/10
+    - heading "Fall Flat Battle" [level=3]
+    - text: Action
+    - paragraph: Fall Flat Battle delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Fire Flush 9.1/10 Fire Flush Action Jump into the action with Fire Flush! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/fire-flush/
+    - img "Fire Flush"
+    - img
+    - img
+    - text: 9.1/10
+    - heading "Fire Flush" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Fire Flush! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Fireboy And Watergirl 6.1/10 Fireboy And Watergirl Action Jump into the action with Fireboy And Watergirl! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/fireboy-and-watergirl/
+    - img "Fireboy And Watergirl"
+    - img
+    - img
+    - text: 6.1/10
+    - heading "Fireboy And Watergirl" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Fireboy And Watergirl! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Flying Kong 9/10 Flying Kong Action Jump into the action with Flying Kong! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/flying-kong/
+    - img "Flying Kong"
+    - img
+    - img
+    - text: 9/10
+    - heading "Flying Kong" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Flying Kong! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Forest Mouse 6.7/10 Forest Mouse Action Experience thrilling action in Forest Mouse! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/forest-mouse/
+    - img "Forest Mouse"
+    - img
+    - img
+    - text: 6.7/10
+    - heading "Forest Mouse" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Forest Mouse! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Fury Chase 8.7/10 Fury Chase Action Experience thrilling action in Fury Chase! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/fury-chase/
+    - img "Fury Chase"
+    - img
+    - img
+    - text: 8.7/10
+    - heading "Fury Chase" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Fury Chase! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Geometry Dash 7.2/10 Geometry Dash Action Jump into the action with Geometry Dash! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/geometry-dash/
+    - img "Geometry Dash"
+    - img
+    - img
+    - text: 7.2/10
+    - heading "Geometry Dash" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Geometry Dash! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Geotastic Geotastic Geographic Guessing A free, multiplayer geography quiz game with different game modes. Compete with friends and players worldwide. FREE":
+    - /url: /games/geotastic/
+    - img
+    - text: Featured
+    - img "Geotastic"
+    - img
+    - heading "Geotastic" [level=3]
+    - text: Geographic Guessing
+    - paragraph: A free, multiplayer geography quiz game with different game modes. Compete with friends and players worldwide.
+    - text: FREE
+  - link "God Simulator 9.7/10 God Simulator Action Jump into the action with God Simulator! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/god-simulator/
+    - img "God Simulator"
+    - img
+    - img
+    - text: 9.7/10
+    - heading "God Simulator" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with God Simulator! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Gun Mayhem 9.9/10 Gun Mayhem Action Jump into the action with Gun Mayhem! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/gun-mayhem/
+    - img "Gun Mayhem"
+    - img
+    - img
+    - text: 9.9/10
+    - heading "Gun Mayhem" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Gun Mayhem! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Head Soccer 2024 6.9/10 Head Soccer 2024 Sports Head Soccer 2024 brings realistic sports action to your browser with engaging gameplay. 10-20 minutes FREE":
+    - /url: /games/head-soccer-2024/
+    - img "Head Soccer 2024"
+    - img
+    - img
+    - text: 6.9/10
+    - heading "Head Soccer 2024" [level=3]
+    - text: Sports
+    - paragraph: Head Soccer 2024 brings realistic sports action to your browser with engaging gameplay.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Highway Heat 7.2/10 Highway Heat Action Jump into the action with Highway Heat! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/highway-heat/
+    - img "Highway Heat"
+    - img
+    - img
+    - text: 7.2/10
+    - heading "Highway Heat" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Highway Heat! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Hill Climb Race 8.3/10 Hill Climb Race Action Hill Climb Race delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/hill-climb-race/
+    - img "Hill Climb Race"
+    - img
+    - img
+    - text: 8.3/10
+    - heading "Hill Climb Race" [level=3]
+    - text: Action
+    - paragraph: Hill Climb Race delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Idle Gold Miner 7/10 Idle Gold Miner Action Jump into the action with Idle Gold Miner! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/idle-gold-miner/
+    - img "Idle Gold Miner"
+    - img
+    - img
+    - text: 7/10
+    - heading "Idle Gold Miner" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Idle Gold Miner! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Jelly Hop 7.8/10 Jelly Hop Action Jump into the action with Jelly Hop! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/jelly-hop/
+    - img "Jelly Hop"
+    - img
+    - img
+    - text: 7.8/10
+    - heading "Jelly Hop" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Jelly Hop! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Jetski Race 8.9/10 Jetski Race Action Jetski Race delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/jetski-race/
+    - img "Jetski Race"
+    - img
+    - img
+    - text: 8.9/10
+    - heading "Jetski Race" [level=3]
+    - text: Action
+    - paragraph: Jetski Race delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Kitten Defense 8.8/10 Kitten Defense Action Jump into the action with Kitten Defense! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/kitten-defense/
+    - img
+    - text: Featured
+    - img "Kitten Defense"
+    - img
+    - img
+    - text: 8.8/10
+    - heading "Kitten Defense" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Kitten Defense! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Knock Balls 8.9/10 Knock Balls Action Experience thrilling action in Knock Balls! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/knock-balls/
+    - img "Knock Balls"
+    - img
+    - img
+    - text: 8.9/10
+    - heading "Knock Balls" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Knock Balls! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Kong Adventure 6.5/10 Kong Adventure Action Experience thrilling action in Kong Adventure! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/kong-adventure/
+    - img "Kong Adventure"
+    - img
+    - img
+    - text: 6.5/10
+    - heading "Kong Adventure" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Kong Adventure! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Krunker 9.2/10 Krunker Action Krunker delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/krunker/
+    - img "Krunker"
+    - img
+    - img
+    - text: 9.2/10
+    - heading "Krunker" [level=3]
+    - text: Action
+    - paragraph: Krunker delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Loop Breakout 9.8/10 Loop Breakout Action Loop Breakout delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/loop-breakout/
+    - img "Loop Breakout"
+    - img
+    - img
+    - text: 9.8/10
+    - heading "Loop Breakout" [level=3]
+    - text: Action
+    - paragraph: Loop Breakout delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Mars Jump 9/10 Mars Jump Action Experience thrilling action in Mars Jump! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/mars-jump/
+    - img "Mars Jump"
+    - img
+    - img
+    - text: 9/10
+    - heading "Mars Jump" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Mars Jump! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Mayhem Drive 7.2/10 Mayhem Drive Action Experience thrilling action in Mayhem Drive! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/mayhem-drive/
+    - img "Mayhem Drive"
+    - img
+    - img
+    - text: 7.2/10
+    - heading "Mayhem Drive" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Mayhem Drive! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Minecraft 9.2/10 Minecraft Action Minecraft delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/minecraft/
+    - img "Minecraft"
+    - img
+    - img
+    - text: 9.2/10
+    - heading "Minecraft" [level=3]
+    - text: Action
+    - paragraph: Minecraft delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Monkey Mart 7.9/10 Monkey Mart Action Experience thrilling action in Monkey Mart! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/monkey-mart/
+    - img "Monkey Mart"
+    - img
+    - img
+    - text: 7.9/10
+    - heading "Monkey Mart" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Monkey Mart! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Mountain Road 8/10 Mountain Road Action Mountain Road delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/mountain-road/
+    - img "Mountain Road"
+    - img
+    - img
+    - text: 8/10
+    - heading "Mountain Road" [level=3]
+    - text: Action
+    - paragraph: Mountain Road delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Narrow One 8.9/10 Narrow One Action Experience thrilling action in Narrow One! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/narrow-one/
+    - img "Narrow One"
+    - img
+    - img
+    - text: 8.9/10
+    - heading "Narrow One" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Narrow One! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Omnom Jump 9.6/10 Omnom Jump Action Experience thrilling action in Omnom Jump! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/omnom-jump/
+    - img "Omnom Jump"
+    - img
+    - img
+    - text: 9.6/10
+    - heading "Omnom Jump" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Omnom Jump! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured OpenGuessr OpenGuessr Geographic Guessing A free, open-source alternative to GeoGuessr. Explore the world through Street View images and guess your location. FREE":
+    - /url: /games/openguessr/
+    - img
+    - text: Featured
+    - img "OpenGuessr"
+    - img
+    - heading "OpenGuessr" [level=3]
+    - text: Geographic Guessing
+    - paragraph: A free, open-source alternative to GeoGuessr. Explore the world through Street View images and guess your location.
+    - text: FREE
+  - link "Orbit Dash 7/10 Orbit Dash Action Experience thrilling action in Orbit Dash! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/orbit-dash/
+    - img "Orbit Dash"
+    - img
+    - img
+    - text: 7/10
+    - heading "Orbit Dash" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Orbit Dash! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Overtake X 7.4/10 Overtake X Action Jump into the action with Overtake X! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/overtake-x/
+    - img "Overtake X"
+    - img
+    - img
+    - text: 7.4/10
+    - heading "Overtake X" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Overtake X! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Pacman 30th Anniversary 8.5/10 Pacman 30th Anniversary Action Pacman 30th Anniversary delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/pacman-30th-anniversary/
+    - img "Pacman 30th Anniversary"
+    - img
+    - img
+    - text: 8.5/10
+    - heading "Pacman 30th Anniversary" [level=3]
+    - text: Action
+    - paragraph: Pacman 30th Anniversary delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Papa's Freezeria 9.8/10 Papa's Freezeria Action Papa's Freezeria delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/papas-freezeria/
+    - img "Papa's Freezeria"
+    - img
+    - img
+    - text: 9.8/10
+    - heading "Papa's Freezeria" [level=3]
+    - text: Action
+    - paragraph: Papa's Freezeria delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Paper IO 6.9/10 Paper IO Action Jump into the action with Paper IO! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/paper-io/
+    - img "Paper IO"
+    - img
+    - img
+    - text: 6.9/10
+    - heading "Paper IO" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Paper IO! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Paper Minecraft 7.6/10 Paper Minecraft Action Paper Minecraft delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/paper-minecraft/
+    - img "Paper Minecraft"
+    - img
+    - img
+    - text: 7.6/10
+    - heading "Paper Minecraft" [level=3]
+    - text: Action
+    - paragraph: Paper Minecraft delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Power Surfer 6.9/10 Power Surfer Action Experience thrilling action in Power Surfer! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/power-surfer/
+    - img "Power Surfer"
+    - img
+    - img
+    - text: 6.9/10
+    - heading "Power Surfer" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Power Surfer! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Ragdoll Hit Stickman 8.7/10 Ragdoll Hit Stickman Action Experience thrilling action in Ragdoll Hit Stickman! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/ragdoll-hit-stickman/
+    - img "Ragdoll Hit Stickman"
+    - img
+    - img
+    - text: 8.7/10
+    - heading "Ragdoll Hit Stickman" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Ragdoll Hit Stickman! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Ragdoll Playground 6.6/10 Ragdoll Playground Action Ragdoll Playground delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/ragdoll-playground/
+    - img "Ragdoll Playground"
+    - img
+    - img
+    - text: 6.6/10
+    - heading "Ragdoll Playground" [level=3]
+    - text: Action
+    - paragraph: Ragdoll Playground delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Rebound Shooter 9.4/10 Rebound Shooter Action Rebound Shooter delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/rebound-shooter/
+    - img "Rebound Shooter"
+    - img
+    - img
+    - text: 9.4/10
+    - heading "Rebound Shooter" [level=3]
+    - text: Action
+    - paragraph: Rebound Shooter delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Red Rush 6/10 Red Rush Action Jump into the action with Red Rush! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/red-rush/
+    - img "Red Rush"
+    - img
+    - img
+    - text: 6/10
+    - heading "Red Rush" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Red Rush! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Run 3 6.9/10 Run 3 Action Jump into the action with Run 3! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/run-3/
+    - img "Run 3"
+    - img
+    - img
+    - text: 6.9/10
+    - heading "Run 3" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Run 3! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Run 3D 8.9/10 Run 3D Action Run 3D delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/run-3d/
+    - img "Run 3D"
+    - img
+    - img
+    - text: 8.9/10
+    - heading "Run 3D" [level=3]
+    - text: Action
+    - paragraph: Run 3D delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Scary Wheels 6.1/10 Scary Wheels Action Jump into the action with Scary Wheels! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/scary-wheels/
+    - img "Scary Wheels"
+    - img
+    - img
+    - text: 6.1/10
+    - heading "Scary Wheels" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Scary Wheels! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Shell Shockers 9.1/10 Shell Shockers Action Jump into the action with Shell Shockers! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/shell-shockers/
+    - img "Shell Shockers"
+    - img
+    - img
+    - text: 9.1/10
+    - heading "Shell Shockers" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Shell Shockers! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Shooter Hero 8.4/10 Shooter Hero Action Jump into the action with Shooter Hero! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/shooter-hero/
+    - img "Shooter Hero"
+    - img
+    - img
+    - text: 8.4/10
+    - heading "Shooter Hero" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Shooter Hero! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Shooter Sky 9.8/10 Shooter Sky Action Jump into the action with Shooter Sky! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/shooter-sky/
+    - img "Shooter Sky"
+    - img
+    - img
+    - text: 9.8/10
+    - heading "Shooter Sky" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Shooter Sky! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Ski Frenzy 7.2/10 Ski Frenzy Action Jump into the action with Ski Frenzy! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/ski-frenzy/
+    - img "Ski Frenzy"
+    - img
+    - img
+    - text: 7.2/10
+    - heading "Ski Frenzy" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Ski Frenzy! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Slope 2 6.5/10 Slope 2 Action Slope 2 delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/slope-2/
+    - img "Slope 2"
+    - img
+    - img
+    - text: 6.5/10
+    - heading "Slope 2" [level=3]
+    - text: Action
+    - paragraph: Slope 2 delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Slope 3 6.6/10 Slope 3 Action Experience thrilling action in Slope 3! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/slope-3/
+    - img "Slope 3"
+    - img
+    - img
+    - text: 6.6/10
+    - heading "Slope 3" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Slope 3! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Slope Cyber 7.8/10 Slope Cyber Action Experience thrilling action in Slope Cyber! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/slope-cyber/
+    - img "Slope Cyber"
+    - img
+    - img
+    - text: 7.8/10
+    - heading "Slope Cyber" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Slope Cyber! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Slope Emoji 2 6.4/10 Slope Emoji 2 Action Experience thrilling action in Slope Emoji 2! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/slope-emoji-2/
+    - img "Slope Emoji 2"
+    - img
+    - img
+    - text: 6.4/10
+    - heading "Slope Emoji 2" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Slope Emoji 2! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Slope Emoji 8.9/10 Slope Emoji Action Experience thrilling action in Slope Emoji! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/slope-emoji/
+    - img "Slope Emoji"
+    - img
+    - img
+    - text: 8.9/10
+    - heading "Slope Emoji" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Slope Emoji! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Slope Gear 6.8/10 Slope Gear Action Experience thrilling action in Slope Gear! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/slope-gear/
+    - img "Slope Gear"
+    - img
+    - img
+    - text: 6.8/10
+    - heading "Slope Gear" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Slope Gear! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Slope Legacy 8.1/10 Slope Legacy Action Jump into the action with Slope Legacy! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/slope-legacy/
+    - img "Slope Legacy"
+    - img
+    - img
+    - text: 8.1/10
+    - heading "Slope Legacy" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Slope Legacy! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Slope Snowball 9.1/10 Slope Snowball Action Slope Snowball delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/slope-snowball/
+    - img "Slope Snowball"
+    - img
+    - img
+    - text: 9.1/10
+    - heading "Slope Snowball" [level=3]
+    - text: Action
+    - paragraph: Slope Snowball delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Slope Spooky 9.8/10 Slope Spooky Action Experience thrilling action in Slope Spooky! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/slope-spooky/
+    - img
+    - text: Featured
+    - img "Slope Spooky"
+    - img
+    - img
+    - text: 9.8/10
+    - heading "Slope Spooky" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Slope Spooky! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Slope 8.3/10 Slope Action Experience thrilling action in Slope! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/slope/
+    - img "Slope"
+    - img
+    - img
+    - text: 8.3/10
+    - heading "Slope" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Slope! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Smash Karts 10/10 Smash Karts Action Jump into the action with Smash Karts! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/smash-karts/
+    - img "Smash Karts"
+    - img
+    - img
+    - text: 10/10
+    - heading "Smash Karts" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Smash Karts! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Smashy Road 7.2/10 Smashy Road Action Experience thrilling action in Smashy Road! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/smashy-road/
+    - img "Smashy Road"
+    - img
+    - img
+    - text: 7.2/10
+    - heading "Smashy Road" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Smashy Road! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Snake Arena 9.1/10 Snake Arena Action Experience thrilling action in Snake Arena! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/snake-arena/
+    - img "Snake Arena"
+    - img
+    - img
+    - text: 9.1/10
+    - heading "Snake Arena" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Snake Arena! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Snow Rider 3D 7.1/10 Snow Rider 3D Action Experience thrilling action in Snow Rider 3D! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/snow-rider-3d/
+    - img "Snow Rider 3D"
+    - img
+    - img
+    - text: 7.1/10
+    - heading "Snow Rider 3D" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Snow Rider 3D! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Snow Road 3D 8.1/10 Snow Road 3D Action Snow Road 3D delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/snow-road-3d/
+    - img "Snow Road 3D"
+    - img
+    - img
+    - text: 8.1/10
+    - heading "Snow Road 3D" [level=3]
+    - text: Action
+    - paragraph: Snow Road 3D delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Snow Road 7.5/10 Snow Road Action Jump into the action with Snow Road! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/snow-road/
+    - img "Snow Road"
+    - img
+    - img
+    - text: 7.5/10
+    - heading "Snow Road" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Snow Road! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Space Road 9.1/10 Space Road Action Experience thrilling action in Space Road! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/space-road/
+    - img "Space Road"
+    - img
+    - img
+    - text: 9.1/10
+    - heading "Space Road" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Space Road! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Spear Warzone 8.9/10 Spear Warzone Action Experience thrilling action in Spear Warzone! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/spear-warzone/
+    - img "Spear Warzone"
+    - img
+    - img
+    - text: 8.9/10
+    - heading "Spear Warzone" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Spear Warzone! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Speed Legends 9.7/10 Speed Legends Action Experience thrilling action in Speed Legends! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/speed-legends/
+    - img "Speed Legends"
+    - img
+    - img
+    - text: 9.7/10
+    - heading "Speed Legends" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Speed Legends! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Speed Shooter 7.7/10 Speed Shooter Action Experience thrilling action in Speed Shooter! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/speed-shooter/
+    - img "Speed Shooter"
+    - img
+    - img
+    - text: 7.7/10
+    - heading "Speed Shooter" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Speed Shooter! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Sprunki Jump 6/10 Sprunki Jump Action Jump into the action with Sprunki Jump! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/sprunki-jump/
+    - img "Sprunki Jump"
+    - img
+    - img
+    - text: 6/10
+    - heading "Sprunki Jump" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Sprunki Jump! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Sprunki 7.4/10 Sprunki Action Jump into the action with Sprunki! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/sprunki/
+    - img "Sprunki"
+    - img
+    - img
+    - text: 7.4/10
+    - heading "Sprunki" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Sprunki! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Stellar Burner 7.3/10 Stellar Burner Action Experience thrilling action in Stellar Burner! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/stellar-burner/
+    - img "Stellar Burner"
+    - img
+    - img
+    - text: 7.3/10
+    - heading "Stellar Burner" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Stellar Burner! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Stickman Hook 8.4/10 Stickman Hook Action Stickman Hook delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/stickman-hook/
+    - img "Stickman Hook"
+    - img
+    - img
+    - text: 8.4/10
+    - heading "Stickman Hook" [level=3]
+    - text: Action
+    - paragraph: Stickman Hook delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Stickman Racing 8/10 Stickman Racing Action Jump into the action with Stickman Racing! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/stickman-racing/
+    - img
+    - text: Featured
+    - img "Stickman Racing"
+    - img
+    - img
+    - text: 8/10
+    - heading "Stickman Racing" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Stickman Racing! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Street Wheelie 6.4/10 Street Wheelie Action Street Wheelie delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/street-wheelie/
+    - img "Street Wheelie"
+    - img
+    - img
+    - text: 6.4/10
+    - heading "Street Wheelie" [level=3]
+    - text: Action
+    - paragraph: Street Wheelie delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Subway Santa 9.4/10 Subway Santa Action Experience thrilling action in Subway Santa! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/subway-santa/
+    - img "Subway Santa"
+    - img
+    - img
+    - text: 9.4/10
+    - heading "Subway Santa" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Subway Santa! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Subway Surfers 8.6/10 Subway Surfers Action Jump into the action with Subway Surfers! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/subway-surfers/
+    - img "Subway Surfers"
+    - img
+    - img
+    - text: 8.6/10
+    - heading "Subway Surfers" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Subway Surfers! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Supermarket Master 7.7/10 Supermarket Master Action Supermarket Master delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/supermarket-master/
+    - img "Supermarket Master"
+    - img
+    - img
+    - text: 7.7/10
+    - heading "Supermarket Master" [level=3]
+    - text: Action
+    - paragraph: Supermarket Master delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Tap Road Beat 7.9/10 Tap Road Beat Action Experience thrilling action in Tap Road Beat! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/tap-road-beat/
+    - img "Tap Road Beat"
+    - img
+    - img
+    - text: 7.9/10
+    - heading "Tap Road Beat" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Tap Road Beat! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Tap Road 7.1/10 Tap Road Action Tap Road delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/tap-road/
+    - img "Tap Road"
+    - img
+    - img
+    - text: 7.1/10
+    - heading "Tap Road" [level=3]
+    - text: Action
+    - paragraph: Tap Road delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Tap Rush 8.2/10 Tap Rush Action Jump into the action with Tap Rush! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/tap-rush/
+    - img "Tap Rush"
+    - img
+    - img
+    - text: 8.2/10
+    - heading "Tap Rush" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Tap Rush! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Temple Run 2 7/10 Temple Run 2 Action Experience thrilling action in Temple Run 2! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/temple-run-2/
+    - img "Temple Run 2"
+    - img
+    - img
+    - text: 7/10
+    - heading "Temple Run 2" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Temple Run 2! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Temple Runner 9.4/10 Temple Runner Action Jump into the action with Temple Runner! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/temple-runner/
+    - img "Temple Runner"
+    - img
+    - img
+    - text: 9.4/10
+    - heading "Temple Runner" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Temple Runner! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Tiny Fishing 7.4/10 Tiny Fishing Action Tiny Fishing delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/tiny-fishing/
+    - img "Tiny Fishing"
+    - img
+    - img
+    - text: 7.4/10
+    - heading "Tiny Fishing" [level=3]
+    - text: Action
+    - paragraph: Tiny Fishing delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Town Run 8.1/10 Town Run Action Jump into the action with Town Run! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/town-run/
+    - img "Town Run"
+    - img
+    - img
+    - text: 8.1/10
+    - heading "Town Run" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Town Run! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Traffic Jam 3D 9.8/10 Traffic Jam 3D Action Traffic Jam 3D delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/traffic-jam-3d/
+    - img
+    - text: Featured
+    - img "Traffic Jam 3D"
+    - img
+    - img
+    - text: 9.8/10
+    - heading "Traffic Jam 3D" [level=3]
+    - text: Action
+    - paragraph: Traffic Jam 3D delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Traffic Rally 8.3/10 Traffic Rally Action Experience thrilling action in Traffic Rally! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/traffic-rally/
+    - img "Traffic Rally"
+    - img
+    - img
+    - text: 8.3/10
+    - heading "Traffic Rally" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Traffic Rally! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Traffic Rider 9.9/10 Traffic Rider Action Traffic Rider delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/traffic-rider/
+    - img "Traffic Rider"
+    - img
+    - img
+    - text: 9.9/10
+    - heading "Traffic Rider" [level=3]
+    - text: Action
+    - paragraph: Traffic Rider delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Traffic Road 6.1/10 Traffic Road Action Experience thrilling action in Traffic Road! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/traffic-road/
+    - img "Traffic Road"
+    - img
+    - img
+    - text: 6.1/10
+    - heading "Traffic Road" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Traffic Road! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Tube Fall 7.9/10 Tube Fall Action Tube Fall delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/tube-fall/
+    - img "Tube Fall"
+    - img
+    - img
+    - text: 7.9/10
+    - heading "Tube Fall" [level=3]
+    - text: Action
+    - paragraph: Tube Fall delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Tung Sahur Horror 8.5/10 Tung Sahur Horror Action Tung Sahur Horror delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/tung-sahur-horror/
+    - img "Tung Sahur Horror"
+    - img
+    - img
+    - text: 8.5/10
+    - heading "Tung Sahur Horror" [level=3]
+    - text: Action
+    - paragraph: Tung Sahur Horror delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Tunnel Ball 6.6/10 Tunnel Ball Action Experience thrilling action in Tunnel Ball! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/tunnel-ball/
+    - img "Tunnel Ball"
+    - img
+    - img
+    - text: 6.6/10
+    - heading "Tunnel Ball" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Tunnel Ball! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Turbo Street 9/10 Turbo Street Action Turbo Street delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/turbo-street/
+    - img "Turbo Street"
+    - img
+    - img
+    - text: 9/10
+    - heading "Turbo Street" [level=3]
+    - text: Action
+    - paragraph: Turbo Street delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Venge IO 7.1/10 Venge IO Action Jump into the action with Venge IO! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/venge-io/
+    - img "Venge IO"
+    - img
+    - img
+    - text: 7.1/10
+    - heading "Venge IO" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Venge IO! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Vex 3 8.6/10 Vex 3 Action Experience thrilling action in Vex 3! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/vex-3/
+    - img "Vex 3"
+    - img
+    - img
+    - text: 8.6/10
+    - heading "Vex 3" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Vex 3! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Wacky Flip 6.1/10 Wacky Flip Action Jump into the action with Wacky Flip! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/wacky-flip/
+    - img "Wacky Flip"
+    - img
+    - img
+    - text: 6.1/10
+    - heading "Wacky Flip" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Wacky Flip! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Wacky Nursery 2 9.4/10 Wacky Nursery 2 Action Wacky Nursery 2 delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/wacky-nursery-2/
+    - img "Wacky Nursery 2"
+    - img
+    - img
+    - text: 9.4/10
+    - heading "Wacky Nursery 2" [level=3]
+    - text: Action
+    - paragraph: Wacky Nursery 2 delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Wacky Nursery 8.8/10 Wacky Nursery Action Jump into the action with Wacky Nursery! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/wacky-nursery/
+    - img "Wacky Nursery"
+    - img
+    - img
+    - text: 8.8/10
+    - heading "Wacky Nursery" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Wacky Nursery! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Wave Road 9.7/10 Wave Road Action Wave Road delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/wave-road/
+    - img "Wave Road"
+    - img
+    - img
+    - text: 9.7/10
+    - heading "Wave Road" [level=3]
+    - text: Action
+    - paragraph: Wave Road delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "White Horizon 7/10 White Horizon Action White Horizon delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/white-horizon/
+    - img "White Horizon"
+    - img
+    - img
+    - text: 7/10
+    - heading "White Horizon" [level=3]
+    - text: Action
+    - paragraph: White Horizon delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Wing Smash 8.1/10 Wing Smash Action Jump into the action with Wing Smash! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/wing-smash/
+    - img "Wing Smash"
+    - img
+    - img
+    - text: 8.1/10
+    - heading "Wing Smash" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Wing Smash! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Wyrmdash 9.8/10 Wyrmdash Action Wyrmdash delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/wyrmdash/
+    - img "Wyrmdash"
+    - img
+    - img
+    - text: 9.8/10
+    - heading "Wyrmdash" [level=3]
+    - text: Action
+    - paragraph: Wyrmdash delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Featured Ziggy Road 9.7/10 Ziggy Road Action Experience thrilling action in Ziggy Road! Fast-paced gameplay with exciting challenges. 10-20 minutes FREE":
+    - /url: /games/ziggy-road/
+    - img
+    - text: Featured
+    - img "Ziggy Road"
+    - img
+    - img
+    - text: 9.7/10
+    - heading "Ziggy Road" [level=3]
+    - text: Action
+    - paragraph: Experience thrilling action in Ziggy Road! Fast-paced gameplay with exciting challenges.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Zombie Rising 8/10 Zombie Rising Action Zombie Rising delivers intense action gameplay with stunning visuals and engaging mechanics. 10-20 minutes FREE":
+    - /url: /games/zombie-rising/
+    - img "Zombie Rising"
+    - img
+    - img
+    - text: 8/10
+    - heading "Zombie Rising" [level=3]
+    - text: Action
+    - paragraph: Zombie Rising delivers intense action gameplay with stunning visuals and engaging mechanics.
+    - img
+    - text: 10-20 minutes FREE
+  - link "Zombie Strike 8.2/10 Zombie Strike Action Jump into the action with Zombie Strike! Non-stop excitement awaits. 10-20 minutes FREE":
+    - /url: /games/zombie-strike/
+    - img "Zombie Strike"
+    - img
+    - img
+    - text: 8.2/10
+    - heading "Zombie Strike" [level=3]
+    - text: Action
+    - paragraph: Jump into the action with Zombie Strike! Non-stop excitement awaits.
+    - img
+    - text: 10-20 minutes FREE
+  - heading "About Action Games" [level=2]
+  - paragraph: Fast-paced action games that test your reflexes and skills. Battle enemies, dodge obstacles, and master epic moves! Our action games collection features the best free online games that you can play instantly in your browser. No downloads, no registration required - just pure gaming fun!
+  - paragraph: Whether you're looking for a quick 5-minute break or an extended gaming session, our action games offer endless entertainment for players of all skill levels. Each game is carefully selected to ensure quality gameplay and maximum fun.
+- contentinfo:
+  - img
+  - text: GeoGuessr Free
+  - paragraph: Play the best free online games instantly in your browser. No downloads, no registration required.
+  - link "Facebook":
+    - /url: https://facebook.com/geoguessr
+    - img
+  - link "Twitter":
+    - /url: https://twitter.com/geoguessr
+    - img
+  - link "Discord":
+    - /url: https://discord.gg/geoguessr
+    - img
+  - link "YouTube":
+    - /url: https://youtube.com/@geoguessr
+    - img
+  - heading "Quick Links" [level=3]
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: /
+    - listitem:
+      - link "Popular Games":
+        - /url: /popular
+    - listitem:
+      - link "New Games":
+        - /url: /new-games
+    - listitem:
+      - link "All Categories":
+        - /url: /categories
+  - heading "Categories" [level=3]
+  - list:
+    - listitem:
+      - link "Action Games":
+        - /url: /action
+    - listitem:
+      - link "Puzzle Games":
+        - /url: /puzzle
+    - listitem:
+      - link "Sports Games":
+        - /url: /sports
+    - listitem:
+      - link "Arcade Games":
+        - /url: /arcade
+    - listitem:
+      - link "Adventure Games":
+        - /url: /adventure
+  - heading "Support" [level=3]
+  - list:
+    - listitem:
+      - link "Contact Us":
+        - /url: /contact
+    - listitem:
+      - link "About Us":
+        - /url: /about
+    - listitem:
+      - link "Privacy Policy":
+        - /url: /privacy
+    - listitem:
+      - link "Terms of Service":
+        - /url: /terms
+    - listitem:
+      - link "DMCA":
+        - /url: /dmca
+  - heading "Subscribe to Our Newsletter" [level=3]
+  - paragraph: Get the latest game updates and exclusive offers!
+  - textbox "Enter your email"
+  - button "Subscribe"
+  - text: © 2025 GeoGuessr Free. All rights reserved.
+  - link "Sitemap":
+    - /url: /sitemap
+  - text: "|"
+  - link "Cookie Policy":
+    - /url: /cookies
+  - text: "| Made with ❤️ by GeoGuessr Free Team"
+```

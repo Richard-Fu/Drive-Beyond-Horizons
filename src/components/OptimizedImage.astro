@@ -1,0 +1,80 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  loading?: 'lazy' | 'eager';
+  class?: string;
+  sizes?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  loading = 'lazy',
+  class: className = '',
+  sizes = '100vw'
+} = Astro.props;
+
+// Generate srcset for responsive images
+const generateSrcSet = (imageSrc: string) => {
+  // If it's an external URL, return as is
+  if (imageSrc.startsWith('http')) {
+    return imageSrc;
+  }
+  
+  // For local images, we could generate multiple sizes
+  // This is a simplified version - in production you'd use an image CDN
+  return imageSrc;
+};
+
+const srcset = generateSrcSet(src);
+---
+
+<img
+  src={src}
+  srcset={srcset}
+  sizes={sizes}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding="async"
+  class={`transition-opacity duration-300 ${className}`}
+  onload="this.classList.add('opacity-100')"
+  onerror="this.onerror=null; this.src='/images/placeholder.jpg';"
+/>
+
+<style>
+  img {
+    opacity: 0;
+  }
+  
+  img.opacity-100 {
+    opacity: 1;
+  }
+  
+  /* Blur-up effect */
+  img[loading="lazy"] {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+</style>

@@ -1,0 +1,350 @@
+---
+// 统一的游戏播放器组件，用于首页和游戏页面
+import { useTranslations } from '../i18n/utils';
+
+export interface Props {
+  title: string;
+  description: string;
+  image: string;
+  embedUrl: string;
+  rating?: number;
+  category?: string;
+  playTime?: string;
+  showBreadcrumb?: boolean;
+  breadcrumbItems?: Array<{text: string, href?: string}>;
+  lang?: string;
+}
+
+const { 
+  title, 
+  description, 
+  image, 
+  embedUrl, 
+  rating = 9.5, 
+  category = 'Game',
+  playTime = '15-30 min',
+  showBreadcrumb = false,
+  breadcrumbItems = [],
+  lang = 'en'
+} = Astro.props;
+
+// 获取翻译函数
+const t = useTranslations(lang);
+
+// 使用10分制评分显示
+const displayRating = rating ? Math.round(rating * 10) / 10 : null;
+---
+
+<!-- 面包屑导航（可选） -->
+{showBreadcrumb && (
+  <nav class="bg-white border-b border-gray-200 py-3">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center space-x-2 text-sm">
+        {breadcrumbItems.map((item, index) => (
+          <>
+            {item.href ? (
+              <a href={item.href} class="text-green-600 hover:text-green-700 font-medium">{item.text}</a>
+            ) : (
+              <span class="text-gray-600">{item.text}</span>
+            )}
+            {index < breadcrumbItems.length - 1 && (
+              <span class="text-gray-400">/</span>
+            )}
+          </>
+        ))}
+      </div>
+    </div>
+  </nav>
+)}
+
+<!-- 主游戏区域 -->
+<section class="bg-gray-900 py-12 relative overflow-hidden">
+  <!-- 背景装饰 -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #4fad82 0%, transparent 50%), radial-gradient(circle at 75% 75%, #b44541 0%, transparent 50%);"></div>
+  </div>
+  
+  <div class="max-w-6xl mx-auto px-4 relative z-10">
+    <div id="gamePreview" class="text-center">
+      <!-- 游戏预览卡片（左右布局） -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 max-w-6xl mx-auto border border-white/20">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          
+          <!-- 左侧：游戏图片 -->
+          <div class="relative cursor-pointer" id="gameImageContainer">
+            <div class="aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-gray-700 to-gray-800 shadow-2xl">
+              <img 
+                src={image} 
+                alt={title}
+                class="w-full h-full object-cover transition-opacity duration-300 hover:opacity-90"
+                loading="eager"
+              />
+            </div>
+            <!-- 播放按钮覆盖层 -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <button id="gameImagePlayButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full text-xl transition-all duration-300 transform hover:scale-110 shadow-2xl flex items-center gap-3">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                </svg>
+                {t('common.playGame')} {title}
+              </button>
+            </div>
+          </div>
+
+          <!-- 右侧：游戏信息（SEO友好内容） -->
+          <div class="space-y-6">
+            <div>
+              <h1 class="text-3xl lg:text-4xl font-bold text-white mb-3">{title}</h1>
+              <p class="text-lg text-gray-300 leading-relaxed">{description}</p>
+            </div>
+            
+            <!-- 游戏特点（SEO关键词） -->
+            <div class="space-y-3">
+              <div class="flex items-start gap-3">
+                <span class="text-green-400 mt-1">✓</span>
+                <p class="text-gray-300">
+                  <strong class="text-white">{t('game.freeToPlay')}</strong> - {t('game.noDownload')}
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-green-400 mt-1">✓</span>
+                <p class="text-gray-300">
+                  <strong class="text-white">{t('game.instantGaming')}</strong> - {t('game.playInstantly')}
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-green-400 mt-1">✓</span>
+                <p class="text-gray-300">
+                  <strong class="text-white">{t('game.crossPlatform')}</strong> - {t('game.worksEverywhere')}
+                </p>
+              </div>
+            </div>
+            
+            <!-- 游戏统计信息 -->
+            <div class="flex flex-wrap gap-4">
+              <div class="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2">
+                <span class="text-yellow-400">★</span>
+                <span class="text-white font-semibold">{displayRating}/10</span>
+              </div>
+              <div class="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2">
+                <span class="text-blue-400">🎮</span>
+                <span class="text-gray-300">{category}</span>
+              </div>
+              <div class="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2">
+                <span class="text-green-400">⏱️</span>
+                <span class="text-gray-300">{playTime}</span>
+              </div>
+              <div class="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2">
+                <span class="text-purple-400">🌐</span>
+                <span class="text-gray-300">{t('game.freeToPlay')}</span>
+              </div>
+            </div>
+            
+            <!-- 行动按钮 -->
+            <button 
+              id="secondaryPlayButton"
+              class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              🎮 {t('common.playNow')} {title}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 加载屏幕（默认隐藏） -->
+    <div id="loadingScreen" class="hidden text-center">
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-12 max-w-2xl mx-auto border border-white/20">
+        <div class="space-y-6">
+          <!-- 加载动画 -->
+          <div class="relative">
+            <div class="w-20 h-20 mx-auto border-4 border-gray-300 border-t-green-600 rounded-full animate-spin"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-2xl">🎮</span>
+            </div>
+          </div>
+          
+          <!-- 加载文字 -->
+          <div class="space-y-2">
+            <h3 class="text-2xl font-bold text-white">{t('common.loadingGame')}</h3>
+            <p class="text-gray-300">{t('common.loading')}</p>
+          </div>
+          
+          <!-- 进度条 -->
+          <div class="w-full bg-gray-700 rounded-full h-3">
+            <div id="progressBar" class="bg-gradient-to-r from-green-500 to-green-600 h-3 rounded-full transition-all duration-200" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 游戏区域 -->
+    <div id="gameArea" class="hidden relative bg-gray-900 min-h-[600px] rounded-xl overflow-hidden border border-white/20">
+      <!-- 加载覆盖层 -->
+      <div id="gameLoading" class="absolute inset-0 bg-gray-800 flex items-center justify-center z-10">
+        <div class="text-center text-white">
+          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+          <p class="text-lg">{t('common.loadingGame')}</p>
+        </div>
+      </div>
+      
+      <!-- 游戏iframe -->
+      <iframe 
+        id="gameFrame" 
+        class="w-full h-[600px] border-0" 
+        style="min-height: 600px;"
+        allow="geolocation; camera; microphone; fullscreen"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ embedUrl }}>
+  // 游戏加载功能
+  let gameLoadProgress = 0;
+  let progressInterval = null;
+  // 将embedUrl存储在window对象上，以便在整个作用域内访问
+  window.gameEmbedUrl = embedUrl;
+
+  function startGame() {
+    // 隐藏预览，显示加载屏幕
+    const gamePreview = document.getElementById('gamePreview');
+    const loadingScreen = document.getElementById('loadingScreen');
+    
+    if (gamePreview) gamePreview.style.display = 'none';
+    if (loadingScreen) loadingScreen.style.display = 'block';
+    
+    // 开始加载动画
+    startLoadingAnimation();
+    
+    // 3秒后加载游戏
+    setTimeout(() => {
+      showGameArea();
+    }, 3000);
+  }
+
+  function startLoadingAnimation() {
+    // 重置进度
+    gameLoadProgress = 0;
+    
+    // 更新进度条
+    progressInterval = setInterval(() => {
+      gameLoadProgress += Math.random() * 15 + 5;
+      if (gameLoadProgress > 100) gameLoadProgress = 100;
+      
+      const progressBar = document.getElementById('progressBar');
+      if (progressBar) {
+        progressBar.style.width = gameLoadProgress + '%';
+      }
+      
+      if (gameLoadProgress >= 100) {
+        clearInterval(progressInterval);
+      }
+    }, 200);
+  }
+
+  function showGameArea() {
+    try {
+      // 清除定时器
+      if (progressInterval) clearInterval(progressInterval);
+      
+      // 隐藏加载屏幕，显示游戏
+      const loadingScreen = document.getElementById('loadingScreen');
+      const gameArea = document.getElementById('gameArea');
+      
+      if (loadingScreen) loadingScreen.style.display = 'none';
+      if (gameArea) gameArea.style.display = 'block';
+      
+      // 加载iframe
+      const gameFrame = document.getElementById('gameFrame');
+      if (gameFrame) {
+        const gameUrl = window.gameEmbedUrl || embedUrl;
+        
+        // 验证URL
+        if (!gameUrl || gameUrl === 'null' || gameUrl === 'undefined') {
+          console.error('Invalid game URL');
+          showError('Unable to load game. Please try again later.');
+          return;
+        }
+        
+        gameFrame.src = gameUrl;
+        
+        // iframe加载完成后隐藏加载覆盖层
+        gameFrame.onload = function() {
+          setTimeout(() => {
+            const gameLoading = document.getElementById('gameLoading');
+            if (gameLoading) {
+              gameLoading.style.display = 'none';
+            }
+          }, 1000);
+        };
+        
+        // 处理iframe加载错误
+        gameFrame.onerror = function() {
+          console.error('Failed to load game iframe');
+          showError('Failed to load game. Please check your internet connection.');
+        };
+      }
+    } catch (error) {
+      console.error('Error in showGameArea:', error);
+      showError('An unexpected error occurred. Please refresh the page.');
+    }
+  }
+  
+  function showError(message) {
+    const gameArea = document.getElementById('gameArea');
+    if (gameArea) {
+      gameArea.innerHTML = `
+        <div class="flex items-center justify-center h-[600px] bg-gray-800 rounded-xl">
+          <div class="text-center text-white">
+            <svg class="w-16 h-16 mx-auto mb-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <h3 class="text-xl font-semibold mb-2">Oops! Something went wrong</h3>
+            <p class="text-gray-300">${message}</p>
+            <button onclick="location.reload()" class="mt-4 px-6 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition-colors">
+              Refresh Page
+            </button>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  // 将函数添加到window对象，以便全局访问
+  window.startGame = startGame;
+  window.startLoadingAnimation = startLoadingAnimation;
+  window.showGameArea = showGameArea;
+  window.showError = showError;
+
+  // 初始化
+  document.addEventListener('DOMContentLoaded', function() {
+    const gameImageContainer = document.getElementById('gameImageContainer');
+    const gameImagePlayButton = document.getElementById('gameImagePlayButton');
+    const secondaryPlayButton = document.getElementById('secondaryPlayButton');
+    
+    // 添加事件监听器
+    if (gameImageContainer) {
+      gameImageContainer.addEventListener('click', window.startGame);
+    }
+    
+    if (gameImagePlayButton) {
+      gameImagePlayButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        window.startGame();
+      });
+    }
+    
+    if (secondaryPlayButton) {
+      secondaryPlayButton.addEventListener('click', window.startGame);
+    }
+  });
+</script>
+
+<style>
+  :root {
+    --primary-green: #4fad82;
+    --primary-red: #b44541;
+  }
+</style>
