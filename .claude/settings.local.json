@@ -23,7 +23,23 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(npm ls:*)"
+      "Bash(npm ls:*)",
+      "Bash(git clone:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:upstash.com)",
+      "Bash(npx:*)",
+      "Bash(cat:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(claude mcp add context7 npx -y @upstash/context7-mcp)",
+      "Bash(claude mcp add playwright npx -y @playwright/mcp@latest)",
+      "Bash(claude mcp add:*)",
+      "Bash(claude mcp:*)",
+      "Bash(npm run preview:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(vercel:*)"
     ],
     "deny": []
   }
