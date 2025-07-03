@@ -1,6 +1,6 @@
-# 🎮 Game-Kuangjia - Reusable SEO-Friendly Game Site Framework
+# 🏎️ Drive Beyond Horizons - Epic Racing Game Website
 
-A modern, production-ready framework for rapidly deploying SEO-optimized game sites. Built with Astro, Tailwind CSS, and optimized for performance and search engines.
+A high-performance racing game website built with modern web technologies. Experience realistic driving physics, multiple racing environments, and unlimited racing action completely free!
 
 ## 🚀 Features
 

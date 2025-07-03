@@ -39,7 +39,12 @@
       "Bash(npm run preview:*)",
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs",
-      "Bash(vercel:*)"
+      "Bash(vercel:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_press_key",
+      "mcp__playwright__browser_close",
+      "Bash(cp:*)"
     ],
     "deny": []
   }

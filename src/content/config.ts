@@ -12,7 +12,7 @@ const gamesCollection = defineCollection({
     // 游戏分类系统
     categories: z.array(z.string()), // 主要分类 (字符串数组)
     tags: z.array(z.string()).default([]), // 标签 (字符串数组, 默认空)
-    gameType: z.enum(['geography', 'quiz', 'puzzle', 'strategy', 'action', 'education', 'arcade', 'sports', 'shooting', 'survival']).default('action'), // 游戏类型
+    gameType: z.enum(['geography', 'quiz', 'puzzle', 'strategy', 'action', 'education', 'arcade', 'sports', 'shooting', 'survival', 'racing', 'simulation']).default('action'), // 游戏类型
     
     // 游戏属性
     difficulty: z.enum(['easy', 'medium', 'hard']).default('medium'), // 难度等级

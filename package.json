@@ -1,7 +1,7 @@
 {
-  "name": "game-kuangjia",
+  "name": "drive-beyond-horizons",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -32,23 +32,26 @@
     "@types/node": "^24.0.10",
     "playwright": "^1.53.2"
   },
-  "description": "A modern, production-ready framework for rapidly deploying SEO-optimized game sites. Built with Astro, Tailwind CSS, and optimized for performance and search engines.",
+  "description": "Drive Beyond Horizons - Epic racing game website with realistic driving physics and stunning landscapes. Built with Astro for optimal performance.",
   "main": "index.js",
   "keywords": [
     "astro",
-    "games",
-    "geoguessr",
+    "racing",
+    "driving",
+    "simulation",
+    "cars",
+    "racing-game",
     "tailwind",
     "seo",
     "static-site"
   ],
-  "author": "Richard Fu",
+  "author": "Racing Games Hub",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Richard-Fu/geo-guessr.git"
+    "url": "https://github.com/racing-games/drive-beyond-horizons.git"
   },
-  "homepage": "https://github.com/Richard-Fu/geo-guessr",
+  "homepage": "https://drivebeyondhorizon.com",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0"

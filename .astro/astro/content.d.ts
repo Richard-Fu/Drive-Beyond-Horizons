@@ -449,6 +449,13 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
+"drive-beyond-horizons.md": {
+	id: "drive-beyond-horizons.md";
+  slug: "drive-beyond-horizons";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "drive-mad.md": {
 	id: "drive-mad.md";
   slug: "drive-mad";

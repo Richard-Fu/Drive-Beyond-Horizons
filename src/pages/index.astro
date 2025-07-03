@@ -28,20 +28,19 @@ const otherGames = [
   ...regularGames.slice(0, 2)
 ].slice(0, 10);
 
-// Get the featured game for the main section (GeoGuessr specifically)
+// Get the featured game for the main section (Drive Beyond Horizons specifically)
 const featuredGame = allGames.find(game => 
-  game.data.title.toLowerCase().includes('geoguessr')
+  game.data.title.toLowerCase().includes('drive beyond horizons')
 ) || allGames.find(game => 
-  game.data.title.toLowerCase().includes('openguessr')
+  game.data.title.toLowerCase().includes('drive beyond')
 ) || allGames.find(game => 
-  game.data.title.toLowerCase().includes('guessr') && 
-  !game.data.title.toLowerCase().includes('globe')
+  game.data.gameType === 'racing' && game.data.featured
 ) || allGames[0];
 ---
 
 <BaseLayout 
-  title="GeoGuessr Free - Play Unlimited Geography Game Online" 
-  description="Explore the world with GeoGuessr Free! Guess locations from street view images in this addictive geography game. Play unlimited rounds for free!"
+  title="Drive Beyond Horizons - Epic Racing Game Online Free" 
+  description="Experience the most thrilling racing game with realistic driving physics! Master high-speed racing, navigate challenging tracks, and conquer diverse terrains for free!"
 >
   
   <!-- Custom CSS for GeoGuessr-style design -->
@@ -95,7 +94,7 @@ const featuredGame = allGames.find(game =>
         <div class="flex items-center space-x-2 text-sm">
           <a href="/" class="text-green-600 hover:text-green-700 font-medium">Home</a>
           <span class="text-gray-400">/</span>
-          <span class="text-gray-600">GeoGuessr Free</span>
+          <span class="text-gray-600">Drive Beyond Horizons</span>
         </div>
       </div>
     </nav>
@@ -103,13 +102,13 @@ const featuredGame = allGames.find(game =>
     <!-- Game Player -->
     <div class="hero-section">
       <GamePlayer 
-        title={featuredGame?.data.title || "GeoGuessr Free"}
-        description={featuredGame?.data.description || "Explore the world with GeoGuessr Free! Guess locations from street view images in this addictive geography game."}
-        image={featuredGame?.data.image || "https://geoguessr.io/data/image/posts/geoguessr-free-banner2.jpg"}
-        embedUrl={featuredGame?.data.embedUrl || "https://openguessr.com/"}
-        rating={featuredGame?.data.rating || 8.5}
-        category={featuredGame?.data.gameType || "Geographic"}
-        playTime={featuredGame?.data.playTime || "15-30 min"}
+        title={featuredGame?.data.title || "Drive Beyond Horizons"}
+        description={featuredGame?.data.description || "Experience the most thrilling racing game with realistic driving physics! Master high-speed racing and navigate challenging tracks."}
+        image={featuredGame?.data.image || "/images/drive-beyond-horizons.jpg"}
+        embedUrl={featuredGame?.data.embedUrl || "https://drivebeyondhorizon.com"}
+        rating={featuredGame?.data.rating || 4.5}
+        category={featuredGame?.data.gameType || "Racing"}
+        playTime={featuredGame?.data.playTime || "20-45 min"}
       />
     </div>
     
@@ -160,11 +159,11 @@ const featuredGame = allGames.find(game =>
 
     <!-- Rating and Social Share Section -->
     <RatingSystem 
-      gameSlug="geoguessr-free"
-      initialRating={featuredGame?.data.rating || 8.5}
-      totalVotes={67}
-      gameTitle={featuredGame?.data.title || "GeoGuessr Free"}
-      gameDescription={featuredGame?.data.description || "Explore the world with GeoGuessr Free! Guess locations from street view images."}
+      gameSlug="drive-beyond-horizons"
+      initialRating={featuredGame?.data.rating || 4.5}
+      totalVotes={1247}
+      gameTitle={featuredGame?.data.title || "Drive Beyond Horizons"}
+      gameDescription={featuredGame?.data.description || "Experience the most thrilling racing game with realistic driving physics and epic challenges."}
     />
   </main>
 
@@ -172,25 +171,25 @@ const featuredGame = allGames.find(game =>
   <article class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       <div class="prose prose-lg max-w-none">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">GeoGuessr Free: The Ultimate Unlimited Geography Guessing Game</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Drive Beyond Horizons: The Ultimate Free Racing Adventure</h2>
         
         <p class="text-lg text-gray-700 mb-6">
-          Welcome to <strong>GeoGuessr Free</strong>, the premier <strong>free GeoGuessr alternative</strong> that offers unlimited gameplay without restrictions! Our <strong>unblocked geography game</strong> provides the same thrilling experience as the original GeoGuessr, completely free and accessible from anywhere. Whether you're a geography enthusiast or looking for an educational gaming experience, our <strong>GeoGuessr unlimited</strong> platform delivers hours of engaging entertainment.
+          Welcome to <strong>Drive Beyond Horizons</strong>, the most thrilling <strong>free racing game</strong> that combines realistic driving physics with epic racing challenges! Our <strong>unblocked racing game</strong> provides hours of high-speed entertainment, completely free and accessible from anywhere. Whether you're a racing enthusiast or looking for adrenaline-pumping gaming action, <strong>Drive Beyond Horizons</strong> delivers the ultimate driving experience.
         </p>
 
-        <h3 class="text-2xl font-semibold mt-8 mb-4">What is GeoGuessr Free Alternative?</h3>
+        <h3 class="text-2xl font-semibold mt-8 mb-4">What is Drive Beyond Horizons Racing Game?</h3>
         <p class="mb-6">
-          Our <strong>free GeoGuessr game</strong> is an <strong>open GeoGuessr</strong> platform that takes you on virtual journeys across the globe. Using Street View technology, the game drops you in random locations worldwide, and your mission is to guess where you are by exploring the environment, analyzing clues, and applying your geographical knowledge. As the best <strong>GeoGuessr alternative</strong>, we offer unlimited gameplay across multiple regions including <strong>GeoGuessr USA</strong>, <strong>GeoGuessr Europe</strong>, <strong>GeoGuessr Asia</strong>, and <strong>GeoGuessr Africa</strong>.
+          <strong>Drive Beyond Horizons</strong> is an innovative <strong>racing simulation game</strong> that takes you on epic driving adventures across diverse landscapes. Experience realistic vehicle physics as you navigate challenging tracks, master high-speed racing, and conquer various terrains. As the premier <strong>free racing game</strong>, we offer unlimited gameplay across multiple environments including <strong>city streets</strong>, <strong>mountain passes</strong>, <strong>desert highways</strong>, and <strong>coastal roads</strong>.
         </p>
 
-        <h3 class="text-2xl font-semibold mt-8 mb-4">GeoGuessr Unblocked - Play Anywhere, Anytime</h3>
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Racing Game Unblocked - Drive Anywhere, Anytime</h3>
         <p class="mb-6">
-          Our <strong>GeoGuessr unblocked</strong> platform ensures you can enjoy geography games regardless of network restrictions. Unlike other sites, our <strong>unblocked GeoGuessr</strong> works seamlessly in schools, offices, and other environments where gaming sites might be restricted. Experience the thrill of <strong>GeoGuessr unlimited</strong> gameplay without any barriers.
+          Our <strong>Drive Beyond Horizons unblocked</strong> platform ensures you can enjoy racing games regardless of network restrictions. Unlike other sites, our <strong>unblocked racing game</strong> works seamlessly in schools, offices, and other environments where gaming sites might be restricted. Experience the thrill of <strong>unlimited racing</strong> without any barriers.
         </p>
 
         <div class="my-8">
           <div class="relative cursor-pointer max-w-2xl mx-auto" id="bannerPlayContainer">
-            <img src="https://geoguessr.io/data/image/posts/geoguessr-free-banner2.jpg" alt="GeoGuessr Free Banner" class="w-full rounded-lg shadow-lg transition-opacity duration-300 hover:opacity-80">
+            <img src="/images/drive-beyond-horizons-banner.jpg" alt="Drive Beyond Horizons Racing Game Banner" class="w-full rounded-lg shadow-lg transition-opacity duration-300 hover:opacity-80">
             <!-- Play Overlay -->
             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg">
               <button id="bannerPlayButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
@@ -200,101 +199,101 @@ const featuredGame = allGames.find(game =>
           </div>
         </div>
 
-        <h3 class="text-2xl font-semibold mt-8 mb-4">Why Choose Our Free GeoGuessr Alternative?</h3>
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Why Choose Drive Beyond Horizons Racing Game?</h3>
         <ul class="space-y-4 mb-8">
           <li>
-            <strong>💯 Completely Free & Unlimited</strong>: Unlike the original <strong>GeoGuessr</strong> that requires subscriptions, our <strong>free GeoGuessr alternative</strong> offers unlimited gameplay at no cost. Play as many rounds as you want without any restrictions!
+            <strong>💯 Completely Free & Unlimited</strong>: Unlike many premium racing games, <strong>Drive Beyond Horizons</strong> offers unlimited racing action at no cost. Race as many laps as you want without any restrictions!
           </li>
           <li>
-            <strong>🚫 Unblocked Access</strong>: Our <strong>GeoGuessr unblocked</strong> platform works everywhere - schools, offices, public WiFi. No restrictions, no blocked access, just pure geography gaming fun.
+            <strong>🚫 Unblocked Access</strong>: Our <strong>racing game unblocked</strong> platform works everywhere - schools, offices, public WiFi. No restrictions, no blocked access, just pure racing excitement.
           </li>
           <li>
-            <strong>🌍 Multiple Game Modes</strong>: Experience <strong>GeoGuessr worldwide</strong>, <strong>GeoGuessr USA</strong>, <strong>GeoGuessr Europe</strong>, and explore famous monuments. Each mode offers unique challenges and learning opportunities.
+            <strong>🏎️ Multiple Vehicle Types</strong>: Experience <strong>sports cars</strong>, <strong>muscle cars</strong>, <strong>supercars</strong>, and <strong>off-road vehicles</strong>. Each vehicle offers unique handling characteristics and racing opportunities.
           </li>
           <li>
-            <strong>📚 Educational & Entertaining</strong>: Perfect for geography students, travel enthusiasts, and anyone curious about the world. Our <strong>geography guessing game</strong> combines education with entertainment.
+            <strong>🏁 Realistic Physics</strong>: Perfect for racing enthusiasts and anyone who loves high-speed action. Our <strong>driving simulation</strong> combines realistic physics with pure entertainment.
           </li>
           <li>
-            <strong>🔓 Open Source Alternative</strong>: As an <strong>open GeoGuessr</strong> platform, we're committed to keeping geography gaming accessible to everyone, everywhere.
+            <strong>🌟 Browser-Based Racing</strong>: No downloads required! Experience <strong>instant racing action</strong> directly in your browser with our optimized racing platform.
           </li>
         </ul>
 
-        <h3 class="text-2xl font-semibold mt-8 mb-4">GeoGuessr Game Modes - Explore the World</h3>
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Racing Game Modes - Conquer Every Terrain</h3>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
           <div class="border rounded-lg p-6">
-            <h4 class="font-bold text-lg mb-2">🌍 GeoGuessr Worldwide</h4>
-            <p>Experience the ultimate <strong>GeoGuessr unlimited</strong> challenge with locations from every continent. From bustling cities to remote villages, test your global geography knowledge.</p>
+            <h4 class="font-bold text-lg mb-2">🌆 City Streets</h4>
+            <p>Experience the ultimate <strong>urban racing</strong> challenge through busy city environments. Navigate traffic, sharp turns, and urban obstacles in this high-speed city racing mode.</p>
           </div>
           <div class="border rounded-lg p-6">
-            <h4 class="font-bold text-lg mb-2">🇺🇸 GeoGuessr USA</h4>
-            <p>Master American geography with our <strong>GeoGuessr USA</strong> mode. Explore all 50 states, from New York's skyscrapers to California's beaches.</p>
+            <h4 class="font-bold text-lg mb-2">🏔️ Mountain Passes</h4>
+            <p>Master challenging mountain roads with our <strong>mountain racing</strong> mode. Conquer winding paths, steep drops, and breathtaking scenic routes.</p>
           </div>
           <div class="border rounded-lg p-6">
-            <h4 class="font-bold text-lg mb-2">🇪🇺 GeoGuessr Europe</h4>
-            <p>Journey through European countries with <strong>GeoGuessr Europe</strong>. Discover historic cities, diverse cultures, and beautiful landscapes across the continent.</p>
+            <h4 class="font-bold text-lg mb-2">🏜️ Desert Highways</h4>
+            <p>Race across vast desert landscapes with <strong>high-speed desert racing</strong>. Experience long straightaways, extreme weather conditions, and endless horizons.</p>
           </div>
           <div class="border rounded-lg p-6">
-            <h4 class="font-bold text-lg mb-2">🏛️ Famous Monuments</h4>
-            <p>Visit world-famous landmarks and monuments. Perfect for learning about global heritage and iconic structures.</p>
+            <h4 class="font-bold text-lg mb-2">🌊 Coastal Roads</h4>
+            <p>Drive along stunning coastal routes with ocean views. Perfect for scenic racing with challenging curves and breathtaking seaside landscapes.</p>
           </div>
         </div>
 
-        <h3 class="text-2xl font-semibold mt-8 mb-4">Advanced Features of Our GeoGuessr Alternative</h3>
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Advanced Features of Drive Beyond Horizons</h3>
         <ul class="space-y-3">
-          <li><strong>🎲 Randomized Global Locations</strong>: Every <strong>free GeoGuessr game</strong> session starts with completely random locations, ensuring endless replayability and fresh challenges.</li>
-          <li><strong>🗺️ Street View Navigation</strong>: Full 360-degree exploration capabilities just like the original, letting you examine every detail to identify your location.</li>
-          <li><strong>📊 Advanced Scoring System</strong>: Earn points based on accuracy - the closer your guess, the higher your score! Perfect for <strong>GeoGuessr competition</strong> practice.</li>
-          <li><strong>👥 Social Gaming</strong>: Share your best scores and challenge friends to beat your <strong>GeoGuessr</strong> achievements.</li>
-          <li><strong>🚫 No Restrictions</strong>: Unlike paid versions, enjoy truly <strong>unlimited GeoGuessr</strong> gameplay without time limits or daily caps.</li>
+          <li><strong>🏎️ Realistic Vehicle Physics</strong>: Every <strong>racing session</strong> features authentic vehicle handling with proper momentum, grip, and physics simulation for the most realistic driving experience.</li>
+          <li><strong>🌦️ Dynamic Weather System</strong>: Experience changing weather conditions that affect track grip, visibility, and vehicle performance, adding extra challenge to every race.</li>
+          <li><strong>📊 Advanced Lap Time System</strong>: Track your best lap times and see detailed performance analytics. Perfect for <strong>racing competition</strong> and skill improvement.</li>
+          <li><strong>👥 Social Racing</strong>: Share your best lap times and challenge friends to beat your <strong>racing achievements</strong> in this thrilling driving game.</li>
+          <li><strong>🚫 No Restrictions</strong>: Unlike premium racing games, enjoy truly <strong>unlimited racing</strong> without time limits, lap caps, or subscription requirements.</li>
         </ul>
 
-        <h3 class="text-2xl font-semibold mt-8 mb-4">GeoGuessr Tips & Strategies</h3>
-        <div class="bg-blue-50 rounded-lg p-6 my-6">
-          <h4 class="font-bold mb-3">🎯 Master the Art of Geography Guessing</h4>
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Racing Tips & Driving Strategies</h3>
+        <div class="bg-red-50 rounded-lg p-6 my-6">
+          <h4 class="font-bold mb-3">🏁 Master the Art of Racing</h4>
           <ul class="list-disc list-inside space-y-2 text-gray-700">
-            <li>Look for <strong>language signs</strong> to identify countries - street signs, shop names, and road markings are key clues</li>
-            <li>Observe <strong>architecture styles</strong> - European buildings differ greatly from American or Asian structures</li>
-            <li>Check <strong>driving sides</strong> - left-hand traffic narrows down possibilities significantly</li>
-            <li>Notice <strong>landscape and vegetation</strong> - climate zones can help identify continents and regions</li>
-            <li>Study <strong>license plates</strong> and car models popular in different countries</li>
-            <li>Use <strong>sun position</strong> to determine if you're in northern or southern hemisphere</li>
+            <li>Learn the <strong>racing line</strong> - take the optimal path through corners for fastest lap times</li>
+            <li>Master <strong>braking points</strong> - brake before corners to maintain control and speed</li>
+            <li>Practice <strong>smooth steering</strong> - avoid sudden movements for better vehicle control</li>
+            <li>Study <strong>track layouts</strong> - memorize each section to anticipate upcoming challenges</li>
+            <li>Choose the <strong>right vehicle</strong> for each track type and racing conditions</li>
+            <li>Perfect your <strong>acceleration timing</strong> - know when to floor it and when to ease off</li>
           </ul>
         </div>
 
-        <h2 class="text-3xl font-bold mt-12 mb-6">How to Play GeoGuessr Game Online Free?</h2>
+        <h2 class="text-3xl font-bold mt-12 mb-6">How to Play Drive Beyond Horizons Racing Game Online Free?</h2>
         
-        <h3 class="text-2xl font-semibold mt-8 mb-4">Get started with Geoguessr</h3>
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Get Started with Racing</h3>
         <ol class="space-y-4">
-          <li><strong>Start the Game</strong>: Visit <strong>GeoGuessr Free</strong> website and click on the "<strong>Play Now</strong>" button to begin.</li>
-          <li><strong>Explore the Location:</strong> Use the arrows to move around and look for hints such as road signs, buildings, and natural landmarks.</li>
-          <li><strong>Make Your Guess</strong>: Once you think you know where you are, click on the map to place your guess.</li>
-          <li><strong>Earn Points</strong>: Receive points based on how close your guess is to the actual location. The closer you are, the higher your score!</li>
+          <li><strong>Start the Game</strong>: Visit <strong>Drive Beyond Horizons</strong> and click the "<strong>Play Now</strong>" button to begin your racing adventure.</li>
+          <li><strong>Choose Your Vehicle:</strong> Select from various high-performance vehicles, each with unique handling characteristics.</li>
+          <li><strong>Master the Controls</strong>: Use WASD or arrow keys to accelerate, brake, and steer your vehicle through challenging tracks.</li>
+          <li><strong>Race for Victory</strong>: Complete laps in the shortest time possible while maintaining control for the ultimate racing experience!</li>
         </ol>
 
-        <h3 class="text-2xl font-semibold mt-8 mb-4">More Geography Games Like GeoGuessr</h3>
-        <p>If you love the thrill of <strong>GeoGuessr Free</strong>, you might be interested in exploring other <em>geography-based games</em> that offer similar excitement and educational value. Here's a list of games like <strong>GeoGuessr</strong> that will take you on virtual journeys around the world and challenge your knowledge of global locations.</p>
+        <h3 class="text-2xl font-semibold mt-8 mb-4">More Racing Games Like Drive Beyond Horizons</h3>
+        <p>If you love the thrill of <strong>Drive Beyond Horizons</strong>, you might be interested in exploring other <em>racing and driving games</em> that offer similar excitement and adrenaline-pumping action. Here's a list of racing games that will take you on high-speed adventures and challenge your driving skills to the limit.</p>
 
-        <h4 class="text-xl font-semibold mt-6 mb-3">City Guesser</h4>
-        <p><strong><a href="/city-guesser" class="text-blue-600 hover:underline">City Guesser</a></strong> is a fun and interactive game that challenges you to guess the city based on video footage. Unlike <strong>GeoGuessr</strong>, which uses <em>Street View</em>, <strong>City Guesser</strong> provides real-time videos of cities around the world, making it a dynamic and visually appealing alternative.</p>
+        <h4 class="text-xl font-semibold mt-6 mb-3">Drift Boss</h4>
+        <p><strong><a href="/drift-boss" class="text-red-600 hover:underline">Drift Boss</a></strong> is a thrilling drifting game that challenges you to navigate winding mountain roads. Master the art of controlled sliding through sharp corners and experience the ultimate test of precision driving skills.</p>
 
-        <h4 class="text-xl font-semibold mt-6 mb-3">Geotastic</h4>
-        <p><a href="/geotastic" class="text-blue-600 hover:underline"><strong>Geotastic</strong></a> is a free, multiplayer geography quiz game that offers different game modes, including a <strong>GeoGuessr</strong>-like mode where you guess locations based on <em>Street View</em> images. You can play solo or compete with friends and other players worldwide.</p>
+        <h4 class="text-xl font-semibold mt-6 mb-3">Highway Heat</h4>
+        <p><a href="/highway-heat" class="text-red-600 hover:underline"><strong>Highway Heat</strong></a> offers high-speed highway racing action where you can experience intense racing gameplay through traffic-filled roads with multiple vehicle options and challenging racing scenarios.</p>
 
-        <p class="font-semibold mt-6"><strong>OpenGuessr - Geoguessr but free</strong></p>
-        <p><strong><a href="/openguessr" class="text-blue-600 hover:underline">OpenGuessr</a></strong> is a free, open-source alternative to <strong>GeoGuessr</strong>. It allows players to explore the world through <em>Street View</em> images and guess their location.</p>
+        <h4 class="text-xl font-semibold mt-6 mb-3">Mountain Road</h4>
+        <p><strong><a href="/mountain-road" class="text-red-600 hover:underline">Mountain Road</a></strong> takes you on scenic mountain driving adventures with challenging elevation changes, sharp curves, and breathtaking landscapes for the ultimate mountain racing experience.</p>
 
         <hr class="my-8 border-gray-300" />
 
-        <p class="text-center"><em><strong>For the best experience and latest updates, bookmark GeoGuessr Free (Ctrl + D) and follow us on social media. Happy exploring!</strong></em></p>
+        <p class="text-center"><em><strong>For the best racing experience and latest updates, bookmark Drive Beyond Horizons (Ctrl + D) and follow us on social media. Happy racing!</strong></em></p>
       </div>
     </div>
   </article>
 
   <!-- Comments Section -->
   <CommentSystem 
-    gameSlug="geoguessr-free"
-    gameTitle="GeoGuessr Free"
+    gameSlug="drive-beyond-horizons"
+    gameTitle="Drive Beyond Horizons"
   />
 
     <!-- Play New Games Section -->

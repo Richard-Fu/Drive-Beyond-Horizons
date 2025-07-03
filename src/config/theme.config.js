@@ -4,62 +4,62 @@
 export default {
   // 网站基础信息
   site: {
-    name: 'GeoGuessr Free',
-    url: 'https://geo-guessr.io', // 修改为实际域名
-    description: 'The best free GeoGuessr alternative with unlimited gameplay',
-    author: 'GameHub Team',
+    name: 'Drive Beyond Horizons',
+    url: 'https://drivebeyondhorizon.com', // 修改为实际域名
+    description: 'Experience epic racing adventures with realistic driving physics and stunning landscapes',
+    author: 'Racing Games Hub',
     language: 'en',
   },
 
   // 主关键词配置
   mainKeyword: {
-    primary: 'geoguessr',
-    variants: ['geoguessr free', 'geoguessr unlimited', 'geoguessr alternative'],
-    branded: 'GeoGuessr Free',
+    primary: 'drive beyond horizons',
+    variants: ['drive beyond horizons free', 'racing game', 'driving simulation'],
+    branded: 'Drive Beyond Horizons',
   },
 
   // 主游戏配置
   featuredGame: {
-    title: 'GeoGuessr Free - Unlimited Geography Game',
-    description: 'Play free GeoGuessr alternative! Guess the world from anywhere - explore stunning locations across USA, Europe, Asia, Africa and test your geography skills with our unblocked unlimited game.',
-    embedUrl: 'https://openguessr.com',
-    image: 'https://geoguessr.io/data/image/posts/geoguessr-free-banner2.jpg',
-    category: 'Geography',
-    rating: 9.5,
-    playTime: '15-30 min',
+    title: 'Drive Beyond Horizons - Epic Racing Adventure',
+    description: 'Experience the most thrilling racing game with realistic driving physics! Master high-speed racing, navigate challenging tracks, and conquer diverse terrains in this free online driving simulation.',
+    embedUrl: 'https://drivebeyondhorizon.com',
+    image: '/images/drive-beyond-horizons-banner.jpg',
+    category: 'Racing',
+    rating: 4.5,
+    playTime: '20-45 min',
     tips: [
-      '🔍 Look for road signs and license plates for clues',
-      '🏛️ Architecture styles can reveal geographic regions',
-      '🌿 Vegetation types indicate climate zones',
-      '🚗 Car models and driving sides help identify countries',
-      '📡 Power lines and infrastructure give location hints',
-      '🏔️ Mountain ranges and landscapes are unique identifiers',
-      '🌍 Pay attention to the sun position for hemisphere clues',
-      '🛣️ Road markings and signs vary by country'
+      '🏎️ Master the racing lines for optimal lap times',
+      '🎮 Use WASD or arrow keys for smooth control',
+      '🚙 Choose the right vehicle for each track',
+      '🏁 Brake before corners to maintain control',
+      '⚡ Learn the track layouts to improve times',
+      '🌟 Practice makes perfect - repeat challenging sections',
+      '🛣️ Watch for track conditions and weather changes',
+      '🏆 Complete races for the best possible times'
     ]
   },
 
   // SEO配置
   seo: {
-    titleTemplate: '%s | Play Free Online Games',
-    defaultImage: '/images/social-card.png',
-    twitterHandle: '@gamehub',
+    titleTemplate: '%s | Drive Beyond Horizons Racing Games',
+    defaultImage: '/images/drive-beyond-horizons-social.jpg',
+    twitterHandle: '@drivebeyond',
     ogType: 'website',
   },
 
-  // 颜色主题
+  // 颜色主题 (赛车主题 - 黑色、红色、银色)
   colors: {
-    primary: '#4fad82',
-    secondary: '#b44541',
-    accent: '#f59e0b',
-    dark: '#1f2937',
-    light: '#f8f8f7',
+    primary: '#dc2626', // 赛车红
+    secondary: '#1f2937', // 深灰黑
+    accent: '#f59e0b', // 金黄色
+    dark: '#111827',
+    light: '#f8fafc',
     // 渐变色
     gradients: {
-      primary: 'from-green-500 to-emerald-600',
-      secondary: 'from-blue-500 to-purple-600',
-      accent: 'from-orange-400 to-red-500',
-      dark: 'from-gray-800 to-gray-900',
+      primary: 'from-red-600 to-red-700',
+      secondary: 'from-gray-800 to-gray-900',
+      accent: 'from-yellow-400 to-orange-500',
+      dark: 'from-gray-900 to-black',
     }
   },
 
@@ -97,10 +97,10 @@ export default {
 
   // 社交媒体
   social: {
-    facebook: 'https://facebook.com/gamehub',
-    twitter: 'https://twitter.com/gamehub',
-    instagram: 'https://instagram.com/gamehub',
-    youtube: 'https://youtube.com/gamehub',
+    facebook: 'https://facebook.com/drivebeyondhorizons',
+    twitter: 'https://twitter.com/drivebeyond',
+    instagram: 'https://instagram.com/drivebeyondhorizons',
+    youtube: 'https://youtube.com/drivebeyondhorizons',
   },
 
   // 广告位配置（预留）
