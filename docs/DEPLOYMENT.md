@@ -63,8 +63,12 @@ vercel
 vercel --prod
 ```
 
-### 4. 环境变量配置
+### 4. 分析配置
 
+#### Vercel Analytics (推荐)
+项目已集成 Vercel Analytics，无需额外配置，部署后自动生效。
+
+#### Google Analytics (可选)
 在 Vercel 项目设置中添加环境变量：
 
 ```bash

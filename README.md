@@ -175,9 +175,11 @@ game-kuangjia/
 - **Categories**: Game category definitions
 - **Social Links**: Footer social media links
 
-### Environment Variables
+### Analytics Integration
 
-Create `.env` file for sensitive data:
+**Vercel Analytics**: Built-in and works automatically when deployed to Vercel.
+
+**Google Analytics** (optional): Create `.env` file for GA integration:
 ```
 PUBLIC_GA_ID=your-google-analytics-id
 PUBLIC_GTM_ID=your-google-tag-manager-id

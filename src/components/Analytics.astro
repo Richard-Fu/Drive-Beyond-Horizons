@@ -1,8 +1,13 @@
 ---
-// Analytics component for GA4 and GTM integration
+// Analytics component for GA4, GTM, and Vercel Analytics integration
+import Analytics from '@vercel/analytics/astro';
+
 const GA_ID = import.meta.env.PUBLIC_GA_ID || '';
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
 ---
+
+<!-- Vercel Analytics -->
+<Analytics />
 
 {GA_ID && (
   <!-- Google Analytics 4 -->
