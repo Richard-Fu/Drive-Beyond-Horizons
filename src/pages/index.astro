@@ -21,12 +21,12 @@ const regularGames = allGames
   .filter(g => !g.data.featured && (g.data.rating || 0) < 8)
   .sort(() => Math.random() - 0.5); // Randomize
 
-// Combine for diversity: 3 featured + 3 high-rated + 2 random
+// Combine for diversity: 4 featured + 4 high-rated + 2 random
 const otherGames = [
-  ...featuredGames.slice(0, 3),
-  ...highRatedGames.slice(0, 3),
+  ...featuredGames.slice(0, 4),
+  ...highRatedGames.slice(0, 4),
   ...regularGames.slice(0, 2)
-].slice(0, 8);
+].slice(0, 10);
 
 // Get the featured game for the main section (GeoGuessr specifically)
 const featuredGame = allGames.find(game => 
@@ -127,7 +127,7 @@ const featuredGame = allGames.find(game =>
 
         <!-- Games Grid -->
         <div class="games-grid">
-          {otherGames.slice(0, 8).map((gameEntry) => (
+          {otherGames.map((gameEntry) => (
             <ModernGameCard 
               title={gameEntry.data.title}
               description={gameEntry.data.description}
