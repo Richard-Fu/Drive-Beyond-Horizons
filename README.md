@@ -234,11 +234,35 @@ This project is open source and available under the [MIT License](LICENSE).
 4. **Fast Hosting**: Use CDN for better performance
 5. **Monitor Analytics**: Track your traffic and optimize
 
+## 🚨 故障排除
+
+遇到部署问题？查看我们的详细故障排除指南：
+
+- 📖 [完整故障排除指南](./docs/TROUBLESHOOTING.md)
+- 🚀 [Vercel 部署问题](./docs/TROUBLESHOOTING.md#vercel-部署问题)
+- 🔧 [依赖冲突解决](./docs/TROUBLESHOOTING.md#依赖冲突通用解决)
+
+**常见问题快速修复：**
+
+```bash
+# Vercel 部署失败？
+rm package-lock.json node_modules -rf
+npm install
+git add . && git commit -m "fix: reset dependencies" && git push
+```
+
+```bash
+# zod 模块找不到？
+# 检查 vercel.json 是否使用了 --legacy-peer-deps
+# 确保使用 "npm ci" 而不是 "npm install"
+```
+
 ## 🆘 Support
 
-- Create an issue for bugs
-- Check existing documentation
-- Contact through the website's contact form
+- 📋 [故障排除指南](./docs/TROUBLESHOOTING.md) - 解决常见问题
+- 🐛 Create an issue for bugs
+- 📚 Check existing documentation  
+- 📧 Contact through the website's contact form
 
 ---
 
