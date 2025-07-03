@@ -29,6 +29,7 @@ export default defineConfig({
     },
     ssr: {
       external: ["svgo"],
+      noExternal: ["zod"]
     },
   },
   compressHTML: true,
