@@ -23,7 +23,7 @@ export default {
     title: 'Drive Beyond Horizons - Epic Racing Adventure',
     description: 'Experience the most thrilling racing game with realistic driving physics! Master high-speed racing, navigate challenging tracks, and conquer diverse terrains in this free online driving simulation.',
     embedUrl: 'https://drivebeyondhorizon.com',
-    image: '/images/drive-beyond-horizons-banner.jpg',
+    image: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2625420/header.jpg?t=1746031041',
     category: 'Racing',
     rating: 4.5,
     playTime: '20-45 min',
@@ -84,7 +84,7 @@ export default {
       description: 'Experience the thrill of sports competition',
       icon: '⚽',
       color: 'green',
-      gradient: 'from-green-500 to-emerald-600'
+      gradient: 'from-red-500 to-red-600'
     },
     racing: {
       title: 'Racing Games',

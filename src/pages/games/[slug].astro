@@ -148,7 +148,7 @@ const categoryName = game.data.categories?.[0]?.toLowerCase() || 'games';
         <div class="text-center mt-12">
           <a 
             href={`/${categoryName}`}
-            class="inline-flex items-center px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-300"
+            class="inline-flex items-center px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors duration-300"
           >
             View More {game.data.categories?.[0] || 'Games'}
             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -194,7 +194,7 @@ const categoryName = game.data.categories?.[0]?.toLowerCase() || 'games';
             <img src={game.data.image} alt={`${game.data.title} Banner`} class="w-full rounded-lg shadow-lg transition-opacity duration-300 hover:opacity-80">
             <!-- Play Overlay -->
             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg">
-              <button id="bannerPlayButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button id="bannerPlayButton" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 ▶️ Play Now
               </button>
             </div>
@@ -266,7 +266,7 @@ const categoryName = game.data.categories?.[0]?.toLowerCase() || 'games';
         <h2 class="text-3xl font-bold mt-12 mb-6">How to Play {game.data.title} Online Free?</h2>
         
         <h3 class="text-2xl font-semibold mt-8 mb-4">Getting Started with {game.data.title}</h3>
-        <div class="bg-green-50 rounded-lg p-6 my-6">
+        <div class="bg-red-50 rounded-lg p-6 my-6">
           <ol class="list-decimal list-inside space-y-3 text-gray-700">
             <li class="font-medium">Click the <strong>"Play Now"</strong> button above to start the game instantly</li>
             <li class="font-medium">Wait for the game to load - this usually takes just a few seconds</li>

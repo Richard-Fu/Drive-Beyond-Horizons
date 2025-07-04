@@ -181,7 +181,7 @@ const displayRating = initialRating ? Math.round(initialRating * 10) / 10 : 8.4;
   function showRatingFeedback(rating) {
     // Create temporary feedback element
     const feedback = document.createElement('div');
-    feedback.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 transition-all duration-300';
+    feedback.className = 'fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 transition-all duration-300';
     feedback.textContent = `Thanks! You rated ${rating} star${rating > 1 ? 's' : ''}`;
     
     document.body.appendChild(feedback);

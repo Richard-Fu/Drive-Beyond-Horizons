@@ -39,8 +39,8 @@ const featuredGame = allGames.find(game =>
 ---
 
 <BaseLayout 
-  title="Drive Beyond Horizons - Epic Racing Game Online Free" 
-  description="Experience the most thrilling racing game with realistic driving physics! Master high-speed racing, navigate challenging tracks, and conquer diverse terrains for free!"
+  title="Drive Beyond Horizons - Play Free Online Driving Simulation Game | Open World Racing Adventure" 
+  description="Experience the most thrilling racing game with realistic driving physics. Master epic driving challenges across diverse landscapes in this free online racing adventure."
 >
   
   <!-- Custom CSS for GeoGuessr-style design -->
@@ -92,7 +92,7 @@ const featuredGame = allGames.find(game =>
     <nav class="bg-white border-b border-gray-200 py-3">
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex items-center space-x-2 text-sm">
-          <a href="/" class="text-green-600 hover:text-green-700 font-medium">Home</a>
+          <a href="/" class="text-red-600 hover:text-red-700 font-medium">Home</a>
           <span class="text-gray-400">/</span>
           <span class="text-gray-600">Drive Beyond Horizons</span>
         </div>
@@ -104,7 +104,7 @@ const featuredGame = allGames.find(game =>
       <GamePlayer 
         title={featuredGame?.data.title || "Drive Beyond Horizons"}
         description={featuredGame?.data.description || "Experience the most thrilling racing game with realistic driving physics! Master high-speed racing and navigate challenging tracks."}
-        image={featuredGame?.data.image || "/images/drive-beyond-horizons.jpg"}
+        image={featuredGame?.data.image || "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2625420/header.jpg?t=1746031041"}
         embedUrl={featuredGame?.data.embedUrl || "https://drivebeyondhorizon.com"}
         rating={featuredGame?.data.rating || 4.5}
         category={featuredGame?.data.gameType || "Racing"}
@@ -144,7 +144,7 @@ const featuredGame = allGames.find(game =>
         <div class="text-center mt-12">
           <a 
             href="/action" 
-            class="inline-flex items-center px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-300"
+            class="inline-flex items-center px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors duration-300"
           >
             View All Games
             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -189,10 +189,10 @@ const featuredGame = allGames.find(game =>
 
         <div class="my-8">
           <div class="relative cursor-pointer max-w-2xl mx-auto" id="bannerPlayContainer">
-            <img src="/images/drive-beyond-horizons-banner.jpg" alt="Drive Beyond Horizons Racing Game Banner" class="w-full rounded-lg shadow-lg transition-opacity duration-300 hover:opacity-80">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2625420/header.jpg?t=1746031041" alt="Drive Beyond Horizons Racing Game Banner" class="w-full rounded-lg shadow-lg transition-opacity duration-300 hover:opacity-80">
             <!-- Play Overlay -->
             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg">
-              <button id="bannerPlayButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button id="bannerPlayButton" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 ▶️ Play Now
               </button>
             </div>

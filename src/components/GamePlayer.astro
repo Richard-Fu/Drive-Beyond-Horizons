@@ -43,7 +43,7 @@ const displayRating = rating ? Math.round(rating * 10) / 10 : null;
         {breadcrumbItems.map((item, index) => (
           <>
             {item.href ? (
-              <a href={item.href} class="text-green-600 hover:text-green-700 font-medium">{item.text}</a>
+              <a href={item.href} class="text-red-600 hover:text-red-700 font-medium">{item.text}</a>
             ) : (
               <span class="text-gray-600">{item.text}</span>
             )}
@@ -82,7 +82,7 @@ const displayRating = rating ? Math.round(rating * 10) / 10 : null;
             </div>
             <!-- 播放按钮覆盖层 -->
             <div class="absolute inset-0 flex items-center justify-center">
-              <button id="gameImagePlayButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full text-xl transition-all duration-300 transform hover:scale-110 shadow-2xl flex items-center gap-3">
+              <button id="gameImagePlayButton" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-xl transition-all duration-300 transform hover:scale-110 shadow-2xl flex items-center gap-3">
                 <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
                 </svg>
@@ -101,19 +101,19 @@ const displayRating = rating ? Math.round(rating * 10) / 10 : null;
             <!-- 游戏特点（SEO关键词） -->
             <div class="space-y-3">
               <div class="flex items-start gap-3">
-                <span class="text-green-400 mt-1">✓</span>
+                <span class="text-red-400 mt-1">✓</span>
                 <p class="text-gray-300">
                   <strong class="text-white">{t('game.freeToPlay')}</strong> - {t('game.noDownload')}
                 </p>
               </div>
               <div class="flex items-start gap-3">
-                <span class="text-green-400 mt-1">✓</span>
+                <span class="text-red-400 mt-1">✓</span>
                 <p class="text-gray-300">
                   <strong class="text-white">{t('game.instantGaming')}</strong> - {t('game.playInstantly')}
                 </p>
               </div>
               <div class="flex items-start gap-3">
-                <span class="text-green-400 mt-1">✓</span>
+                <span class="text-red-400 mt-1">✓</span>
                 <p class="text-gray-300">
                   <strong class="text-white">{t('game.crossPlatform')}</strong> - {t('game.worksEverywhere')}
                 </p>
@@ -131,7 +131,7 @@ const displayRating = rating ? Math.round(rating * 10) / 10 : null;
                 <span class="text-gray-300">{category}</span>
               </div>
               <div class="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2">
-                <span class="text-green-400">⏱️</span>
+                <span class="text-red-400">⏱️</span>
                 <span class="text-gray-300">{playTime}</span>
               </div>
               <div class="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2">
@@ -143,7 +143,7 @@ const displayRating = rating ? Math.round(rating * 10) / 10 : null;
             <!-- 行动按钮 -->
             <button 
               id="secondaryPlayButton"
-              class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+              class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               🎮 {t('common.playNow')} {title}
             </button>
@@ -158,7 +158,7 @@ const displayRating = rating ? Math.round(rating * 10) / 10 : null;
         <div class="space-y-6">
           <!-- 加载动画 -->
           <div class="relative">
-            <div class="w-20 h-20 mx-auto border-4 border-gray-300 border-t-green-600 rounded-full animate-spin"></div>
+            <div class="w-20 h-20 mx-auto border-4 border-gray-300 border-t-red-600 rounded-full animate-spin"></div>
             <div class="absolute inset-0 flex items-center justify-center">
               <span class="text-2xl">🎮</span>
             </div>
@@ -172,7 +172,7 @@ const displayRating = rating ? Math.round(rating * 10) / 10 : null;
           
           <!-- 进度条 -->
           <div class="w-full bg-gray-700 rounded-full h-3">
-            <div id="progressBar" class="bg-gradient-to-r from-green-500 to-green-600 h-3 rounded-full transition-all duration-200" style="width: 0%"></div>
+            <div id="progressBar" class="bg-gradient-to-r from-red-500 to-red-600 h-3 rounded-full transition-all duration-200" style="width: 0%"></div>
           </div>
         </div>
       </div>
@@ -303,7 +303,7 @@ const displayRating = rating ? Math.round(rating * 10) / 10 : null;
             </svg>
             <h3 class="text-xl font-semibold mb-2">Oops! Something went wrong</h3>
             <p class="text-gray-300">${message}</p>
-            <button onclick="location.reload()" class="mt-4 px-6 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition-colors">
+            <button onclick="location.reload()" class="mt-4 px-6 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition-colors">
               Refresh Page
             </button>
           </div>

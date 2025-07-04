@@ -23,16 +23,16 @@
 /* 霓虹光效 */
 .neon-glow {
   box-shadow: 
-    0 0 20px rgba(79, 173, 130, 0.5),
-    0 0 40px rgba(79, 173, 130, 0.3),
-    0 0 60px rgba(79, 173, 130, 0.1);
+    0 0 20px rgba(220, 38, 38, 0.5),
+    0 0 40px rgba(220, 38, 38, 0.3),
+    0 0 60px rgba(220, 38, 38, 0.1);
 }
 
 .neon-text {
   text-shadow: 
-    0 0 10px rgba(79, 173, 130, 0.8),
-    0 0 20px rgba(79, 173, 130, 0.6),
-    0 0 30px rgba(79, 173, 130, 0.4);
+    0 0 10px rgba(220, 38, 38, 0.8),
+    0 0 20px rgba(220, 38, 38, 0.6),
+    0 0 30px rgba(220, 38, 38, 0.4);
 }
 
 /* 渐变背景动画 */
@@ -128,13 +128,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #4fad82, #3d8968);
+  background: linear-gradient(to bottom, #dc2626, #7f1d1d);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #3d8968, #2d6650);
+  background: linear-gradient(to bottom, #b91c1c, #991b1b);
 }
 
 /* 响应式网格 */

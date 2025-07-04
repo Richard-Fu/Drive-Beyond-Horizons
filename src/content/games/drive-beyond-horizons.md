@@ -4,8 +4,8 @@ description: "Experience the most thrilling racing game with realistic driving p
 pubDate: 2025-01-15
 categories: ["Racing", "Simulation", "Action"]
 gameType: "racing"
-embedUrl: "https://drivebeyondhorizon.com"
-image: "/images/drive-beyond-horizons.jpg"
+embedUrl: "https://epicfreegames78.github.io/drive-beyond-horizons/"
+image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2625420/header.jpg?t=1746031041"
 featured: true
 rating: 4.5
 playTime: "20-45 min"

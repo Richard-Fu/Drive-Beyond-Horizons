@@ -60,7 +60,7 @@ const pageDescription = t('seo.homeDescription');
     <nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
       <div class="max-w-7xl mx-auto px-4 py-3">
         <div class="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
-          <a href={`/${lang}/`} class="hover:text-green-600 dark:hover:text-green-400 transition-colors">
+          <a href={`/${lang}/`} class="hover:text-red-600 dark:hover:text-red-400 transition-colors">
             {t('nav.home')}
           </a>
           <span>/</span>
@@ -90,7 +90,7 @@ const pageDescription = t('seo.homeDescription');
           <!-- Game Info -->
           <div class="order-1 lg:order-2 space-y-8">
             <div>
-              <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600 mb-4">
+              <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-blue-600 mb-4">
                 {featuredGame?.data.title || "GeoGuessr Free"}
               </h1>
               <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -101,7 +101,7 @@ const pageDescription = t('seo.homeDescription');
             <!-- Features -->
             <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
               <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span class="text-white text-sm">✓</span>
                 </div>
                 <p class="text-gray-700 dark:text-gray-300">
@@ -109,7 +109,7 @@ const pageDescription = t('seo.homeDescription');
                 </p>
               </div>
               <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span class="text-white text-sm">✓</span>
                 </div>
                 <p class="text-gray-700 dark:text-gray-300">
@@ -117,7 +117,7 @@ const pageDescription = t('seo.homeDescription');
                 </p>
               </div>
               <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span class="text-white text-sm">✓</span>
                 </div>
                 <p class="text-gray-700 dark:text-gray-300">
@@ -147,7 +147,7 @@ const pageDescription = t('seo.homeDescription');
             </div>
 
             <!-- CTA Button -->
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               🎮 {t('common.playNow')} {featuredGame?.data.title || "GeoGuessr"}
             </button>
           </div>
@@ -185,7 +185,7 @@ const pageDescription = t('seo.homeDescription');
         <div class="text-center">
           <a 
             href={`/${lang}/action`}
-            class="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+            class="inline-flex items-center space-x-2 bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <span>{t('common.viewAll')} {t('common.allGames')}</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -231,7 +231,7 @@ const pageDescription = t('seo.homeDescription');
 
         <div class="text-center my-8">
           <img src="https://geoguessr.io/data/image/posts/geoguessr-free-banner2.jpg" alt="GeoGuessr Free Banner" class="rounded-lg shadow-lg mx-auto" />
-          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="mt-4 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300">
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="mt-4 bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300">
             ▶️ {t('common.playNow')}
           </button>
         </div>
