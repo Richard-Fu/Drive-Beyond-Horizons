@@ -1,11 +1,11 @@
 {
-  "name": "GeoGuessr Free - Play Unlimited Games",
-  "short_name": "GeoGuessr Free",
-  "description": "Play free online games instantly. No downloads, no registration required.",
+  "name": "Drive Beyond Horizons - Epic Racing Game",
+  "short_name": "Drive Beyond",
+  "description": "Experience the most thrilling racing game with realistic driving physics. Master epic driving challenges in this free online racing adventure.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#4fad82",
+  "background_color": "#111827",
+  "theme_color": "#dc2626",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -21,7 +21,7 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["games", "entertainment"],
+  "categories": ["games", "entertainment", "racing"],
   "screenshots": [
     {
       "src": "/screenshots/home.png",
